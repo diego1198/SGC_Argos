@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +8,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>QuantumPro | Sign In</title>
+	<title>SGC ARGOS</title>
 	<!-- ================== GOOGLE FONTS ==================-->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet">
 	<!-- ======================= GLOBAL VENDOR STYLES ========================-->
@@ -15,53 +18,35 @@
 	<link rel="stylesheet" href="./assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
 	<!-- ======================= LINE AWESOME ICONS ===========================-->
 	<link rel="stylesheet" href="./assets/css/icons/line-awesome.min.css">
+	<link rel="stylesheet" href="./assets/css/icons/simple-line-icons.css">
 	<!-- ======================= DRIP ICONS ===================================-->
 	<link rel="stylesheet" href="./assets/css/icons/dripicons.min.css">
 	<!-- ======================= MATERIAL DESIGN ICONIC FONTS =================-->
 	<link rel="stylesheet" href="./assets/css/icons/material-design-iconic-font.min.css">
+	<!-- ======================= PAGE VENDOR STYLES ===========================-->
+	<link rel="stylesheet" href="./assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
 	<!-- ======================= GLOBAL COMMON STYLES ============================-->
 	<link rel="stylesheet" href="./assets/css/common/main.bundle.css">
 	<!-- ======================= LAYOUT TYPE ===========================-->
 	<link rel="stylesheet" href="./assets/css/layouts/vertical/core/main.css">
-	<!-- ======================= MENU TYPE ===========================================-->
+	<!-- ======================= MENU TYPE ===========================-->
 	<link rel="stylesheet" href="./assets/css/layouts/vertical/menu-type/default.css">
 	<!-- ======================= THEME COLOR STYLES ===========================-->
 	<link rel="stylesheet" href="./assets/css/layouts/vertical/themes/theme-a.css">
 </head>
 
 <body>
-	<div class="container">
-		<form class="sign-in-form" action="index.html">
-			<div class="card">
-				<div class="card-body">
-					<a href="index.html" class="brand text-center d-block m-b-20">
-						<img src="./assets/img/qt-logo@2x.png" alt="QuantumPro Logo" />
-					</a>
-					<h5 class="sign-in-heading text-center m-b-20">Sign in to your account</h5>
-					<div class="form-group">
-						<label for="inputEmail" class="sr-only">Email address</label>
-						<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="">
-					</div>
-
-					<div class="form-group">
-						<label for="inputPassword" class="sr-only">Password</label>
-						<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-					</div>
-					<div class="checkbox m-b-10 m-t-20">
-						<div class="custom-control custom-checkbox checkbox-primary form-check">
-							<input type="checkbox" class="custom-control-input" id="stateCheck1" checked="">
-							<label class="custom-control-label" for="stateCheck1">	Remember me</label>
-						</div>
-						<a href="auth.forgot-password.html" class="float-right">Forgot Password?</a>
-					</div>
-					<button class="btn btn-primary btn-rounded btn-floating btn-lg btn-block" type="submit">Sign In</button>
-				 <p class="text-muted m-t-25 m-b-0 p-0">Don't have an account yet?<a href="auth.register.html"> Create an account</a></p>
-				</div>
-
+	<!-- START APP WRAPPER -->
+	<div id="app">
+		<?php include "./shared/sidebar.php" ?>
+		<div class="content-wrapper">
+			<?php include "./shared/top-menu.php" ?>
+			<div class="content">
+				<?php include "./content.php"; ?>
 			</div>
-		</form>
+		</div>
 	</div>
-
+	<!-- END CONTENT WRAPPER -->
 	<!-- ================== GLOBAL VENDOR SCRIPTS ==================-->
 	<script src="./assets/vendor/modernizr/modernizr.custom.js"></script>
 	<script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
@@ -74,7 +59,11 @@
 	<script src="./assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 	<!-- ================== GLOBAL APP SCRIPTS ==================-->
 	<script src="./assets/js/global/app.js"></script>
-
+	<!-- ================== PAGE LEVEL VENDOR SCRIPTS ==================-->
+	<script src="./assets/vendor/datatables.net/js/jquery.dataTables.js"></script>
+	<script src="./assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+	<!-- ================== PAGE LEVEL COMPONENT SCRIPTS ==================-->
+	<script src="./assets/js/components/datatables-init.js"></script>
 </body>
 
 </html>
