@@ -117,7 +117,7 @@
                 <a class="dropdown-item" href="pages.profile.html"><i class="icon dripicons-user"></i> Perfil</a>
                 <a class="dropdown-item" href="pages.my-account.html"><i class="icon dripicons-gear"></i> Ajustes de cuenta </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="auth.sign-in.html"><i class="icon dripicons-lock-open"></i> Salir</a>
+                <a class="dropdown-item" href="logout.php"><i class="icon dripicons-lock-open"></i> Salir</a>
             </div>
         </li>
     </ul>

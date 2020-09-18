@@ -33,6 +33,8 @@ session_start();
 	<link rel="stylesheet" href="./assets/css/layouts/vertical/menu-type/default.css">
 	<!-- ======================= THEME COLOR STYLES ===========================-->
 	<link rel="stylesheet" href="./assets/css/layouts/vertical/themes/theme-a.css">
+
+	<script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -49,7 +51,7 @@ session_start();
 	<!-- END CONTENT WRAPPER -->
 	<!-- ================== GLOBAL VENDOR SCRIPTS ==================-->
 	<script src="./assets/vendor/modernizr/modernizr.custom.js"></script>
-	<script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
+	
 	<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="./assets/vendor/js-storage/js.storage.js"></script>
 	<script src="./assets/vendor/js-cookie/src/js.cookie.js"></script>

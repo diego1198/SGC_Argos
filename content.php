@@ -12,5 +12,25 @@ else {
 	elseif ($_GET['module'] == 'clientes') {
 		include "pages/clientes/view.php";
 	}
+
+	elseif ($_GET['module'] == 'usuarios') {
+		include "pages/user/users.php";
+	}
+
+	elseif ($_GET['module'] == 'contrasena') {
+		include "pages/user/password.php";
+	}
+
+	elseif ($_GET['module'] == 'formulario') {
+		include "pages/user/form_user.php";
+	}
+
+	elseif ($_GET['module'] == 'gestiones') {
+		include "pages/gestiones/view.php";
+	}
+
+	elseif ($_GET['module'] == 'nueva_gestion') {
+		include "pages/gestiones/form.php";
+	}
 }
 ?>

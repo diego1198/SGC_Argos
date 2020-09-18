@@ -53,12 +53,11 @@
                     </ul>
                 </li>
                 <li class="sidebar-header"><span>ADMINISTRACIÓN</span></li>
-                <li class="nav-dropdown <?php if($_GET['module'] == 'administracion'){ echo 'active'; }?>">
+                <li class="nav-dropdown <?php if($_GET['module'] == 'administracion' || $_GET['module'] == 'usuarios' || $_GET['module'] == 'contrasena'){ echo 'active'; }?>">
                     <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-user-group"></i><span>Usuarios</span></a>
                     <ul class="collapse nav-sub" aria-expanded="false">
-                        <li><a href="ui.alerts.html"><span>Alerts</span></a></li>
-                        <li><a href="ui.badges.html"><span>Badges</span></a></li>
-                        <li><a href="ui.buttons.html"><span>Buttons</span></a></li>
+                        <li><a href="?module=usuarios"><span>Gestión Usuarios</span></a></li>
+                        <li><a href="?module=contrasena"><span>Cambiar Contraseña</span></a></li>
                     </ul>
                 </li>
             </ul>

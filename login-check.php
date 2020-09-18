@@ -12,7 +12,7 @@ if (!ctype_alnum($username) OR !ctype_alnum($password)) {
 	}
 else {
 
-	$query = mysqli_query($mysqli, "SELECT * FROM usuarios WHERE username='$username' AND password='$password' AND status='activo'")
+	$query = mysqli_query($mysqli, "SELECT * FROM usuario WHERE username='$username' AND password='$password' AND status='activo'")
 									or die('error'.mysqli_error($mysqli));
 	$rows  = mysqli_num_rows($query);
 
