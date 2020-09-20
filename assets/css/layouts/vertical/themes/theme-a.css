@@ -108,7 +108,7 @@ body .top-toolbar.navbar-desktop {
 }
 
 body .top-toolbar.navbar-desktop .navbar-nav .nav-item>a, body .top-toolbar.navbar-desktop .navbar-nav .nav-item>a i {
-    color: #788db4
+    color: #950d1a
 }
 
 body .top-toolbar.navbar-desktop .navbar-nav .nav-item>a:hover, body .top-toolbar.navbar-desktop .navbar-nav .nav-item>a:hover i {
@@ -158,7 +158,7 @@ body .top-toolbar.navbar-desktop .dropdown-menu ul li a {
 }
 
 body .aside-toolbar, body .top-toolbar.navbar-mobile.navbar-tablet {
-    background-color: #191d38
+    background-color: #5d5d60;
 }
 
 body .top-toolbar.navbar-mobile.navbar-tablet .navbar-nav .nav-item>a {
@@ -170,7 +170,7 @@ body .top-toolbar.navbar-mobile.navbar-tablet .navbar-nav .nav-item>a:active, bo
 }
 
 body .header-controls .btn-menu i {
-    color: #788db4
+    color: #950d1a
 }
 
 body .header-controls .btn-menu:hover i {
@@ -195,15 +195,15 @@ body .brand-text {
 }
 
 body .sidebar-left, body .sidebar-left .sidebar-content {
-    background-color: #161931
+    background-color: #484e54
 }
 
 body .sidebar.sidebar-left .sidebar-content .main-menu .sidebar-header {
-    color: rgba(120, 141, 180, .6)
+    color: #e3dede
 }
 
 body .sidebar.sidebar-left .sidebar-content .main-menu .nav.metismenu>li.nav-dropdown>ul>li.nav-dropdown>ul>li>a, body .sidebar.sidebar-left .sidebar-content .main-menu .nav.metismenu>li.nav-dropdown>ul>li.nav-dropdown>ul>li>a>i, body .sidebar.sidebar-left .sidebar-content .main-menu .nav.metismenu>li>a, body .sidebar.sidebar-left .sidebar-content .main-menu .nav.metismenu>li>a>i {
-    color: #788db4
+    color: #e9ecef
 }
 
 body .sidebar.sidebar-left .sidebar-content .main-menu .nav.metismenu li a:hover, body .sidebar.sidebar-left .sidebar-content .main-menu .nav.metismenu li a:hover i {
@@ -249,7 +249,7 @@ body .sidebar.sidebar-left .sidebar-content .main-menu .nav.metismenu>.nav-dropd
 }
 
 body .sidebar.sidebar-left .sidebar-content .main-menu .nav.metismenu>.nav-dropdown.active>.nav-sub {
-    background: linear-gradient(180deg, #736cc7 25%, #736cc7 50%, #736cc7 75%, #736cc7 100%) left bottom no-repeat #161931;
+    background: #2c3238;
     background-size: 3px 100%
 }
 
@@ -401,14 +401,14 @@ body.content-menu .sidebar.sidebar-left .sidebar-content {
 }
 
 .btn-primary, a.btn-primary, a:visited.btn-primary a:link.btn-primary {
-    background-color: #736cc7;
-    border: 1px solid #736cc7;
+    background-color: #950d1a;
+    border: 1px solid #484e54;
     color: rgba(255, 255, 255, .9)
 }
 
 .btn-primary:hover, a.btn-primary:hover, a:visited.btn-primary a:link.btn-primary:hover {
-    background-color: #6861c3!important;
-    border: 1px solid #6861c3!important;
+    background-color: #484e54!important;
+    border: 1px solid #484e54!important;
     box-shadow: 0 5px 10px rgba(115, 108, 199, .4)!important;
     color: #fff
 }
@@ -588,7 +588,7 @@ body.content-menu .sidebar.sidebar-left .sidebar-content {
 }
 
 .dropdown .dropdown-menu .dropdown-item, .dropleft .dropdown-menu .dropdown-item, .dropright .dropdown-menu .dropdown-item, .dropup .dropdown-menu .dropdown-item {
-    color: #839bb3
+    color: #484e54
 }
 
 .dropdown .dropdown-menu .dropdown-item .dropdown-item i, .dropleft .dropdown-menu .dropdown-item .dropdown-item i, .dropright .dropdown-menu .dropdown-item .dropdown-item i, .dropup .dropdown-menu .dropdown-item .dropdown-item i {
@@ -905,7 +905,7 @@ select[multiple]:focus option:checked {
 }
 
 .custom-checkbox.checkbox-primary .custom-control-input:checked~.custom-control-label::before, .custom-checkbox.checkbox-primary .custom-control-input:indeterminate~.custom-control-label::before, .custom-radio.radio-primary .custom-control-input:checked~.custom-control-label::before {
-    background-color: #736cc7
+    background-color: #484e54
 }
 
 .custom-checkbox.checkbox-accent .custom-control-input:checked~.custom-control-label::before, .custom-checkbox.checkbox-accent .custom-control-input:indeterminate~.custom-control-label::before, .custom-radio.radio-accent .custom-control-input:checked~.custom-control-label::before {

@@ -53,7 +53,7 @@
             <div class="card">
                 <div class="card-body">
                     <a href="index.html" class="brand text-center d-block m-b-20">
-                        <img src="./assets/img/qt-logo@2x.png" alt="QuantumPro Logo" />
+                        <img src="images/icon.png" alt="" width="150" height="150">
                     </a>
                     <h5 class="sign-in-heading text-center m-b-20">SGC ARGOS</h5>
                     <div class="form-group">
