@@ -46,6 +46,17 @@ switch ($action) {
 <?php
 
         break;
+    case 'cliente':
+        $id_car = $_GET['id'];
+
+        $query = "SELECT cli.* from cliente cli, cartera car where car.cli_id = cli.cli_id and car.car_id = '$id_car'";
+
+        $result = mysqli_query($mysqli,$query);
+
+        $row = mysqli_fetch_array($result);
+
+        echo json_encode($row);
+        break;
     default:
         # code...
         break;

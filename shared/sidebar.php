@@ -28,19 +28,25 @@
                 <li class="nav-dropdown <?php if($_GET['module'] == 'dashboard'){ echo 'active'; }?>">
                     <a class="has-arrow" href="?module=dashboard" aria-expanded="false"><i class="icon dripicons-meter"></i><span>Dashboard</span></a>
                 </li>
-                <li class="nav-dropdown <?php if($_GET['module'] == 'clientes'){ echo 'active'; }?>">
+                <!-- <li class="nav-dropdown <?php if($_GET['module'] == 'clientes'){ echo 'active'; }?>">
                     <a class="has-arrow" href="?module=clientes" aria-expanded="false"><i class="icon dripicons-user"></i><span>Clientes</span></a>
-                </li>
+                </li> -->
                 <li class="nav-dropdown <?php if($_GET['module'] == 'gestiones'){ echo 'active'; }?>">
                     <a class="has-arrow" href="?module=gestiones" aria-expanded="false"><i class="icon dripicons-document-edit"></i><span>Gestiones</span></a>
                 </li>
                 <li class="nav-dropdown <?php if($_GET['module'] == 'reportes'){ echo 'active'; }?>">
                     <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-to-do"></i><span>Reportes</span></a>
                     <ul class="collapse nav-sub">
-                        <li><a href="cards.basic-content-types.html"><span>Content Types</span></a></li>
-                        <li><a href="cards.basic-layouts.html"><span>Layouts</span></a></li>
-                        <li><a href="cards.basic-navigation.html"><span>Navigation</span></a></li>
-                        <li><a href="cards.basic-actions.html"><span>Actions</span></a></li>
+                        <li><a><span>Ventas por locales</span></a></li>
+                        <li><a><span>Reporte Cobranzas Anteriores</span></a></li>
+                        <li><a><span>Total Cobranza</span></a></li>
+                        <li><a><span>Detalle Cobranza</span></li>
+                        <li><a><span>Dinero por edades de cartera</span></a></li>
+                        <li><a><span>Cartera recuperada</span></a></li>
+                        <li><a><span>Cliente + Consumos</span></a></li>
+                        <li><a><span>Cliente - Consumos</span></a></li>
+                        <li><a><span>Detalle de cobranza por gestores</span></a></li>
+                        <li><a><span>Consumos del mes</span></a></li>
                     </ul>
                 </li>
                 <li class="sidebar-header"><span>ADMINISTRACIÓN</span></li>

@@ -8,6 +8,7 @@ session_start();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 	<title>SGC ARGOS</title>
 	<!-- ================== GOOGLE FONTS ==================-->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet">
@@ -64,8 +65,7 @@ session_start();
 	<!-- ================== PAGE LEVEL VENDOR SCRIPTS ==================-->
 	<script src="./assets/vendor/datatables.net/js/jquery.dataTables.js"></script>
 	<script src="./assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
-	<!-- ================== PAGE LEVEL COMPONENT SCRIPTS ==================-->
-	<script src="./assets/js/components/datatables-init.js"></script>
+	<script src="./assets/vendor/select2/select2.min.js"></script>
 </body>
 
 </html>
