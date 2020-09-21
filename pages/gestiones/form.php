@@ -32,19 +32,21 @@
                             </div>
                             <div class="col-lg-6">
                                 <h5>Datos de Contacto</h5>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <label for="">Contacto</label>
-                                        <input type="text" name="contacto" id="contacto" readonly class="form-control" placeholder="Contacto">
-                                    </div>
-                                    <div class="col-sm-6"></div>
-                                    <div class="col-sm-4">
-                                        <label for="">Email</label>
-                                        <input type="text" name="email" id="email" readonly class="form-control" placeholder="Email">
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <label for="">Teléfono</label>
-                                        <input type="text" name="telefono" id="telefono" readonly class="form-control" placeholder="Teléfono">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <label for="">Contacto</label>
+                                            <input type="text" name="contacto" id="contacto" readonly class="form-control" placeholder="Contacto">
+                                        </div>
+                                        <div class="col-sm-4"></div>
+                                        <div class="col-sm-4">
+                                            <label for="">Email</label>
+                                            <input type="text" name="email" id="email" readonly class="form-control" placeholder="Email">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="">Teléfono</label>
+                                            <input type="text" name="telefono" id="telefono" readonly class="form-control" placeholder="Teléfono">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -117,48 +119,61 @@
                             <div class="col-12">
                                 <div class="card">
                                     <form action="" id="form_gestion">
-                                        <h5 class="card-header">Gestión</h5>
+                                        <h5 class="card-header"><strong> Gestión</strong></h5>
                                         <div class="card-body">
                                             <div class="row">
-                                                <div class="col-lg-3">
-                                                    <label for="">Tipo de Gestión</label>
-                                                    <select class="form-control" id="tipo_gestion" name="tipo_gestion">
-                                                        <option value="0">Selecciona un tipo de gestión</option>
-                                                        <option value="telefonica">Telefónica</option>
-                                                        <option value="correo">Correo</option>
-                                                    </select>
+                                                <div class="col-lg-6">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <label for="">Tipo de Gestión</label>
+                                                            <select class="form-control" id="tipo_gestion" name="tipo_gestion">
+                                                                <option value="0">Selecciona un tipo de gestión</option>
+                                                                <option value="telefonica">Telefónica</option>
+                                                                <option value="correo">Correo</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="">Tipo de Contacto</label>
+                                                            <select class="form-control" id="tipo_contacto" name="tipo_contacto">
+                                                                <option value="0">Selecciona un tipo de contacto</option>
+                                                                <option value="contactado">Contactado</option>
+                                                                <option value="no_contactado">No Contactado</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="">Respuesta</label>
+                                                            <select class="form-control" id="respuesta" name="respuesta">
+                                                                <option value="0">Selecciona una respuesta</option>
+                                                                <option value="pago">Registro de Pago</option>
+                                                                <option value="compromiso">Compromiso de Pago</option>
+                                                                <option value="no_contactado">No Contactado</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="">Número de Contacto</label>
+                                                            <input type="tel" class="form-control" placeholder="Número de contacto" id="numero_contacto" name="numero_contacto" required>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-3">
-                                                    <label for="">Tipo de Contacto</label>
-                                                    <select class="form-control" id="tipo_contacto" name="tipo_contacto">
-                                                        <option value="0">Selecciona un tipo de contacto</option>
-                                                        <option value="contactado">Contactado</option>
-                                                        <option value="no_contactado">No Contactado</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <label for="">Respuesta</label>
-                                                    <select class="form-control" id="respuesta" name="respuesta">
-                                                        <option value="0">Selecciona una respuesta</option>
-                                                        <option value="pago">Registro de Pago</option>
-                                                        <option value="compromiso">Compromiso de Pago</option>
-                                                        <option value="no_contactado">No Contactado</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <label for="">Número de Contacto</label>
-                                                    <input type="tel" class="form-control" placeholder="Número de contacto" id="numero_contacto" name="numero_contacto" required>
+                                                <div class="col-lg-6">
+                                                    <div class="col-sm-12">
+                                                        <label for="">Observación</label>
+                                                        <textarea name="observacion_gestion" id="observacion_gestion" class="form-control" rows="5"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <span style="display:none" id="form_pago">
                                                 <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h5><strong>Registro de Pago</strong></h5>
+                                                    </div>
                                                     <div class="col-sm-3">
                                                         <label for="">Monto:</label>
                                                         <input type="number" name="monto" id="monto" class="form-control">
                                                     </div>
                                                     <div class="col-sm-9">
-                                                        <label for="">Observación:</label>
-                                                        <textarea name="observacion" id="observacion" cols="30" rows="10" class="form-control"></textarea>
+                                                        <label for="">Observación Pago:</label>
+                                                        <textarea name="observacion" id="observacion" cols="30" rows="5" class="form-control"></textarea>
                                                     </div>
                                                 </div>
                                             </span>
