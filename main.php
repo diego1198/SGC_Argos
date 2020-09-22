@@ -60,12 +60,16 @@ session_start();
 	<script src="./assets/vendor/metismenu/dist/metisMenu.js"></script>
 	<script src="./assets/vendor/switchery-npm/index.js"></script>
 	<script src="./assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
 	<!-- ================== GLOBAL APP SCRIPTS ==================-->
 	<script src="./assets/js/global/app.js"></script>
 	<!-- ================== PAGE LEVEL VENDOR SCRIPTS ==================-->
 	<script src="./assets/vendor/datatables.net/js/jquery.dataTables.js"></script>
 	<script src="./assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
 	<script src="./assets/vendor/select2/select2.min.js"></script>
+	
+	<script src="./assets/vendor/chartist/dist/chartist.js"></script>
+
 </body>
 
 </html>
