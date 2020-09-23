@@ -31,9 +31,26 @@
                 <!-- <li class="nav-dropdown <?php if($_GET['module'] == 'clientes'){ echo 'active'; }?>">
                     <a class="has-arrow" href="?module=clientes" aria-expanded="false"><i class="icon dripicons-user"></i><span>Clientes</span></a>
                 </li> -->
+                <!-- <li class="nav-dropdown <?php if($_GET['module'] == 'gestiones'){ echo 'active'; }?>">
+                    <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-document-edit"></i><span>Gestiones</span></a>
+                    <ul class="collapse nav-sub">
+                        <li><a href="?module=gestiones&cartera=30"><span>Cartera 30</span></a></li>
+                        <li><a href="?module=gestiones&cartera=60"><span>Cartera 60</span></a></li>
+                        <li><a href="?module=gestiones&cartera=90"><span>Cartera 90</span></a></li>
+                        <li><a href="?module=gestiones&cartera=91"><span>Cartera +90</span></li>
+                    </ul>
+                </li> -->
+
                 <li class="nav-dropdown <?php if($_GET['module'] == 'gestiones'){ echo 'active'; }?>">
-                    <a class="has-arrow" href="?module=gestiones" aria-expanded="false"><i class="icon dripicons-document-edit"></i><span>Gestiones</span></a>
+                    <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-document-edit"></i><span>Gestiones</span></a>
+                    <ul class="collapse nav-sub">
+                        <li><a href="?module=gestiones&cartera=30"><span>Cartera 30</span></a></li>
+                        <li><a href="?module=gestiones&cartera=60"><span>Cartera 60</span></a></li>
+                        <li><a href="?module=gestiones&cartera=90"><span>Cartera 90</span></a></li>
+                        <li><a href="?module=gestiones&cartera=91"><span>Cartera +90</span></a></li>
+                    </ul>
                 </li>
+                
                 <li class="nav-dropdown <?php if($_GET['module'] == 'reportes'){ echo 'active'; }?>">
                     <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-to-do"></i><span>Reportes</span></a>
                     <ul class="collapse nav-sub">

@@ -109,7 +109,7 @@
             <div class="col-12">
                 <div class="card-deck m-b-30">
                     <div class="card">
-                        <h5 class="card-header border-none">Pizza Hut</h5>
+                        <h5 class="card-header border-none">$ Recuperado Cartera 30</h5>
                         <div class="card-body p-0">
                             <h4 class="card-title text-info p-t-10 p-l-15">67,325 <i class="zmdi zmdi-trending-up text-info"></i></h4>
                             <div class="h-200">
@@ -118,23 +118,32 @@
                         </div>
                     </div>
                     <div class="card">
-                        <h5 class="card-header border-none">Fridays</h5>
+                        <h5 class="card-header border-none">$ Recuperado Cartera 60</h5>
                         <div class="card-body p-0">
-                            <h4 class="card-title text-warning p-t-10 p-l-15">3.69% <i class="zmdi zmdi-trending-down text-warning"></i></h4>
+                            <h4 class="card-title text-warning p-t-10 p-l-15"><i class="zmdi zmdi-trending-down text-warning"></i></h4>
                             <div class="h-200">
                                 <canvas id="bounceRateChart"></canvas>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="card">
-                        <h5 class="card-header border-none"></h5>
+                    <div class="card">
+                        <h5 class="card-header border-none">$ Recuperado Cartera 90</h5>
                         <div class="card-body p-0">
-                            <h4 class="card-title text-primary p-t-10 p-l-15">13m 36s <i class="zmdi zmdi-trending-up text-primary"></i></h4>
+                            <h4 class="card-title text-primary p-t-10 p-l-15"><i class="zmdi zmdi-trending-up text-primary"></i></h4>
                             <div class="h-200">
                                 <canvas id="sessionDuration"></canvas>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+                    <div class="card">
+                        <h5 class="card-header border-none">$ Recuperado Cartera +90</h5>
+                        <div class="card-body p-0">
+                            <h4 class="card-title text-success p-t-10 p-l-15"><i class="zmdi zmdi-trending-up text-success"></i></h4>
+                            <div class="h-200">
+                                <canvas id="cartera_90"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -525,6 +534,7 @@
 <script src="./assets/js/cards/users-chart.js"></script>
 <script src="./assets/js/cards/bounce-rate-chart.js"></script>
 <script src="./assets/js/cards/session-duration-chart.js"></script>
+<script src="./assets/js/cards/cartera_90.js"></script>
 
 <script src="./assets/js/cards/total-visits-chart.js"></script>
 <script src="./assets/js/cards/total-unique-visits-chart.js"></script>

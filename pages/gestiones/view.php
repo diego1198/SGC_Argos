@@ -1,10 +1,32 @@
+<?php
+$cartera = $_GET['cartera'];
+$title = '';
+switch ($cartera) {
+    case '30':
+        $title = 'CARTERA 30 DÍAS';
+        break;
+    case '60':
+        $title = 'CARTERA 60 DÍAS';
+        break;
+    case '90':
+        $title = 'CARTERA 90 DÍAS';
+        break;
+    case '91':
+        $title = 'CARTERA +90 DÍAS';
+        break;
+    default:
+        # code...
+        break;
+}
+?>
 <div class="content" data-layout="tabbed">
     <!-- PAGE HEADER -->
     <header class="page-header">
         <div class="container">
             <div class="d-flex align-items-center">
                 <div class="mr-auto">
-                    <h1 class="separator"><?php echo strtoupper($_GET['module']); ?></h1>
+                    <h1 class="separator"><?php echo strtoupper($_GET['module']).' '.$title; ?></h1>
+                    <input type="hidden" name="cartera" id="cartera" value="<?php echo $cartera;?>">
                     <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="?module=dashboard"><i class="icon dripicons-home"></i></a></li>

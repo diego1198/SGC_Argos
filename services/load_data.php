@@ -38,7 +38,7 @@ for ($i = 0; $i < $array_cant; $i++) {
         $resultado_busqueda = mysqli_query($mysqli,$busqueda_id);
         $row = mysqli_fetch_array($resultado_busqueda);
         $cli_id = $row['cli_id'];
-        $busqueda_personal = "SELECT per_id from personal where per_documento = '". utf8_encode($resultado[$i]['Documeno'])."'";
+        $busqueda_personal = "SELECT per_id from personal where per_documento = '". utf8_encode($resultado[$i]['Documento'])."'";
         $result_personal = mysqli_query($mysqli,$busqueda_personal);
         $cant_personal = mysqli_num_rows($result_personal);
 
@@ -51,7 +51,7 @@ for ($i = 0; $i < $array_cant; $i++) {
         $resultado_busqueda = mysqli_query($mysqli,$busqueda_id);
         $row = mysqli_fetch_array($resultado_busqueda);
         $cli_id = $row['cli_id'];
-        $busqueda_personal = "SELECT per_id from personal where per_documento = '". utf8_encode($resultado[$i]['Documeno'])."'";
+        $busqueda_personal = "SELECT per_id from personal where per_documento = '". utf8_encode($resultado[$i]['Documento'])."'";
         $result_personal = mysqli_query($mysqli,$busqueda_personal);
         $cant_personal = mysqli_num_rows($result_personal);
 
