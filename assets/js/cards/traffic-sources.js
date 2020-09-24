@@ -7,13 +7,13 @@
       // ==============================================================
       new Chartist.Line(
         "#traffic-week", {
-          labels: ["MON", "TUES", "WED", "THURS", "FRI", "SAT", "SUN"],
+          labels: ["LUN", "MAR", "MIE", "JUE", "VIE", "SAB"],
           series: [
-            [0, 2, 3.5, 0, 13, 1, 4, 1],
-            [0, 4, 0, 4, 0, 4, 0, 4]
+            [0, 2, 3.5, 0, 6, 1, 4],
+            [0, 4, 0, 4, 0, 4, 0]
           ]
         }, {
-          high: 15,
+          high: 8,
           low: 0,
           showArea: true,
           fullWidth: true,
@@ -61,18 +61,18 @@
       new Chartist.Line(
         "#traffic-year", {
           labels: [
-            "JAN",
+            "ENE",
             "FEB",
             "MAR",
-            "APR",
+            "ABR",
             "MAY",
             "JUN",
             "JUL",
-            "AUG",
+            "AGO",
             "SEPT",
             "OCT",
             "NOV",
-            "DEC"
+            "DIC"
           ],
           series: [
             [0, 2, 3.5, 4, 8, 3, 4, 6, 2, 6, 4.7, 3, 5],
