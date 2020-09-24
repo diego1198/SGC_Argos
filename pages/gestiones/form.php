@@ -10,6 +10,7 @@
                             <div class="col-lg-6">
                                 <h5>Datos de Cliente</h5>
                                 <input type="hidden" name="id_cartera" id="id_cartera" value="<?php echo $_GET['id']; ?>">
+                                <input type="hidden" name="id_cliente" id="id_cliente">
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <label for="">Cliente</label>
@@ -52,69 +53,6 @@
                             </div>
                         </div>
                         <div class="row"><br></div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <h5 class="card-header">Detalle de Consumo</h5>
-                                    <div class="card-body">
-                                        <div class="table-responsive" id="outer_consumos">
-                                            <table class="table table-bordered table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Fecha</th>
-                                                        <th>Hora</th>
-                                                        <th>Local</th>
-                                                        <th>Sucursal</th>
-                                                        <th>Tarjeta</th>
-                                                        <th>Documento</th>
-                                                        <th>Nombres</th>
-                                                        <th>Autorización</th>
-                                                        <th>Valor Neto</th>
-                                                        <th>IVA</th>
-                                                        <th>Valor Total</th>
-                                                        <th>Comisión</th>
-                                                        <th>Total a Pagar</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -177,6 +115,21 @@
                                                     </div>
                                                 </div>
                                             </span>
+                                            <span style="display:none" id="form_compromiso">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h5><strong>Compromiso de Pago</strong></h5>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label for="">Monto Compromiso:</label>
+                                                        <input type="number" name="monto_compromiso" id="monto_compromiso" class="form-control">
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label for="">Fecha Compromiso:</label>
+                                                        <input type="date" name="fecha_compromiso" id="fecha_compromiso" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </span>
                                         </div>
                                         <div class="card-footer">
                                             <div class="row">
@@ -188,6 +141,21 @@
 
                                         </div>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Detalle de Consumo</h5>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="table-responsive" id="outer_consumos">
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

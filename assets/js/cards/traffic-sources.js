@@ -7,10 +7,10 @@
       // ==============================================================
       new Chartist.Line(
         "#traffic-week", {
-          labels: ["LUN", "MAR", "MIE", "JUE", "VIE", "SAB"],
+          labels: ["FRIDAYS","PIZZA HUT","OTRO"],
           series: [
-            [0, 2, 3.5, 0, 6, 1, 4],
-            [0, 4, 0, 4, 0, 4, 0]
+            [5, 2, 3.5],
+            [3, 4, 1]
           ]
         }, {
           high: 8,

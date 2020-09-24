@@ -116,6 +116,132 @@
                                     </div>
                                 </div>
                                 <!-- End Cards Percentages -->
+                                 <!-- Start Cards Restore -->
+                                 <div class="row">
+                                    <div class="col-12">
+                                        <div class="card-deck m-b-30">
+                                            <div class="card">
+                                                <h5 class="card-header border-none">$ Recuperado Cartera 30</h5>
+                                                <div class="card-body p-0">
+                                                    <h4 class="card-title text-info p-t-10 p-l-15">67,325 <i class="zmdi zmdi-trending-up text-info"></i></h4>
+                                                    <div class="h-200">
+                                                        <canvas id="usersChart"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <h5 class="card-header border-none">$ Recuperado Cartera 60</h5>
+                                                <div class="card-body p-0">
+                                                    <h4 class="card-title text-warning p-t-10 p-l-15"><i class="zmdi zmdi-trending-down text-warning"></i></h4>
+                                                    <div class="h-200">
+                                                        <canvas id="bounceRateChart"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <h5 class="card-header border-none">$ Recuperado Cartera 90</h5>
+                                                <div class="card-body p-0">
+                                                    <h4 class="card-title text-primary p-t-10 p-l-15"><i class="zmdi zmdi-trending-up text-primary"></i></h4>
+                                                    <div class="h-200">
+                                                        <canvas id="sessionDuration"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <h5 class="card-header border-none">$ Recuperado Cartera +90</h5>
+                                                <div class="card-body p-0">
+                                                    <h4 class="card-title text-success p-t-10 p-l-15"><i class="zmdi zmdi-trending-up text-success"></i></h4>
+                                                    <div class="h-200">
+                                                        <canvas id="cartera_90"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Cards Restore -->
+                                <!-- Start Cards Cartera -->
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="row m-0 col-border-xl">
+                                                <div class="col-md-12 col-lg-6 col-xl-3">
+                                                    <div class="card-body">
+                                                        <div class="icon-rounded icon-rounded-success float-left m-r-20">
+                                                            <i class="la la-dollar f-w-600"></i>
+                                                        </div>
+                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="500">0</h5>
+                                                        <h6 class="text-muted m-t-10">
+                                                            Cartera 30 días
+                                                        </h6>
+                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
+                                                            <div class="progress-bar bg-success" role="progressbar" style="" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="500">
+                                                            0
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-lg-6 col-xl-3">
+                                                    <div class="card-body">
+                                                        <div class="icon-rounded icon-rounded-info float-left m-r-20">
+                                                            <i class="la la-dollar f-w-600"></i>
+                                                        </div>
+                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="420">0</h5>
+                                                        <h6 class="text-muted m-t-10">
+                                                            Cartera 60 días
+                                                        </h6>
+                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
+                                                            <div class="progress-bar bg-info" role="progressbar" style="" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="420">
+                                                            0
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-lg-6 col-xl-3">
+                                                    <div class="card-body">
+                                                        <div class="icon-rounded icon-rounded-secondary float-left m-r-20">
+                                                            <i class="la la-dollar f-w-600"></i>
+                                                        </div>
+                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="200">0</h5>
+                                                        <h6 class="text-muted m-t-10">
+                                                            Cartera 90 días
+                                                        </h6>
+                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
+                                                            <div class="progress-bar bg-danger" role="progressbar" style="" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="200">
+                                                            0
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-lg-6 col-xl-3">
+                                                    <div class="card-body">
+                                                        <div class="icon-rounded icon-rounded-primary float-left m-r-20">
+                                                            <i class="la la-dollar f-w-600"></i>
+                                                        </div>
+                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="100">0</h5>
+                                                        <h6 class="text-muted m-t-10">
+                                                            Cartera +90 días
+                                                        </h6>
+                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
+                                                            <div class="progress-bar bg-primary" role="progressbar" style="" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="100">
+                                                            0
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Cards Cartera -->
+                                
+                               
+                            </div>
+                            <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5">
                                 <!-- Start Cards Marks -->
                                 <div class="row">
                                     <div class="col-lg-4">
@@ -220,135 +346,11 @@
                                     </div>
                                 </div>
                                 <!-- End Cards Marks -->
-                                <!-- Start Cards Restore -->
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card-deck m-b-30">
-                                            <div class="card">
-                                                <h5 class="card-header border-none">$ Recuperado Cartera 30</h5>
-                                                <div class="card-body p-0">
-                                                    <h4 class="card-title text-info p-t-10 p-l-15">67,325 <i class="zmdi zmdi-trending-up text-info"></i></h4>
-                                                    <div class="h-200">
-                                                        <canvas id="usersChart"></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <h5 class="card-header border-none">$ Recuperado Cartera 60</h5>
-                                                <div class="card-body p-0">
-                                                    <h4 class="card-title text-warning p-t-10 p-l-15"><i class="zmdi zmdi-trending-down text-warning"></i></h4>
-                                                    <div class="h-200">
-                                                        <canvas id="bounceRateChart"></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <h5 class="card-header border-none">$ Recuperado Cartera 90</h5>
-                                                <div class="card-body p-0">
-                                                    <h4 class="card-title text-primary p-t-10 p-l-15"><i class="zmdi zmdi-trending-up text-primary"></i></h4>
-                                                    <div class="h-200">
-                                                        <canvas id="sessionDuration"></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <h5 class="card-header border-none">$ Recuperado Cartera +90</h5>
-                                                <div class="card-body p-0">
-                                                    <h4 class="card-title text-success p-t-10 p-l-15"><i class="zmdi zmdi-trending-up text-success"></i></h4>
-                                                    <div class="h-200">
-                                                        <canvas id="cartera_90"></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Cards Restore -->
-                            </div>
-                            <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5">
-                                <!-- Start Cards Cartera -->
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card">
-                                            <div class="row m-0 col-border-xl">
-                                                <div class="col-md-12 col-lg-6 col-xl-3">
-                                                    <div class="card-body">
-                                                        <div class="icon-rounded icon-rounded-success float-left m-r-20">
-                                                            <i class="la la-dollar f-w-600"></i>
-                                                        </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="500">0</h5>
-                                                        <h6 class="text-muted m-t-10">
-                                                            Cartera 30 días
-                                                        </h6>
-                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
-                                                            <div class="progress-bar bg-success" role="progressbar" style="" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="500">
-                                                            0
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 col-lg-6 col-xl-3">
-                                                    <div class="card-body">
-                                                        <div class="icon-rounded icon-rounded-info float-left m-r-20">
-                                                            <i class="la la-dollar f-w-600"></i>
-                                                        </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="420">0</h5>
-                                                        <h6 class="text-muted m-t-10">
-                                                            Cartera 60 días
-                                                        </h6>
-                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
-                                                            <div class="progress-bar bg-info" role="progressbar" style="" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="420">
-                                                            0
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 col-lg-6 col-xl-3">
-                                                    <div class="card-body">
-                                                        <div class="icon-rounded icon-rounded-secondary float-left m-r-20">
-                                                            <i class="la la-dollar f-w-600"></i>
-                                                        </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="200">0</h5>
-                                                        <h6 class="text-muted m-t-10">
-                                                            Cartera 90 días
-                                                        </h6>
-                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
-                                                            <div class="progress-bar bg-danger" role="progressbar" style="" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="200">
-                                                            0
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 col-lg-6 col-xl-3">
-                                                    <div class="card-body">
-                                                        <div class="icon-rounded icon-rounded-primary float-left m-r-20">
-                                                            <i class="la la-dollar f-w-600"></i>
-                                                        </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="100">0</h5>
-                                                        <h6 class="text-muted m-t-10">
-                                                            Cartera +90 días
-                                                        </h6>
-                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
-                                                            <div class="progress-bar bg-primary" role="progressbar" style="" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="100">
-                                                            0
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Cards Cartera -->
                                 <!-- Start Cards Gestiones -->
                                 <div class="row">
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="card">
-                                            <div class="card-header">Gestiones Recientes
+                                            <div class="card-header">Pagos Registrados
                                                 <ul class="actions top-right">
                                                     <li><a href="javascript:void(0)" data-q-action="card-expand"><i class="icon dripicons-expand-2"></i></a></li>
                                                 </ul>
@@ -358,226 +360,118 @@
                                                     <table id="recent-transaction-table" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                                <th>ID GESTIÓN</th>
+                                                                <th>GESTOR</th>
                                                                 <th>FECHA</th>
                                                                 <th>PAGO</th>
-                                                                <th>ESTADO</th>
                                                                 <th class="no-sort">ACCIONES</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td>440-23423</td>
+                                                                <td>GESTOR 1</td>
                                                                 <td>06/25/18</td>
                                                                 <td>$650</td>
-                                                                <td><span class="badge badge-pill badge-warning">Pending</span></td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-29384</td>
+                                                                <td>GESTOR 2</td>
                                                                 <td>06/25/18</td>
                                                                 <td>$550</td>
-                                                                <td><span class="badge badge-pill badge-warning">Pending</span></td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-23423</td>
+                                                                <td>GESTOR 2</td>
                                                                 <td>06/25/18</td>
                                                                 <td>$550</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
+                                                                
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-23444</td>
+                                                                <td>GESTOR 3</td>
                                                                 <td>06/24/18</td>
                                                                 <td>$950</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-243453</td>
+                                                                <td>GESTOR 1</td>
                                                                 <td>06/24/18</td>
                                                                 <td>$250</td>
-                                                                <td><span class="badge badge-pill badge-warning">Pending</span></td>
+                                                                
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-23434</td>
+                                                                <td>GESTOR 2</td>
                                                                 <td>06/23/18</td>
                                                                 <td>$900</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-23423</td>
+                                                                <td>GESTOR 3</td>
                                                                 <td>06/23/18</td>
                                                                 <td>$830</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
+                                                                
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-6786</td>
+                                                                <td>GESTOR 2</td>
                                                                 <td>06/21/18</td>
                                                                 <td>$230</td>
-                                                                <td><span class="badge badge-pill badge-danger">Failed</span></td>
+                                                                
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-36354</td>
+                                                                <td>GESTOR 3</td>
                                                                 <td>06/21/18</td>
                                                                 <td>$1,034</td>
-                                                                <td><span class="badge badge-pill badge-warning">Pending</span></td>
+                                                                
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-34533</td>
+                                                                <td>GESTOR 2</td>
                                                                 <td>06/21/18</td>
                                                                 <td>$5,300</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-678655</td>
-                                                                <td>06/19/18</td>
-                                                                <td>$627</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-343535</td>
-                                                                <td>06/19/18</td>
-                                                                <td>$350</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-796777</td>
-                                                                <td>06/19/18</td>
-                                                                <td>$600</td>
-                                                                <td><span class="badge badge-pill badge-danger">Reversed</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-4534646</td>
-                                                                <td>06/17/18</td>
-                                                                <td>$900</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-35565</td>
-                                                                <td>06/17/18</td>
-                                                                <td>$950</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-547345645</td>
-                                                                <td>06/16/18</td>
-                                                                <td>$800</td>
-                                                                <td><span class="badge badge-pill badge-warning">Pending</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-3464345</td>
-                                                                <td>06/16/18</td>
-                                                                <td>$650</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-346455</td>
-                                                                <td>06/16/18</td>
-                                                                <td>$650</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-345677</td>
+                                                                <td>GESTOR 1</td>
                                                                 <td>06/15/18</td>
                                                                 <td>$650</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-3456467</td>
+                                                                <td>GESTOR 3</td>
                                                                 <td>06/15/18</td>
                                                                 <td>$650</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>440-75433</td>
-                                                                <td>06/15/18</td>
-                                                                <td>$650</td>
-                                                                <td><span class="badge badge-pill badge-danger">Canceled</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-4575456</td>
+                                                                <td>GESTOR 1</td>
                                                                 <td>06/14/18</td>
                                                                 <td>$650</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-34645</td>
-                                                                <td>06/14/18</td>
-                                                                <td>$650</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>440-67867</td>
-                                                                <td>06/14/18</td>
-                                                                <td>$650</td>
-                                                                <td><span class="badge badge-pill badge-success">Paid</span></td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
@@ -606,9 +500,9 @@
                                                         <table class="table v-align-middle">
                                                             <thead class="bg-light">
                                                                 <tr>
-                                                                    <th class="p-l-20">Name</th>
-                                                                    <th>Earnings</th>
-                                                                    <th>Quota</th>
+                                                                    <th class="p-l-20">Cliente</th>
+                                                                    <th>Consumo Total</th>
+                                                                    <th>Fecha Consumo</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -617,51 +511,51 @@
                                                                         <strong class="nowrap">Robert Norris</strong>
                                                                     </td>
                                                                     <td>$37,000</td>
-                                                                    <td><span class="badge badge-pill badge-success">Above</span></td>
+                                                                    <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/47.jpg" alt="">
                                                                         <strong class="nowrap">Shawna Cohen</strong></td>
                                                                     <td>$27,600</td>
-                                                                    <td><span class="badge badge-pill badge-info">Met</span></td>
+                                                                    <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/24.jpg" alt="">
                                                                         <strong class="nowrap">Darrin Todd</strong></td>
                                                                     <td>$23,200</td>
 
-                                                                    <td><span class="badge badge-pill badge-info">Met</span></td>
+                                                                    <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/01.jpg" alt="">
                                                                         <strong class="nowrap">Michelle White</strong></td>
                                                                     <td>$19,300</td>
 
-                                                                    <td><span class="badge badge-pill badge-info">Met</span></td>
+                                                                    <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/09.jpg" alt="">
                                                                         <strong class="nowrap">Josh Lynch</strong></td>
                                                                     <td>$18,500</td>
-                                                                    <td><span class="badge badge-pill badge-warning">Pending</span></td>
+                                                                    <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/26.jpg" alt="">
                                                                         <strong class="nowrap">Jason Kendall</strong></td>
                                                                     <td>$16,300</td>
-                                                                    <td><span class="badge badge-pill badge-warning">Pending</span></td>
+                                                                    <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/11.jpg" alt="">
                                                                         <strong class="nowrap">Aaron Elliott</strong></td>
                                                                     <td>$8,300</td>
-                                                                    <td><span class="badge badge-pill badge-danger">Danger</span></td>
+                                                                    <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="border-none"><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/21.jpg" alt="">
                                                                         <strong class="nowrap">Rebecca Harris</strong></td>
                                                                     <td class="border-none">$4,000</td>
-                                                                    <td class="border-none"><span class="badge badge-pill badge-danger">Danger</span> </td>
+                                                                    <td>06/25/18</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -727,22 +621,22 @@
                                 <!-- End Cards Gestiones -->
                             </div>
                             <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6">
-                                <!-- Start Cards Cobrado X Deuda -->
+                                <!-- Start Cards Cobrado X Marca -->
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="card">
-                                            <h5 class="card-header p-t-25 p-b-20"><span class="">Cobrado X Deudas</span></h5>
+                                            <h5 class="card-header p-t-25 p-b-20"><span class="">Consumo Y Cobro por Marca</span></h5>
                                             <div class="card-toolbar top-right">
                                                 <ul class="nav nav-pills nav-pills-primary justify-content-end" id="pills-demo-1" role="tablist">
                                                     <li class="nav-item">
-                                                        <a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="true">Semana</a>
+                                                        <a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="true">Marcas</a>
                                                     </li>
-                                                    <li class="nav-item">
+                                                    <!-- <li class="nav-item">
                                                         <a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2" aria-selected="false">Mes</a>
                                                     </li>
                                                     <li class="nav-item">
                                                         <a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3" aria-selected="false">Año</a>
-                                                    </li>
+                                                    </li> -->
                                                 </ul>
                                             </div>
                                             <div class="card-body">
@@ -758,7 +652,7 @@
                                                         </ul>
                                                         <div class="ct-chart" id="traffic-week" style="height: 350px;"></div>
                                                     </div>
-                                                    <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2">
+                                                    <!-- <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2">
 
                                                         <ul class="list-reset list-inline-block m-b-15">
                                                             <li class="m-r-5">
@@ -782,7 +676,69 @@
                                                             </li>
                                                         </ul>
                                                         <div class="ct-chart" id="traffic-year" style="height: 350px;"></div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Cards Cobrado X Marca -->
+                                <!-- Start Cards Cobrado X Deuda -->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <h5 class="card-header p-t-25 p-b-20"><span class="">Consumo en el mes</span></h5>
+                                            <div class="card-toolbar top-right">
+                                                <ul class="nav nav-pills nav-pills-primary justify-content-end" id="pills-demo-1" role="tablist">
+                                                    <!-- <li class="nav-item">
+                                                        <a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="true">Semana</a>
+                                                    </li> -->
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2" aria-selected="false">Mes</a>
+                                                    </li>
+                                                    <!-- <li class="nav-item">
+                                                        <a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3" aria-selected="false">Año</a>
+                                                    </li> -->
+                                                </ul>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tab-content" id="pills-tabContent-1">
+                                                    <!-- <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1">
+                                                        <ul class="list-reset list-inline-block m-b-15">
+                                                            <li class="m-r-5">
+                                                                <span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Cobrado</span>
+                                                            </li>
+                                                            <li class="m-r-5">
+                                                                <span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Deuda</span>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="ct-chart" id="traffic-week" style="height: 350px;"></div>
+                                                    </div> -->
+                                                    <div class="tab-pane fade show active" id="pills-2" role="tabpanel" aria-labelledby="pills-2">
+
+                                                        <ul class="list-reset list-inline-block m-b-15">
+                                                            <li class="m-r-5">
+                                                                <span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Cobrado</span>
+                                                            </li>
+                                                            <li class="m-r-5">
+                                                                <span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Deuda</span>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="ct-chart" id="deuda-month" style="height: 350px;"></div>
+
                                                     </div>
+                                                    <!-- <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3">
+
+                                                        <ul class="list-reset list-inline-block m-b-15">
+                                                            <li class="m-r-5">
+                                                                <span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Cobrado</span>
+                                                            </li>
+                                                            <li class="m-r-5">
+                                                                <span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Deuda</span>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="ct-chart" id="traffic-year" style="height: 350px;"></div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -824,3 +780,4 @@
 <script src="./assets/js/cards/recent-transactions.js"></script>
 
 <script src="./assets/js/cards/traffic-sources.js"></script>
+<script src="./assets/js/cards/deuda-chart.js"></script>
