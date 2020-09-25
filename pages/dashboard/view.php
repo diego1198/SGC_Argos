@@ -241,7 +241,13 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="card">
-                                            <h5 class="card-header">Balance Final</h5>
+                                            <h5 class="card-header"></h5>
+                                            <div class="card-body p-150">
+                                                <h5 class="font-size-30">BALANCE FINAL</h5>
+                                            </div>
+                                            <div class="card-footer">
+
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -391,7 +397,7 @@
                                                             <tr>
                                                                 <td>GESTOR 1</td>
                                                                 <td></td>
-                                                                <td>06/25/18</td>
+                                                                <td>06/25/18 16:43:00</td>
                                                                 <td>$650</td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
@@ -400,7 +406,7 @@
                                                             <tr>
                                                                 <td>GESTOR 2</td>
                                                                 <td></td>
-                                                                <td>06/25/18</td>
+                                                                <td>06/25/18 16:43:00</td>
                                                                 <td>$550</td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
@@ -409,7 +415,7 @@
                                                             <tr>
                                                                 <td>GESTOR 2</td>
                                                                 <td></td>
-                                                                <td>06/25/18</td>
+                                                                <td>06/25/18 16:43:00</td>
                                                                 <td>$550</td>
 
                                                                 <td>
@@ -419,7 +425,7 @@
                                                             <tr>
                                                                 <td>GESTOR 3</td>
                                                                 <td></td>
-                                                                <td>06/24/18</td>
+                                                                <td>06/24/18 16:43:00</td>
                                                                 <td>$950</td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
@@ -428,7 +434,7 @@
                                                             <tr>
                                                                 <td>GESTOR 1</td>
                                                                 <td></td>
-                                                                <td>06/24/18</td>
+                                                                <td>06/24/18 16:43:00</td>
                                                                 <td>$250</td>
 
                                                                 <td>
@@ -438,7 +444,7 @@
                                                             <tr>
                                                                 <td>GESTOR 2</td>
                                                                 <td></td>
-                                                                <td>06/23/18</td>
+                                                                <td>06/23/18 16:43:00</td>
                                                                 <td>$900</td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
@@ -447,7 +453,7 @@
                                                             <tr>
                                                                 <td>GESTOR 3</td>
                                                                 <td></td>
-                                                                <td>06/23/18</td>
+                                                                <td>06/23/18 16:43:00</td>
                                                                 <td>$830</td>
 
                                                                 <td>
@@ -457,7 +463,7 @@
                                                             <tr>
                                                                 <td>GESTOR 2</td>
                                                                 <td></td>
-                                                                <td>06/21/18</td>
+                                                                <td>06/21/18 16:43:00</td>
                                                                 <td>$230</td>
 
                                                                 <td>
@@ -467,7 +473,7 @@
                                                             <tr>
                                                                 <td>GESTOR 3</td>
                                                                 <td></td>
-                                                                <td>06/21/18</td>
+                                                                <td>06/21/18 16:43:00</td>
                                                                 <td>$1,034</td>
 
                                                                 <td>
@@ -477,7 +483,7 @@
                                                             <tr>
                                                                 <td>GESTOR 2</td>
                                                                 <td></td>
-                                                                <td>06/21/18</td>
+                                                                <td>06/21/18 16:43:00</td>
                                                                 <td>$5,300</td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
@@ -486,7 +492,7 @@
                                                             <tr>
                                                                 <td>GESTOR 1</td>
                                                                 <td></td>
-                                                                <td>06/15/18</td>
+                                                                <td>06/15/18 16:43:00</td>
                                                                 <td>$650</td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
@@ -495,7 +501,7 @@
                                                             <tr>
                                                                 <td>GESTOR 3</td>
                                                                 <td></td>
-                                                                <td>06/15/18</td>
+                                                                <td>06/15/18 16:43:00</td>
                                                                 <td>$650</td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
@@ -504,7 +510,7 @@
                                                             <tr>
                                                                 <td>GESTOR 1</td>
                                                                 <td></td>
-                                                                <td>06/14/18</td>
+                                                                <td>06/14/18 16:43:00</td>
                                                                 <td>$650</td>
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
@@ -523,9 +529,6 @@
                                                     <li class="nav-item">
                                                         <a class="nav-link active" id="pills-month-tab" data-toggle="tab" href="#sales-month-tab" role="tab">Més</a>
                                                     </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" id="pills-year-tab" data-toggle="tab" href="#sales-year-tab" role="tab">Año</a>
-                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="card-body p-0">
@@ -541,108 +544,55 @@
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/27.jpg" alt="">
+                                                                    <td>
                                                                         <strong class="nowrap">Robert Norris</strong>
                                                                     </td>
                                                                     <td>$37,000</td>
                                                                     <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/47.jpg" alt="">
+                                                                    <td>
                                                                         <strong class="nowrap">Shawna Cohen</strong></td>
                                                                     <td>$27,600</td>
                                                                     <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/24.jpg" alt="">
+                                                                    <td>
                                                                         <strong class="nowrap">Darrin Todd</strong></td>
                                                                     <td>$23,200</td>
 
                                                                     <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/01.jpg" alt="">
+                                                                    <td>
                                                                         <strong class="nowrap">Michelle White</strong></td>
                                                                     <td>$19,300</td>
 
                                                                     <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/09.jpg" alt="">
+                                                                    <td>
                                                                         <strong class="nowrap">Josh Lynch</strong></td>
                                                                     <td>$18,500</td>
                                                                     <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/26.jpg" alt="">
+                                                                    <td>
                                                                         <strong class="nowrap">Jason Kendall</strong></td>
                                                                     <td>$16,300</td>
                                                                     <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/11.jpg" alt="">
+                                                                    <td>
                                                                         <strong class="nowrap">Aaron Elliott</strong></td>
                                                                     <td>$8,300</td>
                                                                     <td>06/25/18</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="border-none"><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/21.jpg" alt="">
+                                                                    <td class="border-none">
                                                                         <strong class="nowrap">Rebecca Harris</strong></td>
                                                                     <td class="border-none">$4,000</td>
                                                                     <td>06/25/18</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="sales-year-tab" role="tabpanel" aria-labelledby="sales-year-tab">
-                                                        <table class="table v-align-middle">
-                                                            <thead class="bg-light">
-                                                                <tr>
-                                                                    <th>Name</th>
-                                                                    <th>Earnings</th>
-                                                                    <th>Quota</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/02.jpg" alt="">
-                                                                        <strong class="nowrap">Mike Jones </strong>
-                                                                    </td>
-                                                                    <td>$587,000</td>
-                                                                    <td><span class="badge badge-pill badge-success">Above</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/6.jpg" alt="">
-                                                                        <strong class="nowrap">Leslie Chapman</strong></td>
-                                                                    <td>$427,600</td>
-                                                                    <td><span class="badge badge-pill badge-success">Above</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/7.jpg" alt="">
-                                                                        <strong class="nowrap">Taylor Collier</strong></td>
-                                                                    <td>$323,200</td>
-
-                                                                    <td><span class="badge badge-pill badge-success">Above</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/35.jpg" alt="">
-                                                                        <strong class="nowrap">Dominic Shaw</strong></td>
-                                                                    <td>$321,000</td>
-
-                                                                    <td><span class="badge badge-pill badge-info">Met</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/38.jpg" alt="">
-                                                                        <strong class="nowrap">Josh Lynch</strong></td>
-                                                                    <td>$293,500</td>
-                                                                    <td><span class="badge badge-pill badge-warning">Pending</span></td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td><img class="align-self-center mr-3 ml-2 w-50 rounded-circle" src="./assets/img/avatars/30.jpg" alt="">
-                                                                        <strong class="nowrap">Angelo Parker</strong></td>
-                                                                    <td>$87,300</td>
-                                                                    <td><span class="badge badge-pill badge-danger">Danger</span> </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -674,6 +624,19 @@
                                             <h5 class="card-header">Consumo por semanas</h5>
                                             <div class="card-body">
                                                 <canvas id="chartjs_barChart"></canvas>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="row">
+                                                    <div class="col-sm-2 offset-md-2">
+                                                        <h5 class="font-size-20">Mes 1</h5>
+                                                    </div>
+                                                    <div class="col-sm-2 offset-md-2">
+                                                        <h5 class="font-size-20">Mes 2</h5>
+                                                    </div>
+                                                    <div class="col-sm-2 offset-md-2">
+                                                        <h5 class="font-size-20">Mes 3</h5>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

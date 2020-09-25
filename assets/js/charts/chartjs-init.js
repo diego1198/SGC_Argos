@@ -18,20 +18,20 @@
 					datasets: [{
 						label: 'Fridays',
 						data: [12, 19, 3, 17, 28, 24, 7,6,12,17,11,12],
-						backgroundColor: "rgba(57, 154, 242,0.7)",
-						borderColor: "rgba(57, 154, 242,0.8)",
+						backgroundColor: "rgba(57, 154, 242,0.2)",
+						borderColor: "rgba(57, 154, 242,0.3)",
 						borderWidth: .6
 					}, {
 						label: 'Pizza Hut',
 						data: [30, 29, 5, 5, 20, 3, 10,12,6,23,15,19],
-						backgroundColor: "rgba(255, 92, 117,0.6)",
-						borderColor: "rgba(255, 92, 117,0.7)",
+						backgroundColor: "rgba(255, 92, 117,0.2)",
+						borderColor: "rgba(255, 92, 117,0.3)",
 						borderWidth: .6
 					}, {
 						label: 'Otro',
 						data: [10, 24, 8, 11, 20, 14, 17,10,25,2,13,15],
-						backgroundColor: "rgba(47, 191, 60,0.6)",
-						borderColor: "rgba(47, 191, 60,0.7)",
+						backgroundColor: "rgba(47, 191, 60,0.2)",
+						borderColor: "rgba(47, 191, 60,0.3)",
 						borderWidth: .6
 					}]
 				}
@@ -48,15 +48,15 @@
 					datasets: [{
 						label: 'Fridays',
 						data: [12, 19, 3, 17, 28, 24, 7,6,12,17,11,12],
-						backgroundColor: "rgba(57, 154, 242)"
+						backgroundColor: "rgba(57, 154, 242,0.4)"
 					}, {
 						label: 'Pizza Hut',
 						data: [30, 29, 5, 5, 20, 3, 10,12,6,23,15,19],
-						backgroundColor: "rgba(255, 92, 117)"
+						backgroundColor: "rgba(255, 92, 117,0.4)"
 					},{
 						label: 'Otros',
 						data: [12, 19, 3, 17, 28, 24, 7,12,20,6,5,15],
-						backgroundColor: "rgba(47, 191, 60)"
+						backgroundColor: "rgba(47, 191, 60,0.4)"
 					}]
 				}
 			});
