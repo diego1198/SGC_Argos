@@ -16,10 +16,8 @@
 			bindto: "#total-revenue",
 			data: {
 				columns: [
-					["New", 25],
-					["Other", 10],
-					["Referrals", 25],
-					["Returning", 40]
+					["Cobrado", 50],
+					["Por Cobrar", 50]
 				],
 
 				type: "donut",
@@ -37,8 +35,8 @@
 				label: {
 					show: false
 				},
-				title: "Total Revenue",
-				width: 25
+				title: "Cartera Total",
+				width: 30
 			},
 
 			legend: {
@@ -46,12 +44,8 @@
 			},
 			color: {
 				pattern: [
-						QuantumPro.APP_COLORS.info,
-					QuantumPro.APP_COLORS.grey100,
-
-
-					QuantumPro.APP_COLORS.accent,
-							QuantumPro.APP_COLORS.primary
+					QuantumPro.APP_COLORS.info,
+					QuantumPro.APP_COLORS.accent
 				]
 			}
 		});

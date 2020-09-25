@@ -14,18 +14,24 @@
 			var myChart = new Chart(ctx, {
 				type: 'line',
 				data: {
-					labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+					labels: ["ENE","FEB","MAR","ABR","JUN","JUL","AGO","SEP","OCT","NOV","DIC"],
 					datasets: [{
-						label: 'apples',
-						data: [12, 19, 3, 17, 6, 3, 7],
-						backgroundColor: "rgba(88, 103, 195,0.4)",
-						borderColor: "rgba(88, 103, 195,0.7)",
+						label: 'Fridays',
+						data: [12, 19, 3, 17, 28, 24, 7,6,12,17,11,12],
+						backgroundColor: "rgba(57, 154, 242,0.7)",
+						borderColor: "rgba(57, 154, 242,0.8)",
 						borderWidth: .6
 					}, {
-						label: 'oranges',
-						data: [2, 29, 5, 5, 2, 3, 10],
-						backgroundColor: "rgba(28, 134, 191,0.4)",
-						borderColor: "rgba(28, 134, 191,0.7)",
+						label: 'Pizza Hut',
+						data: [30, 29, 5, 5, 20, 3, 10,12,6,23,15,19],
+						backgroundColor: "rgba(255, 92, 117,0.6)",
+						borderColor: "rgba(255, 92, 117,0.7)",
+						borderWidth: .6
+					}, {
+						label: 'Otro',
+						data: [10, 24, 8, 11, 20, 14, 17,10,25,2,13,15],
+						backgroundColor: "rgba(47, 191, 60,0.6)",
+						borderColor: "rgba(47, 191, 60,0.7)",
 						borderWidth: .6
 					}]
 				}
@@ -38,15 +44,19 @@
 			var myChart = new Chart(ctx, {
 				type: 'bar',
 				data: {
-					labels: ["M", "T", "W", "R", "F", "S", "S"],
+					labels: ["1","2","3","4","1","2","3","4","1","2","3","4"],
 					datasets: [{
-						label: 'apples',
-						data: [12, 19, 3, 17, 28, 24, 7],
-						backgroundColor: "rgba(88, 103, 195,0.4)"
+						label: 'Fridays',
+						data: [12, 19, 3, 17, 28, 24, 7,6,12,17,11,12],
+						backgroundColor: "rgba(57, 154, 242)"
 					}, {
-						label: 'oranges',
-						data: [30, 29, 5, 5, 20, 3, 10],
-						backgroundColor: "rgba(28, 134, 191,0.4)"
+						label: 'Pizza Hut',
+						data: [30, 29, 5, 5, 20, 3, 10,12,6,23,15,19],
+						backgroundColor: "rgba(255, 92, 117)"
+					},{
+						label: 'Otros',
+						data: [12, 19, 3, 17, 28, 24, 7,12,20,6,5,15],
+						backgroundColor: "rgba(47, 191, 60)"
 					}]
 				}
 			});

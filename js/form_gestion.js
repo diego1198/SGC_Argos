@@ -75,14 +75,13 @@ $('#form_gestion').submit(function (e) {
         if ($('#tipo_contacto').val() != 0) {
             if ($('#respuesta').val() != 0) {
                 var data = $(this).serialize();
-                alert(data)
                 $.ajax({
                     type: "POST",
                     url: "ajax/gestiones/gestiones.php?action=save&id_car=" + car_id,
                     data: data,
                     success: function (response) {
                         if (response == 'exito') {
-                            window.location.href = '?module=gestiones';
+                            window.location.href = '?module=gestiones&cartera=30';
                         }
                     }
                 });

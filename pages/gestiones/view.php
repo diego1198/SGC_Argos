@@ -46,6 +46,9 @@ switch ($cartera) {
                 <li class="nav-item" role="presentation">
                     <a href="#tab-3" class="nav-link" data-toggle="tab" aria-expanded="true" onclick="load_gestion('cobrada')">Cobrada</a>
                 </li>
+                <li class="nav-item" role="presentation">
+                    <a href="#tab-4" class="nav-link" data-toggle="tab" aria-expanded="true" onclick="load_gestion('compromiso')">Compromiso de Pago</a>
+                </li>
             </ul>
         </div>
     </header>
@@ -79,6 +82,15 @@ switch ($cartera) {
                             <h5 class="card-header">Cobrada</h5>
                             <div class="table-responsive">
                                 <div class="card-body" id="loader_cobrada">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fadeIn" id="tab-4">
+                        <div class="card">
+                            <h5 class="card-header">Compromiso de Pago</h5>
+                            <div class="table-responsive">
+                                <div class="card-body" id="loader_compromiso">
                                 </div>
                             </div>
                         </div>

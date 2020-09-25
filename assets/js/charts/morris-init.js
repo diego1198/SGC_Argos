@@ -10,7 +10,6 @@
 (function(window, document, $, undefined) {
   "use strict";
 	$(function() {
-
 		if ($('#morris_area_chart').length && $('#morris_line_chart').length && $('#morris_bar_chart').length && $('#morris_stacked').length && $('#morris_pie_chart').length) {
 			var data = [{
 				y: '2016',

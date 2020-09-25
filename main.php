@@ -36,6 +36,7 @@ session_start();
 	<link rel="stylesheet" href="./assets/css/layouts/vertical/themes/theme-a.css">
 
 	<script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -63,6 +64,9 @@ session_start();
 
 	<!-- ================== GLOBAL APP SCRIPTS ==================-->
 	<script src="./assets/js/global/app.js"></script>
+
+	<script src="./assets/vendor/jvectormap-next/jquery-jvectormap.min.js"></script>
+	<script src="./assets/vendor/jvectormap-next/jquery-jvectormap-world-mill.js"></script>
 	<!-- ================== PAGE LEVEL VENDOR SCRIPTS ==================-->
 	<script src="./assets/vendor/datatables.net/js/jquery.dataTables.js"></script>
 	<script src="./assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>

@@ -26,13 +26,13 @@
                     <div class="card-body">
                         <ul class="nav nav-pills nav-pills-info mb-3" id="pills-demo-2" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="pills-4-tab" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-4" aria-selected="true"><i class="la la-home"></i>Categoría 1</a>
+                                <a class="nav-link active" id="pills-4-tab" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-4" aria-selected="true"><i class="la la-bank"></i>Cartera</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="pills-5-tab" data-toggle="pill" href="#pills-5" role="tab" aria-controls="pills-5" aria-selected="false"><i class="la la-user"></i>Categoría 2</a>
+                                <a class="nav-link" id="pills-5-tab" data-toggle="pill" href="#pills-5" role="tab" aria-controls="pills-5" aria-selected="false"><i class="la la-cart-plus"></i>Ventas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="pills-6-tab" data-toggle="pill" href="#pills-6" role="tab" aria-controls="pills-6" aria-selected="false"><i class="la la-envelope"></i>Categoría 3</a>
+                                <a class="nav-link" id="pills-6-tab" data-toggle="pill" href="#pills-6" role="tab" aria-controls="pills-6" aria-selected="false"><i class="la la-bar-chart"></i>Estadísticas</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent-2">
@@ -116,8 +116,8 @@
                                     </div>
                                 </div>
                                 <!-- End Cards Percentages -->
-                                 <!-- Start Cards Restore -->
-                                 <div class="row">
+                                <!-- Start Cards Restore -->
+                                <div class="row">
                                     <div class="col-12">
                                         <div class="card-deck m-b-30">
                                             <div class="card">
@@ -238,8 +238,28 @@
                                     </div>
                                 </div>
                                 <!-- End Cards Cartera -->
-                                
-                               
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="card">
+                                            <h5 class="card-header">Balance Final</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <h5 class="card-header">Porcentaje Cartera</h5>
+                                            <div class="card-body p-10">
+                                                <div id="total-revenue" style="height:290px"></div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <ul class="list-reset list-inline-block text-center">
+                                                    <li class="text-muted text-info m-r-10"><i class="badge badge-info m-r-5  badge-circle w-10 h-10 "></i>Cobrado $2000</li>
+                                                    <li class="text-muted text-accent m-r-10 "><i class="badge badge-accent m-r-5  badge-circle w-10 h-10 "></i>Por Cobrar $2000</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5">
                                 <!-- Start Cards Marks -->
@@ -350,7 +370,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="card">
-                                            <div class="card-header">Pagos Registrados
+                                            <div class="card-header">Últimos Pagos Registrados
                                                 <ul class="actions top-right">
                                                     <li><a href="javascript:void(0)" data-q-action="card-expand"><i class="icon dripicons-expand-2"></i></a></li>
                                                 </ul>
@@ -361,6 +381,7 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>GESTOR</th>
+                                                                <th>CLIENTE</th>
                                                                 <th>FECHA</th>
                                                                 <th>PAGO</th>
                                                                 <th class="no-sort">ACCIONES</th>
@@ -369,6 +390,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td>GESTOR 1</td>
+                                                                <td></td>
                                                                 <td>06/25/18</td>
                                                                 <td>$650</td>
                                                                 <td>
@@ -377,6 +399,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 2</td>
+                                                                <td></td>
                                                                 <td>06/25/18</td>
                                                                 <td>$550</td>
                                                                 <td>
@@ -385,15 +408,17 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 2</td>
+                                                                <td></td>
                                                                 <td>06/25/18</td>
                                                                 <td>$550</td>
-                                                                
+
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 3</td>
+                                                                <td></td>
                                                                 <td>06/24/18</td>
                                                                 <td>$950</td>
                                                                 <td>
@@ -402,15 +427,17 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 1</td>
+                                                                <td></td>
                                                                 <td>06/24/18</td>
                                                                 <td>$250</td>
-                                                                
+
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 2</td>
+                                                                <td></td>
                                                                 <td>06/23/18</td>
                                                                 <td>$900</td>
                                                                 <td>
@@ -419,33 +446,37 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 3</td>
+                                                                <td></td>
                                                                 <td>06/23/18</td>
                                                                 <td>$830</td>
-                                                                
+
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 2</td>
+                                                                <td></td>
                                                                 <td>06/21/18</td>
                                                                 <td>$230</td>
-                                                                
+
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 3</td>
+                                                                <td></td>
                                                                 <td>06/21/18</td>
                                                                 <td>$1,034</td>
-                                                                
+
                                                                 <td>
                                                                     <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 2</td>
+                                                                <td></td>
                                                                 <td>06/21/18</td>
                                                                 <td>$5,300</td>
                                                                 <td>
@@ -454,6 +485,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 1</td>
+                                                                <td></td>
                                                                 <td>06/15/18</td>
                                                                 <td>$650</td>
                                                                 <td>
@@ -462,6 +494,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 3</td>
+                                                                <td></td>
                                                                 <td>06/15/18</td>
                                                                 <td>$650</td>
                                                                 <td>
@@ -470,6 +503,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>GESTOR 1</td>
+                                                                <td></td>
                                                                 <td>06/14/18</td>
                                                                 <td>$650</td>
                                                                 <td>
@@ -625,59 +659,9 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="card">
-                                            <h5 class="card-header p-t-25 p-b-20"><span class="">Consumo Y Cobro por Marca</span></h5>
-                                            <div class="card-toolbar top-right">
-                                                <ul class="nav nav-pills nav-pills-primary justify-content-end" id="pills-demo-1" role="tablist">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="true">Marcas</a>
-                                                    </li>
-                                                    <!-- <li class="nav-item">
-                                                        <a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2" aria-selected="false">Mes</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3" aria-selected="false">Año</a>
-                                                    </li> -->
-                                                </ul>
-                                            </div>
+                                            <h5 class="card-header">Consumo por Marcas</h5>
                                             <div class="card-body">
-                                                <div class="tab-content" id="pills-tabContent-1">
-                                                    <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1">
-                                                        <ul class="list-reset list-inline-block m-b-15">
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Cobrado</span>
-                                                            </li>
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Deuda</span>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="ct-chart" id="traffic-week" style="height: 350px;"></div>
-                                                    </div>
-                                                    <!-- <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2">
-
-                                                        <ul class="list-reset list-inline-block m-b-15">
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Cobrado</span>
-                                                            </li>
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Deuda</span>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="ct-chart" id="traffic-month" style="height: 350px;"></div>
-
-                                                    </div>
-                                                    <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3">
-
-                                                        <ul class="list-reset list-inline-block m-b-15">
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Cobrado</span>
-                                                            </li>
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Deuda</span>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="ct-chart" id="traffic-year" style="height: 350px;"></div>
-                                                    </div> -->
-                                                </div>
+                                                <canvas id="chartjs_lineChart"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -687,59 +671,9 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="card">
-                                            <h5 class="card-header p-t-25 p-b-20"><span class="">Consumo en el mes</span></h5>
-                                            <div class="card-toolbar top-right">
-                                                <ul class="nav nav-pills nav-pills-primary justify-content-end" id="pills-demo-1" role="tablist">
-                                                    <!-- <li class="nav-item">
-                                                        <a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="true">Semana</a>
-                                                    </li> -->
-                                                    <li class="nav-item">
-                                                        <a class="nav-link active" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2" aria-selected="false">Mes</a>
-                                                    </li>
-                                                    <!-- <li class="nav-item">
-                                                        <a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3" aria-selected="false">Año</a>
-                                                    </li> -->
-                                                </ul>
-                                            </div>
+                                            <h5 class="card-header">Consumo por semanas</h5>
                                             <div class="card-body">
-                                                <div class="tab-content" id="pills-tabContent-1">
-                                                    <!-- <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1">
-                                                        <ul class="list-reset list-inline-block m-b-15">
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Cobrado</span>
-                                                            </li>
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Deuda</span>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="ct-chart" id="traffic-week" style="height: 350px;"></div>
-                                                    </div> -->
-                                                    <div class="tab-pane fade show active" id="pills-2" role="tabpanel" aria-labelledby="pills-2">
-
-                                                        <ul class="list-reset list-inline-block m-b-15">
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Cobrado</span>
-                                                            </li>
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Deuda</span>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="ct-chart" id="deuda-month" style="height: 350px;"></div>
-
-                                                    </div>
-                                                    <!-- <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3">
-
-                                                        <ul class="list-reset list-inline-block m-b-15">
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-info badge-circle w-10 h-10 m-r-10"></i>Cobrado</span>
-                                                            </li>
-                                                            <li class="m-r-5">
-                                                                <span><i class="badge badge-success badge-circle w-10 h-10 m-r-10"></i>Deuda</span>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="ct-chart" id="traffic-year" style="height: 350px;"></div>
-                                                    </div> -->
-                                                </div>
+                                                <canvas id="chartjs_barChart"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -781,3 +715,12 @@
 
 <script src="./assets/js/cards/traffic-sources.js"></script>
 <script src="./assets/js/cards/deuda-chart.js"></script>
+
+<script src="./assets/vendor/d3/dist/d3.min.js"></script>
+<script src="./assets/vendor/flot/jquery.flot.time.js"></script>
+<script src="./assets/vendor/echarts/echarts-all-3.js"></script>
+<script src="./assets/vendor/c3/c3.min.js"></script>
+<script src="./assets/js/cards/total-revenue.js"></script>
+
+<script src="./assets/vendor/chart.js/dist/Chart.bundle.min.js"></script>
+<script src="./assets/js/charts/chartjs-init.js"></script>
