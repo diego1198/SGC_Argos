@@ -100,8 +100,8 @@
                     <div class="media d-user">
                         <img class="align-self-center mr-3 w-40 rounded-circle" src="./assets/img/avatars/1.jpg" alt="Albert Einstein">
                         <div class="media-body">
-                            <h5 class="mt-0 mb-0">Administrador</h5>
-                            <span>Super Admin</span>
+                            <h5 class="mt-0 mb-0"><?php echo $_SESSION['name_user'];?></h5>
+                            <span><?php echo $_SESSION['permisos_acceso'];?></span>
                         </div>
                     </div>
                 </div>

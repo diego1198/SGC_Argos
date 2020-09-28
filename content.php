@@ -18,7 +18,7 @@ else {
 	}
 
 	elseif ($_GET['module'] == 'contrasena') {
-		include "pages/user/password.php";
+		include "pages/password/password.php";
 	}
 
 	elseif ($_GET['module'] == 'formulario') {

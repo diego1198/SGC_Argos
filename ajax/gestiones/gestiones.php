@@ -43,6 +43,9 @@ switch ($action) {
                                     <a data-toggle='tooltip' data-placement='top' title='Gestionar' class='btn btn-success btn-md' href='?module=nueva_gestion&id=<?php echo $row['car_id'] ?>'>
                                         <i style='color:#fff' class='icon dripicons-document-edit'></i>
                                     </a>
+                                    <a data-toggle='tooltip' data-placement='top' title='Ver Observación' class='btn btn-info btn-md' onclick="ver_observacion(<?php echo $row['car_id']; ?>)">
+                                        <i style='color:#fff' class='icon dripicons-blog'></i>
+                                    </a>
                                 </td>
                             </tr>
                         <?php
@@ -115,6 +118,7 @@ switch ($action) {
                             <th>Ciudad</th>
                             <th>Cliente</th>
                             <th>Contacto</th>
+                            <th>Valor Total</th>
                             <th>Dia Corte</th>
                             <th>Acciones</th>
                         </tr>
@@ -128,13 +132,11 @@ switch ($action) {
                                 <td><?php echo $row['cli_ciudad']; ?></td>
                                 <td><?php echo $row['cli_descripcion']; ?></td>
                                 <td><?php echo $row['cli_contacto']; ?></td>
+                                <td><?php echo $row['cli_valor_pagar']; ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td>
                                     <a data-toggle='tooltip' data-placement='top' title='Gestionar' class='btn btn-success btn-md' href='?module=nueva_gestion&id=<?php echo $row['car_id'] ?>'>
                                         <i style='color:#fff' class='icon dripicons-document-edit'></i>
-                                    </a>
-                                    <a data-toggle='tooltip' data-placement='top' title='Gestionar' class='btn btn-info btn-md' onclick="ver_observacion(<?php echo $row['car_id']; ?>)">
-                                        <i style='color:#fff' class='icon dripicons-blog'></i>
                                     </a>
                                 </td>
                             </tr>
@@ -176,11 +178,14 @@ switch ($action) {
                                 <td><?php echo $row['cli_descripcion']; ?></td>
                                 <td><?php echo $row['cli_contacto']; ?></td>
                                 <td><?php echo $row['car_fecha_ingreso']; ?></td>
-                                <td><?php echo $row['com_monto']; ?></td>
                                 <td><?php echo $row['com_fecha']; ?></td>
+                                <td><?php echo $row['com_monto']; ?></td>
                                 <td>
                                     <a data-toggle='tooltip' data-placement='top' title='Gestionar' class='btn btn-success btn-md' href='?module=nueva_gestion&id=<?php echo $row['car_id'] ?>'>
                                         <i style='color:#fff' class='icon dripicons-document-edit'></i>
+                                    </a>
+                                    <a data-toggle='tooltip' data-placement='top' title='Ver Observación' class='btn btn-info btn-md' onclick="ver_observacion(<?php echo $row['car_id']; ?>)">
+                                        <i style='color:#fff' class='icon dripicons-blog'></i>
                                     </a>
                                 </td>
                             </tr>

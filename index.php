@@ -59,12 +59,12 @@
                     <h5 class="sign-in-heading text-center m-b-20">SGC ARGOS</h5>
                     <div class="form-group">
                         <label for="inputEmail" class="sr-only">Usuario:</label>
-                        <input type="text" id="inputEmail" name= "username"class="form-control" placeholder="Usuario" required="">
+                        <input type="text" id="inputEmail" name= "username"class="form-control" placeholder="Usuario" required autofocus>
                     </div>
 
                     <div class="form-group">
                         <label for="inputPassword" class="sr-only">Contraseña:</label>
-                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required="">
+                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required >
                     </div>
                     <div class="checkbox m-b-10 m-t-20">
                         <div class="custom-control custom-checkbox checkbox-primary form-check">

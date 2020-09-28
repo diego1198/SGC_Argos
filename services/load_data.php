@@ -38,6 +38,7 @@ for ($i = 0; $i < $array_cant; $i++) {
         $row = mysqli_fetch_array($resultado_busqueda);
         $cli_id = $row['cli_id'];
         $busqueda_personal = "SELECT per_id from personal where per_documento = '". utf8_encode($resultado[$i]['Documento'])."'";
+        echo $busqueda_personal. '<br/>';
         $result_personal = mysqli_query($mysqli,$busqueda_personal);
         $row_personal = mysqli_fetch_array($result_personal);
         if(mysqli_num_rows($result_personal) > 0){
@@ -61,9 +62,6 @@ for ($i = 0; $i < $array_cant; $i++) {
             $query_Ins_Personal = "INSERT into personal(per_id,per_nombre, per_documento, cli_id) 
                                 values('$id_personal','". utf8_encode($resultado[$i]['Nombre'])."','". utf8_encode($resultado[$i]['Documento'])."',"."'$cli_id'".")";
             $result_Ins = mysqli_query($mysqli,$query_Ins_Personal);
-        }else{
-            $row_personal = mysqli_fetch_array($result_personal);
-            $id_personal = $row_personal['per_id'];
         }
 
         $query_bus_marca = "SELECT mar_id from marca where mar_descripcion = '".utf8_encode($resultado[$i]['Marca'])."'";
@@ -124,6 +122,8 @@ for ($i = 0; $i < $array_cant; $i++) {
         
         mysqli_query($mysqli,$queryConsumo) or die('error: '.mysqli_error($mysqli));
 
+
+
     }else{
         $busqueda_id = "SELECT cli_id from cliente where cli_descripcion = '". utf8_encode($resultado[$i]['Empresa'])."'";
         $resultado_busqueda = mysqli_query($mysqli,$busqueda_id);
@@ -146,9 +146,6 @@ for ($i = 0; $i < $array_cant; $i++) {
             $query_Ins_Personal = "INSERT into personal(per_id,per_nombre, per_documento, cli_id) 
                                 values('$id_personal','". utf8_encode($resultado[$i]['Nombre'])."','". utf8_encode($resultado[$i]['Documento'])."',"."'$cli_id'".")";
             $result_Ins = mysqli_query($mysqli,$query_Ins_Personal);
-        }else{
-            $row_personal = mysqli_fetch_array($result_personal);
-            $id_personal = $row_personal['per_id'];
         }
 
         $query_bus_marca = "SELECT mar_id from marca where mar_descripcion = '".utf8_encode($resultado[$i]['Marca'])."'";
@@ -210,4 +207,18 @@ for ($i = 0; $i < $array_cant; $i++) {
     
 
 }
+
+    $queryCartera = "SELECT cli.cli_id,cli.cli_descripcion,sum(con_valor_total) as monto_total 
+                    from consumo con, personal p, cliente cli 
+                    where con.per_id = p.per_id and p.cli_id = cli.cli_id group by cli.cli_id";
+
+    
+    $resultCar = mysqli_query($mysqli,$queryCartera);
+
+    while($row = mysqli_fetch_array($resultCar)){
+        $QueryInsCartera = "INSERT INTO cartera(car_estado,cli_valor_pagar,cli_id)
+        values('sin_gestion','$row[monto_total]','$row[cli_id]')";
+
+        $resIns = mysqli_query($mysqli,$QueryInsCartera);
+    }
 ?>
