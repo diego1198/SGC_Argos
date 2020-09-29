@@ -30,7 +30,14 @@ switch ($action) {
                     <tbody>
                         <?php
                         $no = 1;
-                        while ($row = mysqli_fetch_array($result)) { ?>
+                        while ($row = mysqli_fetch_array($result)) { 
+                            $queryUltGes = "SELECT ges_id,ges_fecha from gestion where car_id = '$row[car_id]' order by ges_fecha desc";
+                            
+                            $resultUltGes = mysqli_query($mysqli,$queryUltGes);
+
+                            $rowUltGes = mysqli_fetch_array($resultUltGes);
+
+                            ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
@@ -38,12 +45,12 @@ switch ($action) {
                                 <td><?php echo $row['cli_contacto']; ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['cli_valor_pagar']; ?></td>
-                                <td><?php echo $row['car_fecha_ingreso']; ?></td>
+                                <td><?php echo $rowUltGes['ges_fecha']; ?></td>
                                 <td>
                                     <a data-toggle='tooltip' data-placement='top' title='Gestionar' class='btn btn-success btn-md' href='?module=nueva_gestion&id=<?php echo $row['car_id'] ?>'>
                                         <i style='color:#fff' class='icon dripicons-document-edit'></i>
                                     </a>
-                                    <a data-toggle='tooltip' data-placement='top' title='Ver Observación' class='btn btn-info btn-md' onclick="ver_observacion(<?php echo $row['car_id']; ?>)">
+                                    <a data-toggle='modal' data-placement='top' title='Ver Observación' class='btn btn-info btn-md' onclick="ver_observacion(<?php echo $rowUltGes['ges_id']; ?>)">
                                         <i style='color:#fff' class='icon dripicons-blog'></i>
                                     </a>
                                 </td>
@@ -58,9 +65,8 @@ switch ($action) {
             <?php
                 break;
             case 'cobrada':
-                $query = "SELECT c.*,cli.*,p.pag_monto FROM cartera c, cliente cli,gestion g,pago p 
-                where c.cli_id = cli.cli_id and c.car_estado = '$case' and g.car_id = c.car_id 
-                and g.pag_id = p.pag_id";
+                $query = "SELECT c.*,cli.* FROM cartera c, cliente cli,gestion g
+                where c.cli_id = cli.cli_id and c.car_estado = '$case' and g.car_id = c.car_id group by c.car_id";
 
                 $result = mysqli_query($mysqli, $query); ?>
 
@@ -72,27 +78,53 @@ switch ($action) {
                             <th>Cliente</th>
                             <th>Contacto</th>
                             <th>Dia Corte</th>
+                            <th>Valor a Pagar</th>
                             <th>Pago</th>
+                            <th>Estado</th>
+                            <th>Fecha Ult. Gestión</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $no = 1;
-                        while ($row = mysqli_fetch_array($result)) { ?>
+                        while ($row = mysqli_fetch_array($result)) { 
+                            $queryUltGes = "SELECT ges_id,ges_fecha from gestion where car_id = '$row[car_id]' order by ges_fecha desc";
+                            
+                            $resultUltGes = mysqli_query($mysqli,$queryUltGes);
+
+                            $rowUltGes = mysqli_fetch_array($resultUltGes);
+
+                            $queryPagos = "SELECT sum(pag_monto) as total_pago from pago p, gestion g, cartera c 
+                            where p.pag_id = g.pag_id and g.car_id = c.car_id and c.car_id = '$row[car_id]'";
+                            
+                            $resPagos = mysqli_query($mysqli,$queryPagos);
+
+                            $rowPag = mysqli_fetch_array($resPagos);
+
+                            $totalPago = $rowPag['total_pago'];
+
+                            if($totalPago < $row['cli_valor_pagar']){
+                                $estado = "<span class='badge badge-pill badge-primary border-radius'>Abono</span>";
+                            }else{
+                                $estado = "<span class='badge badge-pill badge-success'>Pagado</span>";
+                            }
+                            ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
                                 <td><?php echo $row['cli_descripcion']; ?></td>
                                 <td><?php echo $row['cli_contacto']; ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
-                                <td><?php echo $row['pag_monto']; ?></td>
-                                <td><?php echo $row['car_fecha_ingreso']; ?></td>
+                                <td><?php echo $row['cli_valor_pagar']?></td>
+                                <td><?php echo $totalPago; ?></td>
+                                <td><?php echo $estado ?></td>
+                                <td><?php echo $rowUltGes['ges_fecha']; ?></td>
                                 <td>
                                     <a data-toggle='tooltip' data-placement='top' title='Gestionar' class='btn btn-success btn-md' href='?module=nueva_gestion&id=<?php echo $row['car_id'] ?>'>
                                         <i style='color:#fff' class='icon dripicons-document-edit'></i>
                                     </a>
-                                    <a data-toggle='tooltip' data-placement='top' title='Gestionar' class='btn btn-info btn-md' onclick="ver_observacion(<?php echo $row['car_id']; ?>)">
+                                    <a data-toggle='modal' data-placement='top' title='Ver Observación' class='btn btn-info btn-md' onclick="ver_observacion(<?php echo $rowUltGes['ges_id']; ?>)">
                                         <i style='color:#fff' class='icon dripicons-blog'></i>
                                     </a>
                                 </td>
@@ -248,7 +280,7 @@ switch ($action) {
                 $id_pago = 1;
             }
             $queryPago = "INSERT into pago(pag_id,pag_monto,pag_observacion)values('$id_pago','$monto','$observacion')";
-            $resPago = mysqli_query($mysqli, $queryPago) or die('error:' . mysqli_error($mysqli));
+            $resPago = mysqli_query($mysqli, $queryPago) or die('error pago:' . mysqli_error($mysqli));
         }
 
         if (isset($monto_compromiso) && $respuesta == 'compromiso') {
@@ -260,14 +292,14 @@ switch ($action) {
             } else {
                 $id_com = 1;
             }
-            $queryCom = "INSERT into compromiso(com_id,com_monto,com_fecha)values('$id_com','$monto_compromiso','$fecha_compromiso')";
-            $resCom = mysqli_query($mysqli, $queryCom) or die('error:' . mysqli_error($mysqli));
+            $queryCom = "INSERT into compromiso(com_id,com_monto,com_fecha,com_estado)values('$id_com','$monto_compromiso','$fecha_compromiso','pendiente')";
+            $resCom = mysqli_query($mysqli, $queryCom) or die('error compromiso:' . mysqli_error($mysqli));
         }
 
         if ($estado == 'pendiente') {
             $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id)
             values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id')";
-        } elseif ($estado == 'pago') {
+        } elseif ($estado == 'cobrada') {
             $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id,pag_id)
                         values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id','$id_pago')";
         } else {
@@ -276,12 +308,11 @@ switch ($action) {
         }
 
 
-
-        $res = mysqli_query($mysqli, $queryGestion) or die('error:' . mysqli_error($mysqli));
+        $res = mysqli_query($mysqli, $queryGestion) or die('error gestion:' . mysqli_error($mysqli));
 
         if ($res) {
             $updCartera = "UPDATE cartera set car_estado = '$estado' where car_id = '$car_id'";
-            $result = mysqli_query($mysqli, $updCartera) or die('error' . mysqli_error($mysqli));
+            $result = mysqli_query($mysqli, $updCartera) or die('error update' . mysqli_error($mysqli));
             if ($result) {
                 echo 'exito';
             }
@@ -345,6 +376,15 @@ switch ($action) {
         </table>
 
 <?php
+        break;
+    case 'observacion':
+        $id = $_GET['id'];
+            $queryObservacion = "SELECT ges_observacion FROM gestion where ges_id = '$id'";
+            $res = mysqli_query($mysqli,$queryObservacion);
+
+            $row = mysqli_fetch_array($res);
+
+            echo $row['ges_observacion'];
         break;
     default:
         # code...

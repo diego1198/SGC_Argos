@@ -13,3 +13,14 @@ function load_gestion(caso){
         }
     });
 }
+
+function ver_observacion(id){
+    $('#modal_observacion').modal('show');
+    $.ajax({
+        type: "GET",
+        url: "ajax/gestiones/gestiones.php?action=observacion&id="+id,
+        success: function (response) {
+            $('#content_observacion').html(response)
+        }
+    });
+}

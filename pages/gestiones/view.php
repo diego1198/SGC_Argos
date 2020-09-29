@@ -100,4 +100,8 @@ switch ($cartera) {
         </div>
     </section>
 </div>
+<?php
+    include('modal/observacion.php')
+?>
 <script src="js/gestiones.js"></script>
+
