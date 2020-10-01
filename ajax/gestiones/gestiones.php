@@ -182,6 +182,9 @@ switch ($action) {
             <?php
                 break;
             case 'compromiso':
+
+                $fecha_actual=date('Y-m-d');
+
                 $query = "SELECT c.*,cli.*,com.com_monto,com.com_fecha FROM cartera c, cliente cli,gestion g,compromiso com 
                 where c.cli_id = cli.cli_id and c.car_estado = '$case' and c.car_id = g.car_id and g.com_id = com.com_id";
 
@@ -197,13 +200,21 @@ switch ($action) {
                             <th>Dia Corte</th>
                             <th>Fecha Compromiso</th>
                             <th>Valor Compromiso</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $no = 1;
-                        while ($row = mysqli_fetch_array($result)) { ?>
+                        while ($row = mysqli_fetch_array($result)) { 
+                            if($fecha_actual > $row['com_fecha']){
+                                $subestado = "<span class='badge badge-pill badge-danger border-radius'>Incumplimiento</span>";
+                            }else{
+                                $subestado = "<span class='badge badge-pill badge-primary border-radius'>Pendiente</span>";
+                            }
+                            
+                            ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
@@ -212,6 +223,7 @@ switch ($action) {
                                 <td><?php echo $row['car_fecha_ingreso']; ?></td>
                                 <td><?php echo $row['com_fecha']; ?></td>
                                 <td><?php echo $row['com_monto']; ?></td>
+                                <td><?php echo $subestado; ?></td>
                                 <td>
                                     <a data-toggle='tooltip' data-placement='top' title='Gestionar' class='btn btn-success btn-md' href='?module=nueva_gestion&id=<?php echo $row['car_id'] ?>'>
                                         <i style='color:#fff' class='icon dripicons-document-edit'></i>
