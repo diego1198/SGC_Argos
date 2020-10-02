@@ -7,7 +7,7 @@
                     <h5 class="card-header" style="background-color: #950d1a; color: white;">INGRESO DE NUEVA GESTIÓN</h5>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <h5>Datos de Cliente</h5>
                                 <input type="hidden" name="id_cartera" id="id_cartera" value="<?php echo $_GET['id']; ?>">
                                 <input type="hidden" name="id_cliente" id="id_cliente">
@@ -16,37 +16,60 @@
                                         <label for="">Cliente</label>
                                         <input type="text" name="nombre_cliente" id="nombre_cliente" readonly class="form-control" placeholder="Cliente">
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6">
                                         <label for="">Ciudad</label>
                                         <input type="text" name="ciudad" id="ciudad" readonly class="form-control" placeholder="Ciudad">
                                     </div>
 
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6">
                                         <label for="">Día de Corte</label>
                                         <input type="text" name="dia_corte" id="dia_corte" readonly class="form-control" placeholder="Día de Corte">
                                     </div>
-                                    <div class="col-sm-4">
-                                        <label for="">Total Deuda</label>
-                                        <input type="text" name="total_deuda" id="total_deuda" readonly class="form-control" placeholder="Total">
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <h5>Datos de Contacto</h5>
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-sm-8">
+                                        <div class="col-sm-12">
                                             <label for="">Contacto</label>
                                             <input type="text" name="contacto" id="contacto" readonly class="form-control" placeholder="Contacto">
                                         </div>
-                                        <div class="col-sm-4"></div>
-                                        <div class="col-sm-4">
+
+                                        <div class="col-sm-8">
                                             <label for="">Email</label>
                                             <input type="text" name="email" id="email" readonly class="form-control" placeholder="Email">
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="">Teléfono</label>
                                             <input type="text" name="telefono" id="telefono" readonly class="form-control" placeholder="Teléfono">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <h5>Deuda</h5>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label for="">Total Cartera:</label>
+                                            <input type="text" name="total_deuda" id="total_deuda" readonly class="form-control" placeholder="Total">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <h5>Cartera</h5>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label for="">Fecha Inicio:</label>
+                                            <input type="text" name="fecha_inicio" id="fecha_inicio" readonly class="form-control">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="">Fecha Fín:</label>
+                                            <input type="text" name="fecha_fin" id="fecha_fin" readonly class="form-control">
                                         </div>
                                     </div>
                                 </div>

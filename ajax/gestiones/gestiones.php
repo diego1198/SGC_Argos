@@ -6,10 +6,11 @@ $action = $_GET['action'];
 switch ($action) {
     case 'list':
         $case = $_GET['case'];
+        $cartera = $_GET['cartera'];
 
         switch ($case) {
             case 'pendiente':
-                $query = "SELECT c.*,cli.* FROM cartera c, cliente cli where c.cli_id = cli.cli_id and c.car_estado = '$case'";
+                $query = "SELECT c.*,cli.* FROM cartera c, cliente cli where c.cli_id = cli.cli_id and c.car_estado = '$case' and c.car_tipo = '$cartera'";
 
                 $result = mysqli_query($mysqli, $query); ?>
 
@@ -30,14 +31,14 @@ switch ($action) {
                     <tbody>
                         <?php
                         $no = 1;
-                        while ($row = mysqli_fetch_array($result)) { 
+                        while ($row = mysqli_fetch_array($result)) {
                             $queryUltGes = "SELECT ges_id,ges_fecha from gestion where car_id = '$row[car_id]' order by ges_fecha desc";
-                            
-                            $resultUltGes = mysqli_query($mysqli,$queryUltGes);
+
+                            $resultUltGes = mysqli_query($mysqli, $queryUltGes);
 
                             $rowUltGes = mysqli_fetch_array($resultUltGes);
 
-                            ?>
+                        ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
@@ -66,7 +67,7 @@ switch ($action) {
                 break;
             case 'cobrada':
                 $query = "SELECT c.*,cli.* FROM cartera c, cliente cli,gestion g
-                where c.cli_id = cli.cli_id and c.car_estado = '$case' and g.car_id = c.car_id group by c.car_id";
+                where c.cli_id = cli.cli_id and c.car_estado = '$case' and g.car_id = c.car_id group by c.car_id and c.car_tipo = '$cartera'";
 
                 $result = mysqli_query($mysqli, $query); ?>
 
@@ -88,35 +89,35 @@ switch ($action) {
                     <tbody>
                         <?php
                         $no = 1;
-                        while ($row = mysqli_fetch_array($result)) { 
+                        while ($row = mysqli_fetch_array($result)) {
                             $queryUltGes = "SELECT ges_id,ges_fecha from gestion where car_id = '$row[car_id]' order by ges_fecha desc";
-                            
-                            $resultUltGes = mysqli_query($mysqli,$queryUltGes);
+
+                            $resultUltGes = mysqli_query($mysqli, $queryUltGes);
 
                             $rowUltGes = mysqli_fetch_array($resultUltGes);
 
                             $queryPagos = "SELECT sum(pag_monto) as total_pago from pago p, gestion g, cartera c 
                             where p.pag_id = g.pag_id and g.car_id = c.car_id and c.car_id = '$row[car_id]'";
-                            
-                            $resPagos = mysqli_query($mysqli,$queryPagos);
+
+                            $resPagos = mysqli_query($mysqli, $queryPagos);
 
                             $rowPag = mysqli_fetch_array($resPagos);
 
                             $totalPago = $rowPag['total_pago'];
 
-                            if($totalPago < $row['cli_valor_pagar']){
+                            if ($totalPago < $row['cli_valor_pagar']) {
                                 $estado = "<span class='badge badge-pill badge-primary border-radius'>Abono</span>";
-                            }else{
+                            } else {
                                 $estado = "<span class='badge badge-pill badge-success'>Pagado</span>";
                             }
-                            ?>
+                        ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
                                 <td><?php echo $row['cli_descripcion']; ?></td>
                                 <td><?php echo $row['cli_contacto']; ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
-                                <td><?php echo $row['cli_valor_pagar']?></td>
+                                <td><?php echo $row['cli_valor_pagar'] ?></td>
                                 <td><?php echo $totalPago; ?></td>
                                 <td><?php echo $estado ?></td>
                                 <td><?php echo $rowUltGes['ges_fecha']; ?></td>
@@ -139,7 +140,8 @@ switch ($action) {
             <?php
                 break;
             case 'sin_gestion':
-                $query = "SELECT c.*,cli.* FROM cartera c, cliente cli where c.cli_id = cli.cli_id and c.car_estado = '$case'";
+                $query = "SELECT c.*,cli.* FROM cartera c, cliente cli where c.cli_id = cli.cli_id and c.car_estado = '$case' and c.car_tipo = '$cartera'";
+
 
                 $result = mysqli_query($mysqli, $query); ?>
 
@@ -183,10 +185,10 @@ switch ($action) {
                 break;
             case 'compromiso':
 
-                $fecha_actual=date('Y-m-d');
+                $fecha_actual = date('Y-m-d');
 
                 $query = "SELECT c.*,cli.*,com.com_monto,com.com_fecha FROM cartera c, cliente cli,gestion g,compromiso com 
-                where c.cli_id = cli.cli_id and c.car_estado = '$case' and c.car_id = g.car_id and g.com_id = com.com_id";
+                where c.cli_id = cli.cli_id and c.car_estado = '$case' and c.car_id = g.car_id and g.com_id = com.com_id and c.car_tipo = '$cartera'";
 
                 $result = mysqli_query($mysqli, $query); ?>
 
@@ -207,14 +209,14 @@ switch ($action) {
                     <tbody>
                         <?php
                         $no = 1;
-                        while ($row = mysqli_fetch_array($result)) { 
-                            if($fecha_actual > $row['com_fecha']){
+                        while ($row = mysqli_fetch_array($result)) {
+                            if ($fecha_actual > $row['com_fecha']) {
                                 $subestado = "<span class='badge badge-pill badge-danger border-radius'>Incumplimiento</span>";
-                            }else{
+                            } else {
                                 $subestado = "<span class='badge badge-pill badge-primary border-radius'>Pendiente</span>";
                             }
-                            
-                            ?>
+
+                        ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
@@ -251,7 +253,8 @@ switch ($action) {
     case 'cliente':
         $id_car = $_GET['id'];
 
-        $query = "SELECT cli.* from cliente cli, cartera car where car.cli_id = cli.cli_id and car.car_id = '$id_car'";
+        $query = "SELECT cli.*,car.car_fecha_inicio,car.car_fecha_fin 
+        from cliente cli, cartera car where car.cli_id = cli.cli_id and car.car_id = '$id_car'";
 
         $result = mysqli_query($mysqli, $query);
 
@@ -333,8 +336,19 @@ switch ($action) {
         break;
     case 'total':
         $id_cliente = $_GET['id'];
-        $queryTotal = "SELECT sum(con.con_valor_total) as 'valor_pagar' 
-        from consumo con, personal p,cliente c where con.per_id = p.per_id and p.cli_id = c.cli_id and c.cli_id = '$id_cliente'";
+        $fecha_ini = $_GET['fecha_inicio'];
+        $fecha_fin = $_GET['fecha_fin'];
+
+        if ($fecha_ini != '') {
+            $queryTotal = "SELECT sum(con.con_valor_total) as 'valor_pagar' 
+            from consumo con, personal p,cliente c where con.per_id = p.per_id and p.cli_id = c.cli_id and c.cli_id = '$id_cliente'
+            and con.con_fecha >= '$fecha_ini' and con.con_fecha < '$fecha_fin'";
+        } else {
+            $queryTotal = "SELECT sum(con.con_valor_total) as 'valor_pagar' 
+            from consumo con, personal p,cliente c where con.per_id = p.per_id and p.cli_id = c.cli_id and c.cli_id = '$id_cliente'
+            and  con.con_fecha < '$fecha_fin'";
+        }
+
         $resultTotal = mysqli_query($mysqli, $queryTotal);
         $row = mysqli_fetch_array($resultTotal);
         echo $row['valor_pagar'];
@@ -342,10 +356,22 @@ switch ($action) {
 
     case 'consumos':
         $id_cliente = $_GET['id'];
-        $query = "SELECT con.*,p.per_nombre,p.per_documento,l.loc_direccion,m.mar_descripcion 
-        from consumo con, personal p,cliente c,local l,marca m 
-        where con.loc_id = l.loc_id and l.mar_id = m.mar_id and 
-        con.per_id = p.per_id and p.cli_id = c.cli_id and c.cli_id = '$id_cliente'";
+        $fecha_ini = $_GET['fecha_inicio'];
+        $fecha_fin = $_GET['fecha_fin'];
+
+        if ($fecha_ini != '') {
+            $query = "SELECT con.*,p.per_nombre,p.per_documento,l.loc_direccion,m.mar_descripcion 
+            from consumo con, personal p,cliente c,local l,marca m 
+            where con.loc_id = l.loc_id and l.mar_id = m.mar_id and 
+            con.per_id = p.per_id and p.cli_id = c.cli_id and c.cli_id = '$id_cliente' and con.con_fecha >= '$fecha_ini' and con.con_fecha< '$fecha_fin'";
+        } else {
+            $query = "SELECT con.*,p.per_nombre,p.per_documento,l.loc_direccion,m.mar_descripcion 
+            from consumo con, personal p,cliente c,local l,marca m 
+            where con.loc_id = l.loc_id and l.mar_id = m.mar_id and 
+            con.per_id = p.per_id and p.cli_id = c.cli_id and c.cli_id = '$id_cliente' and con.con_fecha< '$fecha_fin'";
+        }
+
+
         $result = mysqli_query($mysqli, $query);
         ?>
         <table class="table table-bordered table-hover" id="table_consumos">
@@ -391,12 +417,12 @@ switch ($action) {
         break;
     case 'observacion':
         $id = $_GET['id'];
-            $queryObservacion = "SELECT ges_observacion FROM gestion where ges_id = '$id'";
-            $res = mysqli_query($mysqli,$queryObservacion);
+        $queryObservacion = "SELECT ges_observacion FROM gestion where ges_id = '$id'";
+        $res = mysqli_query($mysqli, $queryObservacion);
 
-            $row = mysqli_fetch_array($res);
+        $row = mysqli_fetch_array($res);
 
-            echo $row['ges_observacion'];
+        echo $row['ges_observacion'];
         break;
     default:
         # code...
