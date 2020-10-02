@@ -260,7 +260,7 @@ switch ($action) {
 
         $row = mysqli_fetch_array($result);
 
-        echo json_encode(utf8_decode($row));
+        echo json_encode($row);
         break;
 
     case 'save':
