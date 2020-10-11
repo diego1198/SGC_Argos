@@ -41,7 +41,7 @@
                                             <label for="">Email</label>
                                             <input type="text" name="email" id="email" readonly class="form-control" placeholder="Email">
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-8">
                                             <label for="">Teléfono</label>
                                             <input type="text" name="telefono" id="telefono" readonly class="form-control" placeholder="Teléfono">
                                         </div>

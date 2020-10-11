@@ -10,7 +10,7 @@ switch ($action) {
     case 'carga_data':
 
         $estado = 'adeuda';
-        $fechainicio = '2020-06-01';
+        $fechainicio = '2019-01-01';
         $fechafin = date('Y-m-d');
 
         //url del webservice
@@ -29,16 +29,16 @@ switch ($action) {
             echo $err;
         }
 
-        $array_cant = count($resultado); ?>
-<?php
+        $array_cant = count($resultado);
+
         for ($i = 0; $i < $array_cant; $i++) {
 
             $busqueda_existe = "SELECT cli_descripcion from cliente where cli_descripcion ='" . utf8_encode($resultado[$i]['Empresa']) . "'";
             $response = mysqli_query($mysqli, $busqueda_existe) or die('error: ' . mysqli_error($mysqli));
             $cant_cliente = mysqli_num_rows($response);
             if ($cant_cliente == 0) {
-                $query = "INSERT INTO CLIENTE(cli_descripcion,cli_ciudad,cli_contacto,cli_email,cli_dia_corte)
-        values('" . utf8_encode($resultado[$i]['Empresa']) . "','" . utf8_encode($resultado[$i]['Ciudad']) . "','" . utf8_encode($resultado[$i]['Contacto']) . "','" . utf8_encode($resultado[$i]['Email']) . "','" . utf8_encode($resultado[$i]['DiaCorte']) . "')";
+                $query = "INSERT INTO CLIENTE(cli_descripcion,cli_ciudad,cli_contacto,cli_email,cli_dia_corte,cli_telefono)
+                        values('" . utf8_encode($resultado[$i]['Empresa']) . "','" . utf8_encode($resultado[$i]['Ciudad']) . "','" . utf8_encode($resultado[$i]['Contacto']) . "','" . utf8_encode($resultado[$i]['Email']) . "','" . utf8_encode($resultado[$i]['DiaCorte']) . "','" . utf8_encode($resultado[$i]['Telefono']) ."')";
 
                 $row = mysqli_query($mysqli, $query);
 
@@ -117,19 +117,24 @@ switch ($action) {
                     $id_local = $row_bus_local['loc_id'];
                 }
 
+                $queryIdConsumo = "SELECT con_id from consumo where id_transaccion = '" . utf8_encode($resultado[$i]['IdTransaccion']) . "'";
 
+                $resId = mysqli_query($mysqli,$queryIdConsumo);
 
+                $cantId = mysqli_num_rows($resId);
 
+                if($cantId = 0){
 
-                $queryConsumo = "INSERT INTO consumo(con_fecha,con_hora,con_numero_tarjeta,con_valor_neto,
-                                            con_iva,con_valor_total,con_autorizacion,con_estado,
-                                            loc_id,per_id)
-                        values('" . utf8_encode($resultado[$i]['Fecha']) . "','" . utf8_encode($resultado[$i]['Hora']) . "',
-                        '" . utf8_encode($resultado[$i]['Tarjeta']) . "','" . utf8_encode($resultado[$i]['ValorNeto']) . "',
-                        '" . utf8_encode($resultado[$i]['Iva']) . "','" . utf8_encode($resultado[$i]['ValorTotal']) . "',
-                        '" . utf8_encode($resultado[$i]['Autorizacion']) . "','pendiente','$id_local','$id_personal')";
+                    $queryConsumo = "INSERT INTO consumo(con_fecha,con_hora,con_numero_tarjeta,con_valor_neto,
+                                                con_iva,con_valor_total,con_autorizacion,con_estado,
+                                                loc_id,per_id,id_transaccion)
+                            values('" . utf8_encode($resultado[$i]['Fecha']) . "','" . utf8_encode($resultado[$i]['Hora']) . "',
+                            '" . utf8_encode($resultado[$i]['Tarjeta']) . "','" . utf8_encode($resultado[$i]['ValorNeto']) . "',
+                            '" . utf8_encode($resultado[$i]['Iva']) . "','" . utf8_encode($resultado[$i]['ValorTotal']) . "',
+                            '" . utf8_encode($resultado[$i]['Autorizacion']) . "','pendiente','$id_local','$id_personal','". utf8_encode($resultado[$i]['IdTransaccion']) . "')";
 
-                mysqli_query($mysqli, $queryConsumo) or die('error: ' . mysqli_error($mysqli));
+                    mysqli_query($mysqli, $queryConsumo) or die('error: ' . mysqli_error($mysqli));
+                }
             } else {
                 $busqueda_id = "SELECT cli_id from cliente where cli_descripcion = '" . utf8_encode($resultado[$i]['Empresa']) . "'";
                 $resultado_busqueda = mysqli_query($mysqli, $busqueda_id);
@@ -198,15 +203,23 @@ switch ($action) {
                     $id_local = $row_bus_local['loc_id'];
                 }
 
-                $queryConsumo = "INSERT INTO consumo(con_fecha,con_hora,con_numero_tarjeta,con_valor_neto,
+                $queryIdConsumo = "SELECT con_id from consumo where id_transaccion = '" . utf8_encode($resultado[$i]['IdTransaccion']) . "'";
+
+                $resId = mysqli_query($mysqli,$queryIdConsumo) or die('error con:'.mysqli_error($mysqli));
+
+                $cantId = mysqli_num_rows($resId);
+
+                if($cantId == 0){
+                    $queryConsumo = "INSERT INTO consumo(con_fecha,con_hora,con_numero_tarjeta,con_valor_neto,
                                             con_iva,con_valor_total,con_autorizacion,con_estado,
-                                            loc_id,per_id)
+                                            loc_id,per_id,id_transaccion)
                         values('" . utf8_encode($resultado[$i]['Fecha']) . "','" . utf8_encode($resultado[$i]['Hora']) . "',
                         '" . utf8_encode($resultado[$i]['Tarjeta']) . "','" . utf8_encode($resultado[$i]['ValorNeto']) . "',
                         '" . utf8_encode($resultado[$i]['Iva']) . "','" . utf8_encode($resultado[$i]['ValorTotal']) . "',
-                        '" . utf8_encode($resultado[$i]['Autorizacion']) . "','pendiente','$id_local','$id_personal')";
+                        '" . utf8_encode($resultado[$i]['Autorizacion']) . "','pendiente','$id_local','$id_personal','". utf8_encode($resultado[$i]['IdTransaccion']) . "')";
 
-                mysqli_query($mysqli, $queryConsumo) or die('error: ' . mysqli_error($mysqli));
+                    mysqli_query($mysqli, $queryConsumo) or die('error: ' . mysqli_error($mysqli));
+                }
             }
         }
         break;

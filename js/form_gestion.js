@@ -12,7 +12,7 @@ function load_datos(id) {
             $('#ciudad').val(data.cli_ciudad)
             $('#nombre_cliente').val(data.cli_descripcion)
             $('#dia_corte').val(data.cli_dia_corte)
-
+            $('#telefono').val(data.cli_telefono)
             $('#contacto').val(data.cli_contacto)
             $('#email').val(data.cli_email)
             $('#cli_telefono').val(data.cli_telefono)
