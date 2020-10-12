@@ -38,7 +38,7 @@ switch ($action) {
             $cant_cliente = mysqli_num_rows($response);
             if ($cant_cliente == 0) {
                 $query = "INSERT INTO CLIENTE(cli_descripcion,cli_ciudad,cli_contacto,cli_email,cli_dia_corte,cli_telefono)
-                        values('" . utf8_encode($resultado[$i]['Empresa']) . "','" . utf8_encode($resultado[$i]['Ciudad']) . "','" . utf8_encode($resultado[$i]['Contacto']) . "','" . utf8_encode($resultado[$i]['Email']) . "','" . utf8_encode($resultado[$i]['DiaCorte']) . "','" . utf8_encode($resultado[$i]['Telefono']) ."')";
+                        values('" . utf8_encode($resultado[$i]['Empresa']) . "','" . utf8_encode($resultado[$i]['Ciudad']) . "','" . utf8_encode($resultado[$i]['Contacto']) . "','" . utf8_encode($resultado[$i]['Email']) . "','" . utf8_encode($resultado[$i]['DiaCorte']) . "','" . utf8_encode($resultado[$i]['Telefono']) . "')";
 
                 $row = mysqli_query($mysqli, $query);
 
@@ -119,11 +119,11 @@ switch ($action) {
 
                 $queryIdConsumo = "SELECT con_id from consumo where id_transaccion = '" . utf8_encode($resultado[$i]['IdTransaccion']) . "'";
 
-                $resId = mysqli_query($mysqli,$queryIdConsumo);
+                $resId = mysqli_query($mysqli, $queryIdConsumo);
 
                 $cantId = mysqli_num_rows($resId);
 
-                if($cantId = 0){
+                if ($cantId = 0) {
 
                     $queryConsumo = "INSERT INTO consumo(con_fecha,con_hora,con_numero_tarjeta,con_valor_neto,
                                                 con_iva,con_valor_total,con_autorizacion,con_estado,
@@ -131,7 +131,7 @@ switch ($action) {
                             values('" . utf8_encode($resultado[$i]['Fecha']) . "','" . utf8_encode($resultado[$i]['Hora']) . "',
                             '" . utf8_encode($resultado[$i]['Tarjeta']) . "','" . utf8_encode($resultado[$i]['ValorNeto']) . "',
                             '" . utf8_encode($resultado[$i]['Iva']) . "','" . utf8_encode($resultado[$i]['ValorTotal']) . "',
-                            '" . utf8_encode($resultado[$i]['Autorizacion']) . "','pendiente','$id_local','$id_personal','". utf8_encode($resultado[$i]['IdTransaccion']) . "')";
+                            '" . utf8_encode($resultado[$i]['Autorizacion']) . "','pendiente','$id_local','$id_personal','" . utf8_encode($resultado[$i]['IdTransaccion']) . "')";
 
                     mysqli_query($mysqli, $queryConsumo) or die('error: ' . mysqli_error($mysqli));
                 }
@@ -205,18 +205,18 @@ switch ($action) {
 
                 $queryIdConsumo = "SELECT con_id from consumo where id_transaccion = '" . utf8_encode($resultado[$i]['IdTransaccion']) . "'";
 
-                $resId = mysqli_query($mysqli,$queryIdConsumo) or die('error con:'.mysqli_error($mysqli));
+                $resId = mysqli_query($mysqli, $queryIdConsumo) or die('error con:' . mysqli_error($mysqli));
 
                 $cantId = mysqli_num_rows($resId);
 
-                if($cantId == 0){
+                if ($cantId == 0) {
                     $queryConsumo = "INSERT INTO consumo(con_fecha,con_hora,con_numero_tarjeta,con_valor_neto,
                                             con_iva,con_valor_total,con_autorizacion,con_estado,
                                             loc_id,per_id,id_transaccion)
                         values('" . utf8_encode($resultado[$i]['Fecha']) . "','" . utf8_encode($resultado[$i]['Hora']) . "',
                         '" . utf8_encode($resultado[$i]['Tarjeta']) . "','" . utf8_encode($resultado[$i]['ValorNeto']) . "',
                         '" . utf8_encode($resultado[$i]['Iva']) . "','" . utf8_encode($resultado[$i]['ValorTotal']) . "',
-                        '" . utf8_encode($resultado[$i]['Autorizacion']) . "','pendiente','$id_local','$id_personal','". utf8_encode($resultado[$i]['IdTransaccion']) . "')";
+                        '" . utf8_encode($resultado[$i]['Autorizacion']) . "','pendiente','$id_local','$id_personal','" . utf8_encode($resultado[$i]['IdTransaccion']) . "')";
 
                     mysqli_query($mysqli, $queryConsumo) or die('error: ' . mysqli_error($mysqli));
                 }
@@ -257,84 +257,176 @@ switch ($action) {
             echo ('90Ini:' . $fecha90Ini . '<br/>');
             echo ('90Fin:' . $fecha90Fin . '<br/>');
 
-            $queryCartera = "SELECT sum(con_valor_total) as monto_total 
-                    from consumo con, personal p, cliente cli 
-                    where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
-                    and con.con_fecha >= '$fecha30Ini' and con.con_fecha < '$fecha30Fin'";
+            $queryBus30 = "SELECT car_id from cartera where cli_id = '$rowCli[cli_id]' and car_tipo = '30'";
+
+            $resQ = mysqli_query($mysqli, $queryBus30);
+
+            if (mysqli_num_rows($resQ) == 0) {
+                $queryCartera = "SELECT sum(con_valor_total) as monto_total 
+                from consumo con, personal p, cliente cli 
+                where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
+                and con.con_fecha >= '$fecha30Ini' and con.con_fecha < '$fecha30Fin'";
 
 
-            $resultCar = mysqli_query($mysqli, $queryCartera);
+                $resultCar = mysqli_query($mysqli, $queryCartera);
 
-            $row = mysqli_fetch_array($resultCar);
+                $row = mysqli_fetch_array($resultCar);
 
-            if ($row['monto_total'] != '') {
-                $queryCartera = "INSERT INTO cartera(car_fecha_inicio,car_fecha_fin,car_estado,car_fecha_ingreso,cli_valor_pagar,cli_id,car_tipo) 
-                values('$fecha30Ini','$fecha30Fin','sin_gestion','$fechaHoy','$row[monto_total]','$rowCli[cli_id]','30')";
+                if ($row['monto_total'] != '') {
 
-                $resCar = mysqli_query($mysqli, $queryCartera) or die('error cartera 30:'.mysqli_error($mysqli));
+                    $queryCartera = "INSERT INTO cartera(car_fecha_inicio,car_fecha_fin,car_estado,car_fecha_ingreso,cli_valor_pagar,cli_id,car_tipo) 
+                                    values('$fecha30Ini','$fecha30Fin','sin_gestion','$fechaHoy','$row[monto_total]','$rowCli[cli_id]','30')";
+
+                    $resCar = mysqli_query($mysqli, $queryCartera) or die('error cartera 30:' . mysqli_error($mysqli));
+                }
+            } else {
+                $queryCartera = "SELECT sum(con_valor_total) as monto_total 
+                from consumo con, personal p, cliente cli 
+                where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
+                and con.con_fecha >= '$fecha30Ini' and con.con_fecha < '$fecha30Fin'";
+
+
+                $resultCar = mysqli_query($mysqli, $queryCartera);
+
+                $row = mysqli_fetch_array($resultCar);
+
+                if ($row['monto_total'] != '') {
+
+                    $queryCartera = "UPDATE cartera set car_fecha_inicio = '$fecha30Ini', car_fecha_fin = '$fecha30Fin',
+                                     car_estado = 'sin_gestion', car_fecha_ingreso = '$fechaHoy',cli_valor_pagar='$row[monto_total]'
+                                     where cli_id = '$rowCli[cli_id]' and car_tipo = '30'";
+
+                    $resCar = mysqli_query($mysqli, $queryCartera) or die('error update cartera 30:' . mysqli_error($mysqli));
+                }
             }
 
 
+            $queryBus60 = "SELECT car_id from cartera where cli_id = '$rowCli[cli_id]' and car_tipo = '60'";
+
+            $resQ = mysqli_query($mysqli, $queryBus60);
+
+            if (mysqli_num_rows($resQ) == 0) {
+                $queryCartera = "SELECT sum(con_valor_total) as monto_total from consumo con, personal p, cliente cli 
+                where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
+                and con.con_fecha >= '$fecha60Ini)' and con.con_fecha < '$fecha60Fin'";
 
 
-            $queryCartera = "SELECT sum(con_valor_total) as monto_total 
-                    from consumo con, personal p, cliente cli 
-                    where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
-                    and con.con_fecha >= '$fecha60Ini)' and con.con_fecha < '$fecha60Fin'";
+                $resultCar = mysqli_query($mysqli, $queryCartera);
+
+                $row = mysqli_fetch_array($resultCar);
+
+                if ($row['monto_total'] != '') {
+                    $queryCartera = "INSERT INTO cartera(car_fecha_inicio,car_fecha_fin,car_estado,car_fecha_ingreso,cli_valor_pagar,cli_id,car_tipo) 
+                    values('$fecha60Ini','$fecha60Fin','sin_gestion','$fechaHoy','$row[monto_total]','$rowCli[cli_id]','60')";
+
+                    $resCar = mysqli_query($mysqli, $queryCartera) or die('error cartera 60:' . mysqli_error($mysqli));
+                }
+            } else {
+                $queryCartera = "SELECT sum(con_valor_total) as monto_total 
+                from consumo con, personal p, cliente cli 
+                where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
+                and con.con_fecha >= '$fecha60Ini' and con.con_fecha < '$fecha60Fin'";
 
 
-            $resultCar = mysqli_query($mysqli, $queryCartera);
+                $resultCar = mysqli_query($mysqli, $queryCartera);
 
-            $row = mysqli_fetch_array($resultCar);
+                $row = mysqli_fetch_array($resultCar);
 
-            if ($row['monto_total'] != '') {
-                $queryCartera = "INSERT INTO cartera(car_fecha_inicio,car_fecha_fin,car_estado,car_fecha_ingreso,cli_valor_pagar,cli_id,car_tipo) 
-                values('$fecha60Ini','$fecha60Fin','sin_gestion','$fechaHoy','$row[monto_total]','$rowCli[cli_id]','60')";
+                if ($row['monto_total'] != '') {
 
-                $resCar = mysqli_query($mysqli, $queryCartera) or die('error cartera 60:'.mysqli_error($mysqli));
+                    $queryCartera = "UPDATE cartera set car_fecha_inicio = '$fecha60Ini', car_fecha_fin = '$fecha60Fin',
+                                     car_estado = 'sin_gestion', car_fecha_ingreso = '$fechaHoy',cli_valor_pagar='$row[monto_total]'
+                                     where cli_id = '$rowCli[cli_id]' and car_tipo = '60'";
+
+                    $resCar = mysqli_query($mysqli, $queryCartera) or die('error update cartera 60:' . mysqli_error($mysqli));
+                }
             }
 
 
+            $queryBus90 = "SELECT car_id from cartera where cli_id = '$rowCli[cli_id]' and car_tipo = '90'";
 
-            $queryCartera = "SELECT sum(con_valor_total) as monto_total 
-                    from consumo con, personal p, cliente cli 
-                    where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
-                    and con.con_fecha >= '$fecha90Ini' and con.con_fecha < '$fecha90Fin'";
+            $resQ = mysqli_query($mysqli, $queryBus90);
+
+            if (mysqli_num_rows($resQ) == 0) {
+                $queryCartera = "SELECT sum(con_valor_total) as monto_total 
+                from consumo con, personal p, cliente cli 
+                where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
+                and con.con_fecha >= '$fecha90Ini' and con.con_fecha < '$fecha90Fin'";
 
 
-            $resultCar = mysqli_query($mysqli, $queryCartera);
+                $resultCar = mysqli_query($mysqli, $queryCartera);
 
-            $row = mysqli_fetch_array($resultCar);
+                $row = mysqli_fetch_array($resultCar);
 
-            if ($row['monto_total'] != '') {
-                $queryCartera = "INSERT INTO cartera(car_fecha_inicio,car_fecha_fin,car_estado,car_fecha_ingreso,cli_valor_pagar,cli_id,car_tipo) 
-                values('$fecha90Ini','$fecha90Fin','sin_gestion','$fechaHoy','$row[monto_total]','$rowCli[cli_id]','90')";
+                if ($row['monto_total'] != '') {
+                    $queryCartera = "INSERT INTO cartera(car_fecha_inicio,car_fecha_fin,car_estado,car_fecha_ingreso,cli_valor_pagar,cli_id,car_tipo) 
+                    values('$fecha90Ini','$fecha90Fin','sin_gestion','$fechaHoy','$row[monto_total]','$rowCli[cli_id]','90')";
 
-                $resCar = mysqli_query($mysqli, $queryCartera)or die('error cartera 90:'.mysqli_error($mysqli));
+                    $resCar = mysqli_query($mysqli, $queryCartera) or die('error cartera 90:' . mysqli_error($mysqli));
+                }
+            } else {
+                $queryCartera = "SELECT sum(con_valor_total) as monto_total 
+                from consumo con, personal p, cliente cli 
+                where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
+                and con.con_fecha >= '$fecha90Ini' and con.con_fecha < '$fecha90Fin'";
+
+
+                $resultCar = mysqli_query($mysqli, $queryCartera);
+
+                $row = mysqli_fetch_array($resultCar);
+
+                if ($row['monto_total'] != '') {
+
+                    $queryCartera = "UPDATE cartera set car_fecha_inicio = '$fecha90Ini', car_fecha_fin = '$fecha90Fin',
+                                     car_estado = 'sin_gestion', car_fecha_ingreso = '$fechaHoy',cli_valor_pagar='$row[monto_total]'
+                                     where cli_id = '$rowCli[cli_id]' and car_tipo = '90'";
+
+                    $resCar = mysqli_query($mysqli, $queryCartera) or die('error update cartera 90:' . mysqli_error($mysqli));
+                }
             }
 
 
-            $queryCartera = "SELECT sum(con_valor_total) as monto_total 
-                    from consumo con, personal p, cliente cli 
-                    where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
-                    and con.con_fecha < '$fecha90Ini'";
+            $queryBus91 = "SELECT car_id from cartera where cli_id = '$rowCli[cli_id]' and car_tipo = '91'";
+
+            $resQ = mysqli_query($mysqli, $queryBus91);
+
+            if (mysqli_num_rows($resQ) == 0) {
+                $queryCartera = "SELECT sum(con_valor_total) as monto_total 
+                from consumo con, personal p, cliente cli 
+                where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
+                and con.con_fecha < '$fecha90Ini'";
 
 
-            $resultCar = mysqli_query($mysqli, $queryCartera);
+                $resultCar = mysqli_query($mysqli, $queryCartera);
 
-            $row = mysqli_fetch_array($resultCar);
+                $row = mysqli_fetch_array($resultCar);
 
-            if ($row['monto_total'] != '') {
-                $queryCartera = "INSERT INTO cartera(car_fecha_fin,car_estado,car_fecha_ingreso,cli_valor_pagar,cli_id,car_tipo) 
-                values('$fecha90Ini','sin_gestion','$fechaHoy','$row[monto_total]','$rowCli[cli_id]','91')";
+                if ($row['monto_total'] != '') {
+                    $queryCartera = "INSERT INTO cartera(car_fecha_fin,car_estado,car_fecha_ingreso,cli_valor_pagar,cli_id,car_tipo) 
+                    values('$fecha90Ini','sin_gestion','$fechaHoy','$row[monto_total]','$rowCli[cli_id]','91')";
 
-                $resCar = mysqli_query($mysqli, $queryCartera)or die('error cartera +90:'.mysqli_error($mysqli));
+                    $resCar = mysqli_query($mysqli, $queryCartera) or die('error cartera +90:' . mysqli_error($mysqli));
+                }
+            } else {
+                $queryCartera = "SELECT sum(con_valor_total) as monto_total 
+                from consumo con, personal p, cliente cli 
+                where con.per_id = p.per_id and p.cli_id = cli.cli_id and cli.cli_id = '$rowCli[cli_id]'
+                and con.con_fecha < '$fecha90Ini'";
+
+                $resultCar = mysqli_query($mysqli, $queryCartera);
+
+                $row = mysqli_fetch_array($resultCar);
+
+                if ($row['monto_total'] != '') {
+
+                    $queryCartera = "UPDATE cartera set car_fecha_fin = '$fecha90Fin',
+                                     car_estado = 'sin_gestion', car_fecha_ingreso = '$fechaHoy',cli_valor_pagar='$row[monto_total]'
+                                     where cli_id = '$rowCli[cli_id]' and car_tipo = '91'";
+
+                    $resCar = mysqli_query($mysqli, $queryCartera) or die('error update cartera 91:' . mysqli_error($mysqli));
+                }
             }
         }
 
         break;
 }
-
-
-
-?>
