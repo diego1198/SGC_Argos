@@ -12,43 +12,7 @@
 (function(window, document, $, undefined) {
 	  "use strict";
 	$(function() {
-		var chart = c3.generate({
-			bindto: "#total-revenue",
-			data: {
-				columns: [
-					["Cobrado", 50],
-					["Por Cobrar", 50]
-				],
-
-				type: "donut",
-				onclick: function(d, i) {
-					console.log("onclick", d, i);
-				},
-				onmouseover: function(d, i) {
-					console.log("onmouseover", d, i);
-				},
-				onmouseout: function(d, i) {
-					console.log("onmouseout", d, i);
-				}
-			},
-			donut: {
-				label: {
-					show: false
-				},
-				title: "Cartera Total",
-				width: 30
-			},
-
-			legend: {
-				hide: true
-			},
-			color: {
-				pattern: [
-					QuantumPro.APP_COLORS.info,
-					QuantumPro.APP_COLORS.accent
-				]
-			}
-		});
+		
 
 	});
 })(window, document, window.jQuery);

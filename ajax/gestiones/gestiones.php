@@ -1,6 +1,7 @@
 <?php
 require_once "../../config/database.php";
 session_start();
+date_default_timezone_set('America/Guayaquil');
 $action = $_GET['action'];
 
 switch ($action) {
@@ -67,7 +68,7 @@ switch ($action) {
                 break;
             case 'cobrada':
                 $query = "SELECT c.*,cli.* FROM cartera c, cliente cli,gestion g
-                where c.cli_id = cli.cli_id and c.car_estado = '$case' and g.car_id = c.car_id group by c.car_id and c.car_tipo = '$cartera'";
+                where c.cli_id = cli.cli_id and c.car_estado = '$case' and g.car_id = c.car_id and c.car_tipo = '$cartera' group by c.car_id ";
 
                 $result = mysqli_query($mysqli, $query); ?>
 
@@ -212,8 +213,10 @@ switch ($action) {
                         while ($row = mysqli_fetch_array($result)) {
                             if ($fecha_actual > $row['com_fecha']) {
                                 $subestado = "<span class='badge badge-pill badge-danger border-radius'>Incumplimiento</span>";
-                            } else {
-                                $subestado = "<span class='badge badge-pill badge-primary border-radius'>Pendiente</span>";
+                            } else if($fecha_actual == $row['com_fecha']){
+                                $subestado = "<span class='badge badge-pill badge-info border-radius'>Vence Hoy</span>";
+                            }else {
+                                $subestado = "<span class='badge badge-pill badge-warning border-radius'>Pendiente</span>";
                             }
 
                         ?>
@@ -222,7 +225,7 @@ switch ($action) {
                                 <td><?php echo $row['cli_ciudad']; ?></td>
                                 <td><?php echo $row['cli_descripcion']; ?></td>
                                 <td><?php echo $row['cli_contacto']; ?></td>
-                                <td><?php echo $row['car_fecha_ingreso']; ?></td>
+                                <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['com_fecha']; ?></td>
                                 <td><?php echo $row['com_monto']; ?></td>
                                 <td><?php echo $subestado; ?></td>
@@ -336,8 +339,11 @@ switch ($action) {
         break;
     case 'total':
         $id_cliente = $_GET['id'];
+        $id_cartera = $_GET['id_cartera'];
         $fecha_ini = $_GET['fecha_inicio'];
         $fecha_fin = $_GET['fecha_fin'];
+
+        $queryPagos = "SELECT sum(pag_monto) as monto_pagado from cartera c, gestion g,pago p where c.car_id = g.car_id and g.pag_id = p.pag_id and c.car_id = '$id_cartera'";
 
         if ($fecha_ini != '') {
             $queryTotal = "SELECT sum(con.con_valor_total) as 'valor_pagar' 
@@ -351,7 +357,10 @@ switch ($action) {
 
         $resultTotal = mysqli_query($mysqli, $queryTotal);
         $row = mysqli_fetch_array($resultTotal);
-        echo $row['valor_pagar'];
+
+        $resutlPago = mysqli_query($mysqli,$queryPagos);
+        $rowPag = mysqli_fetch_array($resutlPago);
+        echo $row['valor_pagar'] - $rowPag['monto_pagado']; 
         break;
 
     case 'consumos':

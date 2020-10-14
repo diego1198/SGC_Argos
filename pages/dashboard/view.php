@@ -44,52 +44,53 @@
                                             <div class="row m-0 col-border-xl">
                                                 <div class="col-md-12 col-lg-6 col-xl-3">
                                                     <div class="card-body">
-                                                        <div class="icon-rounded icon-rounded-primary float-left m-r-20">
-                                                            <i class="icon dripicons-graph-bar"></i>
-                                                        </div>
-                                                        <h5 class="card-title m-b-5 append-percent counter" data-count="72">0</h5>
-                                                        <h6 class="text-muted m-t-10">
-                                                            Gestiones Exitosas del Mes
-                                                        </h6>
-                                                        <div class="progress progress-active-sessions mt-4" style="height:7px;">
-                                                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter" data-count="145">
-                                                            0
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 col-lg-6 col-xl-3">
-                                                    <div class="card-body">
                                                         <div class="icon-rounded icon-rounded-accent float-left m-r-20">
                                                             <i class="icon dripicons-cart"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 append-percent counter" data-count="67">0</h5>
+                                                        <h5 class="card-title m-b-5 append-percent counter" data-count="" id="sin_gestion_porcentaje">0</h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Gestiones En Espera del Mes
                                                         </h6>
                                                         <div class="progress progress-add-to-cart mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-accent" role="progressbar" style="" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter" data-count="100">
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter" data-count="100" id="sin_gestion">
                                                             0
                                                         </small>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-12 col-lg-6 col-xl-3">
+                                                    <div class="card-body">
+                                                        <div class="icon-rounded icon-rounded-primary float-left m-r-20">
+                                                            <i class="icon dripicons-graph-bar"></i>
+                                                        </div>
+                                                        <h5 class="card-title m-b-5 append-percent counter" data-count="" id="exitosas_porcentaje">0</h5>
+                                                        <h6 class="text-muted m-t-10">
+                                                            Gestiones Exitosas del Mes
+                                                        </h6>
+                                                        <div class="progress progress-active-sessions mt-4" style="height:7px;">
+                                                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter" data-count="145" id="exitosas">
+                                                            0
+                                                        </small>
+                                                    </div>
+                                                </div>
+
 
                                                 <div class="col-md-12 col-lg-6 col-xl-3">
                                                     <div class="card-body">
                                                         <div class="icon-rounded icon-rounded-info float-left m-r-20">
                                                             <i class="icon dripicons-mail"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 append-percent counter" data-count="45">0</h5>
+                                                        <h5 class="card-title m-b-5 append-percent counter" data-count="" id="negativas_porcentaje">0</h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Gestiones Negativas del Mes
                                                         </h6>
                                                         <div class="progress progress-new-account mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-info" role="progressbar" style="" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter" data-count="70">
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter" data-count="70" id="negativas">
                                                             0
                                                         </small>
                                                     </div>
@@ -99,14 +100,14 @@
                                                         <div class="icon-rounded icon-rounded-success float-left m-r-20">
                                                             <i class="la la-dollar f-w-600"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 counter append-percent" data-count="10">0</h5>
+                                                        <h5 class="card-title m-b-5 counter append-percent" data-count="" id="pendientes_porcentaje">0</h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Gestiones Pendientes del Mes
                                                         </h6>
                                                         <div class="progress progress-total-revenue mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-success" role="progressbar" style="" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter " data-count="73">
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter " data-count="73" id="pendientes">
                                                             0
                                                         </small>
                                                     </div>
@@ -123,7 +124,7 @@
                                             <div class="card">
                                                 <h5 class="card-header border-none">$ Recuperado Cartera 30</h5>
                                                 <div class="card-body p-0">
-                                                    <h4 class="card-title text-info p-t-10 p-l-15">67,325 <i class="zmdi zmdi-trending-up text-info"></i></h4>
+                                                    <h3 class="card-title text-info p-t-10 p-l-15" id="recuperado_30"></h3>
                                                     <div class="h-200">
                                                         <canvas id="usersChart"></canvas>
                                                     </div>
@@ -132,7 +133,7 @@
                                             <div class="card">
                                                 <h5 class="card-header border-none">$ Recuperado Cartera 60</h5>
                                                 <div class="card-body p-0">
-                                                    <h4 class="card-title text-warning p-t-10 p-l-15"><i class="zmdi zmdi-trending-down text-warning"></i></h4>
+                                                    <h3 class="card-title text-warning p-t-10 p-l-15" id="recuperado_60"></h3>
                                                     <div class="h-200">
                                                         <canvas id="bounceRateChart"></canvas>
                                                     </div>
@@ -141,7 +142,7 @@
                                             <div class="card">
                                                 <h5 class="card-header border-none">$ Recuperado Cartera 90</h5>
                                                 <div class="card-body p-0">
-                                                    <h4 class="card-title text-primary p-t-10 p-l-15"><i class="zmdi zmdi-trending-up text-primary"></i></h4>
+                                                    <h3 class="card-title text-primary p-t-10 p-l-15" id="recuperado_90"></h3>
                                                     <div class="h-200">
                                                         <canvas id="sessionDuration"></canvas>
                                                     </div>
@@ -150,7 +151,7 @@
                                             <div class="card">
                                                 <h5 class="card-header border-none">$ Recuperado Cartera +90</h5>
                                                 <div class="card-body p-0">
-                                                    <h4 class="card-title text-success p-t-10 p-l-15"><i class="zmdi zmdi-trending-up text-success"></i></h4>
+                                                    <h3 class="card-title text-success p-t-10 p-l-15" id="recuperado_91"></h3>
                                                     <div class="h-200">
                                                         <canvas id="cartera_90"></canvas>
                                                     </div>
@@ -170,14 +171,14 @@
                                                         <div class="icon-rounded icon-rounded-success float-left m-r-20">
                                                             <i class="la la-dollar f-w-600"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="500">0</h5>
+                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="" id="valor_cartera_30"></h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Cartera 30 días
                                                         </h6>
-                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
+                                                        <div class="progress progress-cartera-30 mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-success" role="progressbar" style="" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="500">
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter append-percent" data-count="" id="valor_cartera_30_porcentaje">
                                                             0
                                                         </small>
                                                     </div>
@@ -187,14 +188,14 @@
                                                         <div class="icon-rounded icon-rounded-info float-left m-r-20">
                                                             <i class="la la-dollar f-w-600"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="420">0</h5>
+                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="" id="valor_cartera_60"></h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Cartera 60 días
                                                         </h6>
-                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
+                                                        <div class="progress progress-cartera-60 mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-info" role="progressbar" style="" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="420">
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter append-percent" data-count="" id="valor_cartera_60_porcentaje">
                                                             0
                                                         </small>
                                                     </div>
@@ -204,14 +205,14 @@
                                                         <div class="icon-rounded icon-rounded-secondary float-left m-r-20">
                                                             <i class="la la-dollar f-w-600"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="200">0</h5>
+                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="" id="valor_cartera_90"></h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Cartera 90 días
                                                         </h6>
-                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
+                                                        <div class="progress progress-cartera-90 mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-danger" role="progressbar" style="" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="200">
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter append-percent" data-count="" id="valor_cartera_90_porcentaje">
                                                             0
                                                         </small>
                                                     </div>
@@ -221,14 +222,14 @@
                                                         <div class="icon-rounded icon-rounded-primary float-left m-r-20">
                                                             <i class="la la-dollar f-w-600"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="100">0</h5>
+                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="" id="valor_cartera_91"></h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Cartera +90 días
                                                         </h6>
-                                                        <div class="progress progress-total-revenue mt-4" style="height:7px;">
+                                                        <div class="progress progress-cartera-91 mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-primary" role="progressbar" style="" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
-                                                        <small class="text-muted float-right m-t-5 mb-3 counter prepend-currency" data-count="100">
+                                                        <small class="text-muted float-right m-t-5 mb-3 counter append-percent" data-count="" id="valor_cartera_91_porcentaje">
                                                             0
                                                         </small>
                                                     </div>
@@ -258,8 +259,8 @@
                                             </div>
                                             <div class="card-footer">
                                                 <ul class="list-reset list-inline-block text-center">
-                                                    <li class="text-muted text-info m-r-10"><i class="badge badge-info m-r-5  badge-circle w-10 h-10 "></i>Cobrado $2000</li>
-                                                    <li class="text-muted text-accent m-r-10 "><i class="badge badge-accent m-r-5  badge-circle w-10 h-10 "></i>Por Cobrar $2000</li>
+                                                    <li class="text-muted text-info m-r-10"><i class="badge badge-info m-r-5  badge-circle w-10 h-10 "></i>$<span id="cobrado"></span></li>
+                                                    <li class="text-muted text-accent m-r-10 "><i class="badge badge-accent m-r-5  badge-circle w-10 h-10 "></i> $<span id="por_cobrar"></span></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -663,13 +664,8 @@
 <script src="./assets/vendor/flot.curvedlines/curvedLines.js"></script>
 <script src="./assets/vendor/datatables.net/js/jquery.dataTables.js"></script>
 <script src="./assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
-<script src="./assets/js/components/countUp-init.js"></script>
-<script src="./assets/js/cards/counter-group.js"></script>
 
-<script src="./assets/js/cards/users-chart.js"></script>
-<script src="./assets/js/cards/bounce-rate-chart.js"></script>
-<script src="./assets/js/cards/session-duration-chart.js"></script>
-<script src="./assets/js/cards/cartera_90.js"></script>
+
 
 <script src="./assets/js/cards/total-visits-chart.js"></script>
 <script src="./assets/js/cards/total-unique-visits-chart.js"></script>
@@ -683,7 +679,8 @@
 <script src="./assets/vendor/flot/jquery.flot.time.js"></script>
 <script src="./assets/vendor/echarts/echarts-all-3.js"></script>
 <script src="./assets/vendor/c3/c3.min.js"></script>
-<script src="./assets/js/cards/total-revenue.js"></script>
+
+<script src="./ajax/dashboard/cartera.js"></script>
 
 <script src="./assets/vendor/chart.js/dist/Chart.bundle.min.js"></script>
 <script src="./assets/js/charts/chartjs-init.js"></script>

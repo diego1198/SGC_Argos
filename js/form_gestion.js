@@ -25,7 +25,7 @@ function load_datos(id) {
 
             $.ajax({
                 type: "GET",
-                url: "ajax/gestiones/gestiones.php?action=total&id=" + id_cliente + "&fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin,
+                url: "ajax/gestiones/gestiones.php?action=total&id=" + id_cliente + "&fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin +"&id_cartera="+id,
                 success: function (response) {
                     $('#total_deuda').val(response)
                 }
@@ -43,7 +43,7 @@ function load_consumos() {
 
     $.ajax({
         type: "GET",
-        url: "ajax/gestiones/gestiones.php?action=consumos&id=" + id_cliente+ "&fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin,
+        url: "ajax/gestiones/gestiones.php?action=consumos&id=" + id_cliente + "&fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin,
         success: function (response) {
             $('#outer_consumos').html(response);
             $('#table_consumos').dataTable({
@@ -81,17 +81,22 @@ $('#form_gestion').submit(function (e) {
     if ($('#tipo_gestion').val() != 0) {
         if ($('#tipo_contacto').val() != 0) {
             if ($('#respuesta').val() != 0) {
-                var data = $(this).serialize();
-                $.ajax({
-                    type: "POST",
-                    url: "ajax/gestiones/gestiones.php?action=save&id_car=" + car_id,
-                    data: data,
-                    success: function (response) {
-                        if (response == 'exito') {
-                            window.location.href = '?module=gestiones&cartera=30';
+                if ($('#monto').val() > $('#total_deuda').val()) {
+                    alert('No se puede pagar un monto mayor a la deuda')
+                } else {
+                    var data = $(this).serialize();
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax/gestiones/gestiones.php?action=save&id_car=" + car_id,
+                        data: data,
+                        success: function (response) {
+                            if (response == 'exito') {
+                                window.location.href = '?module=gestiones&cartera=30';
+                            }
                         }
-                    }
-                });
+                    });
+                }
+
             } else {
                 alert('Seleccione una respuesta')
             }

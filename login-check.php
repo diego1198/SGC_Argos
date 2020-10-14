@@ -24,13 +24,9 @@ else {
 		$_SESSION['username']  = $data['username'];
 		$_SESSION['password']  = $data['password'];
 		$_SESSION['name_user'] = $data['name_user'];
-		$_SESSION['permisos_acceso'] = $data['permisos_acceso'];
-		if($_SESSION['permisos_acceso']=='Operador'){
-			echo "<script language=Javascript> location.href=\"main.php?module=gestiones&cartera=30\"; </script>"; 
-		}else{
-			echo "<script language=Javascript> location.href=\"main.php?module=dashboard\"; </script>"; 
-		}
+		$_SESSION['permisos_acceso'] = $data['permisos_acceso'];	
 		
+		header("Location: services/load_data.php?action=carga_data");
 	}
 	else {
 		echo "<script language=Javascript> location.href=\"index.php?alert=1\"; </script>"; 

@@ -112,14 +112,14 @@
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <label for="">Número de Contacto</label>
-                                                            <input type="tel" class="form-control" placeholder="Número de contacto" id="numero_contacto" name="numero_contacto" required>
+                                                            <input type="number" class="form-control" placeholder="Número de contacto" id="numero_contacto" name="numero_contacto" required>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="col-sm-12">
                                                         <label for="">Observación</label>
-                                                        <textarea name="observacion_gestion" id="observacion_gestion" class="form-control" rows="5"></textarea>
+                                                        <textarea name="observacion_gestion" id="observacion_gestion" class="form-control" rows="5" required></textarea>
                                                     </div>
                                                 </div>
                                             </div>

@@ -8,9 +8,8 @@ $action = $_GET['action'];
 
 switch ($action) {
     case 'carga_data':
-
         $estado = 'adeuda';
-        $fechainicio = '2019-01-01';
+        $fechainicio = '2020-09-01';
         $fechafin = date('Y-m-d');
 
         //url del webservice
@@ -144,6 +143,13 @@ switch ($action) {
                 $result_personal = mysqli_query($mysqli, $busqueda_personal);
                 $cant_personal = mysqli_num_rows($result_personal);
 
+                $row_personal = mysqli_fetch_array($result_personal);
+                if (mysqli_num_rows($result_personal) > 0) {
+                    $id_personal = $row_personal['per_id'];
+                } else {
+                    $id_personal = '1';
+                }
+
                 if ($cant_personal == 0) {
                     $query_Id_Personal = "SELECT max(per_id) as max from personal";
                     $resIdPersonal = mysqli_query($mysqli, $query_Id_Personal);
@@ -220,7 +226,15 @@ switch ($action) {
 
                     mysqli_query($mysqli, $queryConsumo) or die('error: ' . mysqli_error($mysqli));
                 }
+
+
             }
+        }
+        session_start();
+        if($_SESSION['permisos_acceso']=='Operador'){
+            echo "<script language=Javascript> location.href=\"../main.php?module=gestiones&cartera=30\"; </script>"; 
+        }else{
+            echo "<script language=Javascript> location.href=\"../main.php?module=dashboard\"; </script>"; 
         }
         break;
     case 'carga_cartera':
