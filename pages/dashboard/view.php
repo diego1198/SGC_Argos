@@ -290,13 +290,13 @@
                                                 <h5 class="card-title border-none text-white p-l-20 p-t-20 m-b-0">Fridays</h5>
                                                 <div class="tab-content" id="total-visits-tab-content">
                                                     <div class="tab-pane fade show active" id="total-visits-tab-1" role="tabpanel" aria-labelledby="total-visits-tab-1">
-                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="3233">0</span>
+                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20" data-count="" id="fridays_semana">0</span>
                                                     </div>
                                                     <div class="tab-pane fade" id="total-visits-tab-2" role="tabpanel" aria-labelledby="total-visits-tab-2">
-                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="7933">0</span>
+                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20" data-count="" id="fridays_mes">0</span>
                                                     </div>
                                                     <div class="tab-pane fade" id="total-visits-tab-3" role="tabpanel" aria-labelledby="total-visits-tab-3">
-                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="15423">0</span>
+                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20" data-count="" id="fridays_anio">0</span>
                                                     </div>
                                                 </div>
                                                 <div class="ct-chart h-75 m-t-40"></div>
@@ -323,13 +323,13 @@
                                                 </h5>
                                                 <div class="tab-content" id="total-uniquevisits-tab-content">
                                                     <div class="tab-pane fade show active" id="total-uniquevisits-tab-1" role="tabpanel" aria-labelledby="total-uniquevisits-tab-1">
-                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="1943">0</span>
+                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20" data-count="" id="pizza_hut_semana">0</span>
                                                     </div>
                                                     <div class="tab-pane fade" id="total-uniquevisits-tab-2" role="tabpanel" aria-labelledby="total-uniquevisits-tab-2">
-                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="3213">0</span>
+                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20" data-count="" id="pizza_hut_mes">0</span>
                                                     </div>
                                                     <div class="tab-pane fade" id="total-uniquevisits-tab-3" role="tabpanel" aria-labelledby="total-visits-tab-3">
-                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="7713">0</span>
+                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20" data-count="" id="pizza_hut_anio">0</span>
                                                     </div>
                                                 </div>
 
@@ -357,13 +357,13 @@
                                                 </h5>
                                                 <div class="tab-content" id="total-uniquevisits-tab-content">
                                                     <div class="tab-pane fade show active" id="total-other-tab-1" role="tabpanel" aria-labelledby="total-other-tab-1">
-                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="1245">0</span>
+                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="">0</span>
                                                     </div>
                                                     <div class="tab-pane fade" id="total-other-tab-2" role="tabpanel" aria-labelledby="total-other-tab-2">
-                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="3213">0</span>
+                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="">0</span>
                                                     </div>
                                                     <div class="tab-pane fade" id="total-other-tab-3" role="tabpanel" aria-labelledby="other-tab-3">
-                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="7713">0</span>
+                                                        <span class="card-title text-white font-size-40 font-w-300 p-l-20 counter" data-count="">0</span>
                                                     </div>
                                                 </div>
 
@@ -383,142 +383,8 @@
                                                 </ul>
                                             </div>
                                             <div class="card-body">
-                                                <div class="table-responsive">
-                                                    <table id="recent-transaction-table" class="table table-striped table-bordered" style="width:100%">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>GESTOR</th>
-                                                                <th>CLIENTE</th>
-                                                                <th>FECHA</th>
-                                                                <th>PAGO</th>
-                                                                <th class="no-sort">ACCIONES</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>GESTOR 1</td>
-                                                                <td></td>
-                                                                <td>06/25/18 16:43:00</td>
-                                                                <td>$650</td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 2</td>
-                                                                <td></td>
-                                                                <td>06/25/18 16:43:00</td>
-                                                                <td>$550</td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 2</td>
-                                                                <td></td>
-                                                                <td>06/25/18 16:43:00</td>
-                                                                <td>$550</td>
-
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 3</td>
-                                                                <td></td>
-                                                                <td>06/24/18 16:43:00</td>
-                                                                <td>$950</td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 1</td>
-                                                                <td></td>
-                                                                <td>06/24/18 16:43:00</td>
-                                                                <td>$250</td>
-
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 2</td>
-                                                                <td></td>
-                                                                <td>06/23/18 16:43:00</td>
-                                                                <td>$900</td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 3</td>
-                                                                <td></td>
-                                                                <td>06/23/18 16:43:00</td>
-                                                                <td>$830</td>
-
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 2</td>
-                                                                <td></td>
-                                                                <td>06/21/18 16:43:00</td>
-                                                                <td>$230</td>
-
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 3</td>
-                                                                <td></td>
-                                                                <td>06/21/18 16:43:00</td>
-                                                                <td>$1,034</td>
-
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 2</td>
-                                                                <td></td>
-                                                                <td>06/21/18 16:43:00</td>
-                                                                <td>$5,300</td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 1</td>
-                                                                <td></td>
-                                                                <td>06/15/18 16:43:00</td>
-                                                                <td>$650</td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 3</td>
-                                                                <td></td>
-                                                                <td>06/15/18 16:43:00</td>
-                                                                <td>$650</td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GESTOR 1</td>
-                                                                <td></td>
-                                                                <td>06/14/18 16:43:00</td>
-                                                                <td>$650</td>
-                                                                <td>
-                                                                    <a href="javascript:void(0)"><i class="icon dripicons-download"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                <div class="table-responsive" id="outer_pagos">
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -534,69 +400,8 @@
                                             </div>
                                             <div class="card-body p-0">
                                                 <div class="tab-content" id="pills-tabContent-sales">
-                                                    <div class="tab-pane fade show active" id="sales-month-tab" role="tabpanel" aria-labelledby="sales-month-tab">
-                                                        <table class="table v-align-middle">
-                                                            <thead class="bg-light">
-                                                                <tr>
-                                                                    <th class="p-l-20">Cliente</th>
-                                                                    <th>Consumo Total</th>
-                                                                    <th>Fecha Consumo</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong class="nowrap">Robert Norris</strong>
-                                                                    </td>
-                                                                    <td>$37,000</td>
-                                                                    <td>06/25/18</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong class="nowrap">Shawna Cohen</strong></td>
-                                                                    <td>$27,600</td>
-                                                                    <td>06/25/18</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong class="nowrap">Darrin Todd</strong></td>
-                                                                    <td>$23,200</td>
-
-                                                                    <td>06/25/18</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong class="nowrap">Michelle White</strong></td>
-                                                                    <td>$19,300</td>
-
-                                                                    <td>06/25/18</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong class="nowrap">Josh Lynch</strong></td>
-                                                                    <td>$18,500</td>
-                                                                    <td>06/25/18</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong class="nowrap">Jason Kendall</strong></td>
-                                                                    <td>$16,300</td>
-                                                                    <td>06/25/18</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong class="nowrap">Aaron Elliott</strong></td>
-                                                                    <td>$8,300</td>
-                                                                    <td>06/25/18</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="border-none">
-                                                                        <strong class="nowrap">Rebecca Harris</strong></td>
-                                                                    <td class="border-none">$4,000</td>
-                                                                    <td>06/25/18</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                    <div class="tab-pane fade show active" id="sales-month-tab" role="tabpanel" aria-labelledby="sales-month-tab" >
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -670,7 +475,6 @@
 <script src="./assets/js/cards/total-visits-chart.js"></script>
 <script src="./assets/js/cards/total-unique-visits-chart.js"></script>
 <script src="./assets/js/cards/other-chart.js"></script>
-<script src="./assets/js/cards/recent-transactions.js"></script>
 
 <script src="./assets/js/cards/traffic-sources.js"></script>
 <script src="./assets/js/cards/deuda-chart.js"></script>
@@ -681,6 +485,8 @@
 <script src="./assets/vendor/c3/c3.min.js"></script>
 
 <script src="./ajax/dashboard/cartera.js"></script>
+<script src="./ajax/dashboard/ventas.js"></script>
+
 
 <script src="./assets/vendor/chart.js/dist/Chart.bundle.min.js"></script>
 <script src="./assets/js/charts/chartjs-init.js"></script>

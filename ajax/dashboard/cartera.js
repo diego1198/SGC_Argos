@@ -524,8 +524,8 @@ function PieCartera() {
                 bindto: "#total-revenue",
                 data: {
                     columns: [
-                        ["Cobrado", datos.Cartera],
-                        ["Por Cobrar", datos.Pagos]
+                        ["Cobrado", datos.Pagos],
+                        ["Por Cobrar", datos.Cartera]
                     ],
 
                     type: "donut"
