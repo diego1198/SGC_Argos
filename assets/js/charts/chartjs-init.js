@@ -5,62 +5,11 @@
 // Dependency File(s): assets/vendor/chart.js/dist/Chart.bundle.min.js
 // -----------------------------------------------------------------------------
 
-(function(window, document, $, undefined) {
-	  "use strict";
-	$(function() {
+(function (window, document, $, undefined) {
+	"use strict";
+	$(function () {
 
-		if ($('#chartjs_lineChart').length) {
-			var ctx = document.getElementById('chartjs_lineChart').getContext('2d');
-			var myChart = new Chart(ctx, {
-				type: 'line',
-				data: {
-					labels: ["ENE","FEB","MAR","ABR","JUN","JUL","AGO","SEP","OCT","NOV","DIC"],
-					datasets: [{
-						label: 'Fridays',
-						data: [12, 19, 3, 17, 28, 24, 7,6,12,17,11,12],
-						backgroundColor: "rgba(57, 154, 242,0.2)",
-						borderColor: "rgba(57, 154, 242,0.3)",
-						borderWidth: .6
-					}, {
-						label: 'Pizza Hut',
-						data: [30, 29, 5, 5, 20, 3, 10,12,6,23,15,19],
-						backgroundColor: "rgba(255, 92, 117,0.2)",
-						borderColor: "rgba(255, 92, 117,0.3)",
-						borderWidth: .6
-					}, {
-						label: 'Otro',
-						data: [10, 24, 8, 11, 20, 14, 17,10,25,2,13,15],
-						backgroundColor: "rgba(47, 191, 60,0.2)",
-						borderColor: "rgba(47, 191, 60,0.3)",
-						borderWidth: .6
-					}]
-				}
-			});
-		}
-
-
-		if ($('#chartjs_barChart').length) {
-			var ctx = document.getElementById("chartjs_barChart").getContext('2d');
-			var myChart = new Chart(ctx, {
-				type: 'bar',
-				data: {
-					labels: ["1","2","3","4","1","2","3","4","1","2","3","4"],
-					datasets: [{
-						label: 'Fridays',
-						data: [12, 19, 3, 17, 28, 24, 7,6,12,17,11,12],
-						backgroundColor: "rgba(57, 154, 242,0.4)"
-					}, {
-						label: 'Pizza Hut',
-						data: [30, 29, 5, 5, 20, 3, 10,12,6,23,15,19],
-						backgroundColor: "rgba(255, 92, 117,0.4)"
-					},{
-						label: 'Otros',
-						data: [12, 19, 3, 17, 28, 24, 7,12,20,6,5,15],
-						backgroundColor: "rgba(47, 191, 60,0.4)"
-					}]
-				}
-			});
-		}
+		
 
 		if ($('#chartjs_radarChart').length) {
 			var ctx = document.getElementById("chartjs_radarChart");

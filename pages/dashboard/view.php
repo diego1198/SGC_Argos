@@ -171,7 +171,7 @@
                                                         <div class="icon-rounded icon-rounded-success float-left m-r-20">
                                                             <i class="la la-dollar f-w-600"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="" id="valor_cartera_30"></h5>
+                                                        <h5 class="card-title m-b-5 prepend-currency" data-count="" id="valor_cartera_30"></h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Cartera 30 días
                                                         </h6>
@@ -188,7 +188,7 @@
                                                         <div class="icon-rounded icon-rounded-info float-left m-r-20">
                                                             <i class="la la-dollar f-w-600"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="" id="valor_cartera_60"></h5>
+                                                        <h5 class="card-title m-b-5 prepend-currency" data-count="" id="valor_cartera_60"></h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Cartera 60 días
                                                         </h6>
@@ -205,7 +205,7 @@
                                                         <div class="icon-rounded icon-rounded-secondary float-left m-r-20">
                                                             <i class="la la-dollar f-w-600"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="" id="valor_cartera_90"></h5>
+                                                        <h5 class="card-title m-b-5 prepend-currency" data-count="" id="valor_cartera_90"></h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Cartera 90 días
                                                         </h6>
@@ -222,7 +222,7 @@
                                                         <div class="icon-rounded icon-rounded-primary float-left m-r-20">
                                                             <i class="la la-dollar f-w-600"></i>
                                                         </div>
-                                                        <h5 class="card-title m-b-5 counter prepend-currency" data-count="" id="valor_cartera_91"></h5>
+                                                        <h5 class="card-title m-b-5 prepend-currency" data-count="" id="valor_cartera_91"></h5>
                                                         <h6 class="text-muted m-t-10">
                                                             Cartera +90 días
                                                         </h6>
@@ -434,13 +434,13 @@
                                             <div class="card-footer">
                                                 <div class="row">
                                                     <div class="col-sm-2 offset-md-2">
-                                                        <h5 class="font-size-20">Mes 1</h5>
+                                                        <h5 class="font-size-20" id="mes3">Mes 1</h5>
                                                     </div>
                                                     <div class="col-sm-2 offset-md-2">
-                                                        <h5 class="font-size-20">Mes 2</h5>
+                                                        <h5 class="font-size-20" id="mes2">Mes 2</h5>
                                                     </div>
                                                     <div class="col-sm-2 offset-md-2">
-                                                        <h5 class="font-size-20">Mes 3</h5>
+                                                        <h5 class="font-size-20" id="mes1">Mes 3</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -484,9 +484,11 @@
 <script src="./assets/vendor/echarts/echarts-all-3.js"></script>
 <script src="./assets/vendor/c3/c3.min.js"></script>
 
+<script src="./assets/vendor/chart.js/dist/Chart.bundle.min.js"></script>
+
 <script src="./ajax/dashboard/cartera.js"></script>
 <script src="./ajax/dashboard/ventas.js"></script>
+<script src="./ajax/dashboard/estadisticas.js"></script>
 
 
-<script src="./assets/vendor/chart.js/dist/Chart.bundle.min.js"></script>
 <script src="./assets/js/charts/chartjs-init.js"></script>

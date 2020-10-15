@@ -51,6 +51,8 @@ function getGestiones() {
                                 width: $('#pendientes_porcentaje').attr('data-count') + '%'
                             }, 400);
 
+                            load_data()
+
                         }
                     });
 
@@ -70,8 +72,6 @@ function load_data() {
             numAnim.start();
         });
     }
-
-
 }
 
 function load_cartera30() {
@@ -486,6 +486,11 @@ function getCarteraMes() {
             $('#valor_cartera_90').attr('data-count', data[2])
             $('#valor_cartera_91').attr('data-count', data[3])
 
+            $('#valor_cartera_30').html(data[0])
+            $('#valor_cartera_60').html(data[1])
+            $('#valor_cartera_90').html(data[2])
+            $('#valor_cartera_91').html(data[3])
+
             $('#valor_cartera_30_porcentaje').attr('data-count', (data[0] * 100) / total)
             $('#valor_cartera_60_porcentaje').attr('data-count', (data[1] * 100) / total)
             $('#valor_cartera_90_porcentaje').attr('data-count', (data[2] * 100) / total)
@@ -504,9 +509,7 @@ function getCarteraMes() {
                 width: $('#valor_cartera_91_porcentaje').attr('data-count') + '%'
             }, 400);
 
-            setTimeout(() => {
-                load_data()
-            }, 1000);
+            
 
         }
     });

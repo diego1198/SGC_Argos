@@ -105,30 +105,32 @@ switch ($action) {
         $res = mysqli_query($mysqli, $query);
 
     ?>
-        <table class="table v-align-middle">
-            <thead class="bg-light">
-                <tr>
-                    <th class="p-l-20">Cliente</th>
-                    <th>Consumo Total</th>
-                    <th>Fecha Ultimo Consumo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                while ($row = mysqli_fetch_array($res)) { ?>
+        <div class="table-responsive">
+            <table class="table v-align-middle">
+                <thead class="bg-light">
                     <tr>
-                        <td>
-                            <strong class="nowrap"><?php echo $row['cli_descripcion']?></strong>
-                        </td>
-                        <td><?php echo $row['total']?></td>
-                        <td><?php echo $row['ultimo_consumo']?></td>
+                        <th class="p-l-20">Cliente</th>
+                        <th>Consumo Total</th>
+                        <th>Fecha Ultimo Consumo</th>
                     </tr>
-                <?php
-                }
-                ?>
+                </thead>
+                <tbody>
+                    <?php
+                    while ($row = mysqli_fetch_array($res)) { ?>
+                        <tr>
+                            <td>
+                                <strong class="nowrap"><?php echo $row['cli_descripcion'] ?></strong>
+                            </td>
+                            <td><?php echo $row['total'] ?></td>
+                            <td><?php echo $row['ultimo_consumo'] ?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
 <?php
 
         break;
