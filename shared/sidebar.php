@@ -36,7 +36,7 @@ switch ($permisos) {
                                                 } ?>">
                             <a class="has-arrow" href="?module=dashboard" aria-expanded="false"><i class="icon dripicons-meter"></i><span>Dashboard</span></a>
                         </li>
-                        <li class="nav-dropdown <?php if ($_GET['module'] == 'gestiones') {
+                        <li class="nav-dropdown <?php if ($_GET['module'] == 'gestiones' || $_GET['module'] == 'nueva_gestion') {
                                                     echo 'active';
                                                 } ?>">
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-document-edit"></i><span>Gestiones</span></a>

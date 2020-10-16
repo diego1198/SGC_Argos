@@ -1,6 +1,8 @@
 $(document).ready(function () {
     var id_cliente = $('#id_cartera').val()
     load_datos(id_cliente);
+    load_gestiones();
+    load_pagos();
 });
 
 function load_datos(id) {
@@ -47,7 +49,52 @@ function load_consumos() {
         success: function (response) {
             $('#outer_consumos').html(response);
             $('#table_consumos').dataTable({
-                "pageLength": 5
+                "pageLength": 5,
+                "lengthMenu": [5, 10, 20, 50],
+                "order": [[ 0, "desc" ]]
+            });
+        }
+    });
+}
+
+function load_gestiones(){
+    var id_cartera = $('#id_cartera').val();
+    $.ajax({
+        type: "GET",
+        url: "ajax/gestiones/gestiones.php?action=gestiones&id_cartera="+id_cartera,
+        success: function (response) {
+            $('#outer_gestiones').html(response);
+            $('#table_gestiones').dataTable({
+                "pageLength": 5,
+                "lengthMenu": [5, 10, 20, 50],
+                "order": [[ 0, "desc" ]]
+            });
+        }
+    });
+}
+
+function ver_observacion(id){
+    $('#modal_observacion').modal('show');
+    $.ajax({
+        type: "GET",
+        url: "ajax/gestiones/gestiones.php?action=observacion&id="+id,
+        success: function (response) {
+            $('#content_observacion').html(response)
+        }
+    });
+}
+
+function load_pagos(){
+    var id_cartera = $('#id_cartera').val();
+    $.ajax({
+        type: "GET",
+        url: "ajax/gestiones/gestiones.php?action=pagos&id_cartera="+id_cartera,
+        success: function (response) {
+            $('#outer_pagos').html(response);
+            $('#table_pagos').dataTable({
+                "pageLength": 5,
+                "lengthMenu": [5, 10, 20, 50],
+                "order": [[ 0, "desc" ]]
             });
         }
     });

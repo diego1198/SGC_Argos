@@ -82,6 +82,7 @@ switch ($action) {
                             <th>Dia Corte</th>
                             <th>Valor a Pagar</th>
                             <th>Pago</th>
+                            <th>Valor Pendiente</th>
                             <th>Estado</th>
                             <th>Fecha Ult. Gestión</th>
                             <th>Acciones</th>
@@ -120,6 +121,7 @@ switch ($action) {
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['cli_valor_pagar'] ?></td>
                                 <td><?php echo $totalPago; ?></td>
+                                <td><?php echo $row['cli_valor_pagar'] - $totalPago ?></td>
                                 <td><?php echo $estado ?></td>
                                 <td><?php echo $rowUltGes['ges_fecha']; ?></td>
                                 <td>
@@ -213,9 +215,9 @@ switch ($action) {
                         while ($row = mysqli_fetch_array($result)) {
                             if ($fecha_actual > $row['com_fecha']) {
                                 $subestado = "<span class='badge badge-pill badge-danger border-radius'>Incumplimiento</span>";
-                            } else if($fecha_actual == $row['com_fecha']){
+                            } else if ($fecha_actual == $row['com_fecha']) {
                                 $subestado = "<span class='badge badge-pill badge-info border-radius'>Vence Hoy</span>";
-                            }else {
+                            } else {
                                 $subestado = "<span class='badge badge-pill badge-warning border-radius'>Pendiente</span>";
                             }
 
@@ -358,9 +360,9 @@ switch ($action) {
         $resultTotal = mysqli_query($mysqli, $queryTotal);
         $row = mysqli_fetch_array($resultTotal);
 
-        $resutlPago = mysqli_query($mysqli,$queryPagos);
+        $resutlPago = mysqli_query($mysqli, $queryPagos);
         $rowPag = mysqli_fetch_array($resutlPago);
-        echo $row['valor_pagar'] - $rowPag['monto_pagado']; 
+        echo $row['valor_pagar'] - $rowPag['monto_pagado'];
         break;
 
     case 'consumos':
@@ -422,7 +424,7 @@ switch ($action) {
             </tbody>
         </table>
 
-<?php
+    <?php
         break;
     case 'observacion':
         $id = $_GET['id'];
@@ -432,6 +434,84 @@ switch ($action) {
         $row = mysqli_fetch_array($res);
 
         echo $row['ges_observacion'];
+        break;
+    case 'gestiones':
+        $id_cartera  = $_GET['id_cartera'];
+        $query = "SELECT * from cartera c,gestion g,usuario u 
+        where c.car_id = g.car_id and c.car_id = '$id_cartera' 
+        and g.us_id = u.id_user
+        order by g.ges_fecha desc";
+        $res = mysqli_query($mysqli, $query);
+    ?>
+        <table class="table table-bordered table-hover" id="table_gestiones">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Tipo Gestión</th>
+                    <th>Contacto</th>
+                    <th>Respuesta</th>
+                    <th>Num. Contacto</th>
+                    <th>Gestor</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while ($row = mysqli_fetch_array($res)) { ?>
+                    <tr>
+                        <td><?php echo $row['ges_fecha']; ?></td>
+                        <td><?php echo $row['ges_tipo_gestion']; ?></td>
+                        <td><?php echo $row['ges_tipo_contacto']; ?></td>
+                        <td><?php echo $row['ges_respuesta']; ?></td>
+                        <td><?php echo $row['ges_contacto']; ?></td>
+                        <td><?php echo $row['name_user']; ?></td>
+                        <td>
+                            <a data-toggle='tooltip' data-placement='top' title='Ver Observación' class='btn btn-success btn-md' onclick="ver_observacion(<?php echo $row['ges_id'] ?>)">
+                                <i style='color:#fff' class='icon dripicons-article'></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    <?php
+        break;
+    case 'pagos':
+        $id_cartera  = $_GET['id_cartera'];
+        $query = "SELECT * from cartera c,gestion g,usuario u,pago p 
+        where c.car_id = g.car_id and c.car_id = '$id_cartera' 
+        and g.us_id = u.id_user and g.pag_id = p.pag_id
+        order by g.ges_fecha desc";
+        $res = mysqli_query($mysqli, $query);
+    ?>
+        <table class="table table-bordered table-hover" id="table_pagos">
+            <thead>
+                <tr>
+                    <th>Fecha Pago</th>
+                    <th>Monto</th>
+                    <th>Observación</th>
+                    <th>Gestor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while ($row = mysqli_fetch_array($res)) { ?>
+                    <tr>
+                        <td><?php echo $row['pag_fecha']; ?></td>
+                        <td><?php echo $row['pag_monto']; ?></td>
+                        <td><?php echo $row['pag_observacion']; ?></td>
+                        <td><?php echo $row['name_user']; ?></td>
+                    </tr>
+
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+<?php
         break;
     default:
         # code...

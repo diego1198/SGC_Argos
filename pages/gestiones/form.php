@@ -171,11 +171,50 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Detalle de Consumo</h5>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="table-responsive" id="outer_consumos">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <ul class="nav nav-pills nav-pills-info mb-3" id="pills-demo-2" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="pills-4-tab" data-toggle="pill" href="#pills-consumos" role="tab" aria-controls="pills-4" aria-selected="true"><i class="la la-cart-arrow-down"></i>Consumo</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="pills-5-tab" data-toggle="pill" href="#pills-gestiones" role="tab" aria-controls="pills-5" aria-selected="false"><i class="la la-file"></i>Gestiones</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="pills-6-tab" data-toggle="pill" href="#pills-pagos" role="tab" aria-controls="pills-6" aria-selected="false"><i class="la la-usd"></i>Pagos</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content" id="pills-tabContent-2">
+                                                <div class="tab-pane fade show active" id="pills-consumos" role="tabpanel" aria-labelledby="pills-4">
+                                                    <h5 class="card-header">Detalle de Consumos</h5>
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="table-responsive" id="outer_consumos">
 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="pills-gestiones" role="tabpanel" aria-labelledby="pills-5">
+                                                    <h5 class="card-header">Detalle de Gestiones</h5>
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="table-responsive" id="outer_gestiones">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="pills-pagos" role="tabpanel" aria-labelledby="pills-6">
+                                                    <h5 class="card-header">Detalle de Pagos</h5>
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="table-responsive" id="outer_pagos">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -188,4 +227,7 @@
         </div>
     </section>
 </div>
+<?php
+    include('modal/observacion.php')
+?>
 <script src="js/form_gestion.js"></script>
