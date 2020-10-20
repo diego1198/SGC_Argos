@@ -43,8 +43,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo utf8_decode($row['cli_descripcion']); ?></td>
-                                <td><?php echo utf8_decode($row['cli_contacto']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['cli_valor_pagar']; ?></td>
                                 <td><?php echo $rowUltGes['ges_fecha']; ?></td>
@@ -99,8 +99,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo utf8_decode($row['cli_descripcion']); ?></td>
-                                <td><?php echo utf8_decode($row['cli_contacto']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['cli_valor_pagar']; ?></td>
                                 <td><?php echo $rowUltGes['ges_fecha']; ?></td>
@@ -172,8 +172,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo utf8_decode($row['cli_descripcion']); ?></td>
-                                <td><?php echo utf8_decode($row['cli_contacto']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['cli_valor_pagar'] ?></td>
                                 <td><?php echo $totalPago; ?></td>
@@ -223,8 +223,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo utf8_decode($row['cli_descripcion']); ?></td>
-                                <td><?php echo utf8_decode($row['cli_contacto']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_valor_pagar']; ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td>
@@ -281,8 +281,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo utf8_decode($row['cli_descripcion']); ?></td>
-                                <td><?php echo utf8_decode($row['cli_contacto']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['com_fecha']; ?></td>
                                 <td><?php echo $row['com_monto']; ?></td>
