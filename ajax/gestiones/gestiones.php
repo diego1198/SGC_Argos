@@ -43,8 +43,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo $row['cli_descripcion']; ?></td>
-                                <td><?php echo $row['cli_contacto']; ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['cli_valor_pagar']; ?></td>
                                 <td><?php echo $rowUltGes['ges_fecha']; ?></td>
@@ -99,8 +99,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo $row['cli_descripcion']; ?></td>
-                                <td><?php echo $row['cli_contacto']; ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['cli_valor_pagar']; ?></td>
                                 <td><?php echo $rowUltGes['ges_fecha']; ?></td>
@@ -172,8 +172,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo $row['cli_descripcion']; ?></td>
-                                <td><?php echo $row['cli_contacto']; ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['cli_valor_pagar'] ?></td>
                                 <td><?php echo $totalPago; ?></td>
@@ -223,8 +223,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo $row['cli_descripcion']; ?></td>
-                                <td><?php echo $row['cli_contacto']; ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_valor_pagar']; ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td>
@@ -281,8 +281,8 @@ switch ($action) {
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $row['cli_ciudad']; ?></td>
-                                <td><?php echo $row['cli_descripcion']; ?></td>
-                                <td><?php echo $row['cli_contacto']; ?></td>
+                                <td><?php echo utf8_encode($row['cli_descripcion']); ?></td>
+                                <td><?php echo utf8_encode($row['cli_contacto']); ?></td>
                                 <td><?php echo $row['cli_dia_corte']; ?></td>
                                 <td><?php echo $row['com_fecha']; ?></td>
                                 <td><?php echo $row['com_monto']; ?></td>
@@ -312,6 +312,9 @@ switch ($action) {
 
         break;
     case 'cliente':
+
+        $array = array();
+
         $id_car = $_GET['id'];
 
         $query = "SELECT cli.*,car.car_fecha_inicio,car.car_fecha_fin 
@@ -321,7 +324,18 @@ switch ($action) {
 
         $row = mysqli_fetch_array($result);
 
-        echo json_encode($row);
+        $array['cli_ciudad']=utf8_encode($row['cli_ciudad']);
+        $array['cli_descripcion']=utf8_encode($row['cli_descripcion']);
+        $array['cli_dia_corte']=utf8_encode($row['cli_dia_corte']);
+        $array['cli_telefono']=utf8_encode($row['cli_telefono']);
+        $array['cli_contacto']=utf8_encode($row['cli_contacto']);
+        $array['cli_email']=utf8_encode($row['cli_email']);
+        $array['cli_telefono']=utf8_encode($row['cli_telefono']);
+        $array['cli_id']=utf8_encode($row['cli_id']);
+        $array['car_fecha_inicio']=utf8_encode($row['car_fecha_inicio']);
+        $array['car_fecha_fin']=utf8_encode($row['car_fecha_fin']);
+
+        echo json_encode($array);
         break;
 
     case 'save':

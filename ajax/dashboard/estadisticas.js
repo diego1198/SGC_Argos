@@ -21,13 +21,12 @@ function loadMarcas(marca) {
                     for (let index = 0; index < dataFridays.length; index++) {
                         dataFridays[index] = parseFloat(dataFridays[index]);
                     }
-
                     if ($('#chartjs_lineChart').length) {
                         var ctx = document.getElementById('chartjs_lineChart').getContext('2d');
                         var myChart = new Chart(ctx, {
                             type: 'line',
                             data: {
-                                labels: ["ENE", "FEB", "MAR", "ABR", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"],
+                                labels: ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"],
                                 datasets: [{
                                     label: 'Fridays',
                                     data: dataFridays,
