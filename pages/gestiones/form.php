@@ -108,11 +108,16 @@
                                                                 <option value="pago">Registro de Pago</option>
                                                                 <option value="compromiso">Compromiso de Pago</option>
                                                                 <option value="no_contactado">No Contactado</option>
+                                                                <option value="notificacion">Notificación</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-lg-6" id="telefono_contacto">
                                                             <label for="">Número de Contacto</label>
-                                                            <input type="number" class="form-control" placeholder="Número de contacto" id="numero_contacto" name="numero_contacto" required>
+                                                            <input type="number" class="form-control" placeholder="Número de contacto" id="numero_contacto" name="numero_contacto">
+                                                        </div>
+                                                        <div class="col-lg-6" style="display:none" id="email_form">
+                                                            <label for="">Email de Contacto</label>
+                                                            <input type="email" class="form-control" placeholder="Email de contacto" id="email_contacto" name="email_contacto">
                                                         </div>
                                                     </div>
                                                 </div>

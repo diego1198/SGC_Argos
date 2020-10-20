@@ -27,7 +27,7 @@ function load_datos(id) {
 
             $.ajax({
                 type: "GET",
-                url: "ajax/gestiones/gestiones.php?action=total&id=" + id_cliente + "&fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin +"&id_cartera="+id,
+                url: "ajax/gestiones/gestiones.php?action=total&id=" + id_cliente + "&fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin + "&id_cartera=" + id,
                 success: function (response) {
                     $('#total_deuda').val(response)
                 }
@@ -51,50 +51,50 @@ function load_consumos() {
             $('#table_consumos').dataTable({
                 "pageLength": 5,
                 "lengthMenu": [5, 10, 20, 50],
-                "order": [[ 0, "desc" ]]
+                "order": [[0, "desc"]]
             });
         }
     });
 }
 
-function load_gestiones(){
+function load_gestiones() {
     var id_cartera = $('#id_cartera').val();
     $.ajax({
         type: "GET",
-        url: "ajax/gestiones/gestiones.php?action=gestiones&id_cartera="+id_cartera,
+        url: "ajax/gestiones/gestiones.php?action=gestiones&id_cartera=" + id_cartera,
         success: function (response) {
             $('#outer_gestiones').html(response);
             $('#table_gestiones').dataTable({
                 "pageLength": 5,
                 "lengthMenu": [5, 10, 20, 50],
-                "order": [[ 0, "desc" ]]
+                "order": [[0, "desc"]]
             });
         }
     });
 }
 
-function ver_observacion(id){
+function ver_observacion(id) {
     $('#modal_observacion').modal('show');
     $.ajax({
         type: "GET",
-        url: "ajax/gestiones/gestiones.php?action=observacion&id="+id,
+        url: "ajax/gestiones/gestiones.php?action=observacion&id=" + id,
         success: function (response) {
             $('#content_observacion').html(response)
         }
     });
 }
 
-function load_pagos(){
+function load_pagos() {
     var id_cartera = $('#id_cartera').val();
     $.ajax({
         type: "GET",
-        url: "ajax/gestiones/gestiones.php?action=pagos&id_cartera="+id_cartera,
+        url: "ajax/gestiones/gestiones.php?action=pagos&id_cartera=" + id_cartera,
         success: function (response) {
             $('#outer_pagos').html(response);
             $('#table_pagos').dataTable({
                 "pageLength": 5,
                 "lengthMenu": [5, 10, 20, 50],
-                "order": [[ 0, "desc" ]]
+                "order": [[0, "desc"]]
             });
         }
     });
@@ -116,10 +116,23 @@ $('#respuesta').change(function (e) {
     } else if ($('#respuesta').val() == 'compromiso') {
         $('#form_pago').hide('slow')
         $('#form_compromiso').show('slow')
-    } else {
+    }
+    else {
         $('#form_pago').hide('slow')
         $('#form_compromiso').hide('slow')
     }
+});
+
+$('#tipo_gestion').change(function (e) {
+    if ($('#tipo_gestion').val() == 'correo') {
+        $('#email_form').show()
+        $('#telefono_contacto').hide()
+    } else {
+        $('#telefono_contacto').show()
+        $('#email_form').hide()
+    }
+    e.preventDefault();
+
 });
 
 $('#form_gestion').submit(function (e) {
@@ -128,21 +141,30 @@ $('#form_gestion').submit(function (e) {
     if ($('#tipo_gestion').val() != 0) {
         if ($('#tipo_contacto').val() != 0) {
             if ($('#respuesta').val() != 0) {
-                if ($('#monto').val() > $('#total_deuda').val()) {
-                    alert('No se puede pagar un monto mayor a la deuda')
+                if ($('#tipo_contacto').val() == 'email' && $('#email_contacto').val() == '') {
+                    alert('El email de contacto es requerido')
                 } else {
-                    var data = $(this).serialize();
-                    $.ajax({
-                        type: "POST",
-                        url: "ajax/gestiones/gestiones.php?action=save&id_car=" + car_id,
-                        data: data,
-                        success: function (response) {
-                            if (response == 'exito') {
-                                window.location.href = '?module=gestiones&cartera=30';
-                            }
+                    if ($('#tipo_contacto').val() == 'telefonica' && $('#numero_contacto').val() == '') {
+                        alert('El numero de contacto es requerido')
+                    } else {
+                        if (parseFloat($('#monto').val()) > parseFloat($('#total_deuda').val())) {
+                            alert('No se puede pagar un monto mayor a la deuda')
+                        } else {
+                            var data = $(this).serialize();
+                            $.ajax({
+                                type: "POST",
+                                url: "ajax/gestiones/gestiones.php?action=save&id_car=" + car_id,
+                                data: data,
+                                success: function (response) {
+                                    if (response == 'exito') {
+                                        window.location.href = '?module=gestiones&cartera=30';
+                                    }
+                                }
+                            });
                         }
-                    });
+                    }
                 }
+
 
             } else {
                 alert('Seleccione una respuesta')

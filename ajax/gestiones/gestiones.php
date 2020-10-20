@@ -66,6 +66,62 @@ switch ($action) {
 
             <?php
                 break;
+            case 'notificacion':
+                $query = "SELECT c.*,cli.* FROM cartera c, cliente cli where c.cli_id = cli.cli_id and c.car_estado = '$case' and c.car_tipo = '$cartera'";
+
+                $result = mysqli_query($mysqli, $query); ?>
+
+                <table id="table_<?php echo $case; ?>" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Ciudad</th>
+                            <th>Cliente</th>
+                            <th>Contacto</th>
+                            <th>Dia Corte</th>
+                            <th>Valor a Pagar</th>
+                            <th>Fecha Ult. Gestión</th>
+                            <th>Acciones</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $no = 1;
+                        while ($row = mysqli_fetch_array($result)) {
+                            $queryUltGes = "SELECT ges_id,ges_fecha from gestion where car_id = '$row[car_id]' order by ges_fecha desc";
+
+                            $resultUltGes = mysqli_query($mysqli, $queryUltGes);
+
+                            $rowUltGes = mysqli_fetch_array($resultUltGes);
+
+                        ?>
+                            <tr>
+                                <td><?php echo $no; ?></td>
+                                <td><?php echo $row['cli_ciudad']; ?></td>
+                                <td><?php echo $row['cli_descripcion']; ?></td>
+                                <td><?php echo $row['cli_contacto']; ?></td>
+                                <td><?php echo $row['cli_dia_corte']; ?></td>
+                                <td><?php echo $row['cli_valor_pagar']; ?></td>
+                                <td><?php echo $rowUltGes['ges_fecha']; ?></td>
+                                <td>
+                                    <a data-toggle='tooltip' data-placement='top' title='Gestionar' class='btn btn-success btn-md' href='?module=nueva_gestion&id=<?php echo $row['car_id'] ?>'>
+                                        <i style='color:#fff' class='icon dripicons-document-edit'></i>
+                                    </a>
+                                    <a data-toggle='modal' data-placement='top' title='Ver Observación' class='btn btn-info btn-md' onclick="ver_observacion(<?php echo $rowUltGes['ges_id']; ?>)">
+                                        <i style='color:#fff' class='icon dripicons-blog'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php
+                            $no++;
+                        }
+                        ?>
+                    </tbody>
+                </table>
+
+            <?php
+                break;
             case 'cobrada':
                 $query = "SELECT c.*,cli.* FROM cartera c, cliente cli,gestion g
                 where c.cli_id = cli.cli_id and c.car_estado = '$case' and g.car_id = c.car_id and c.car_tipo = '$cartera' group by c.car_id ";
@@ -275,7 +331,9 @@ switch ($action) {
         $tipo_gestion = $_POST['tipo_gestion'];
         $tipo_contacto = $_POST['tipo_contacto'];
         $respuesta = $_POST['respuesta'];
-        $numero_contacto = $_POST['numero_contacto'];
+        if(isset($_POST['numero_contacto'])){
+            $numero_contacto = $_POST['numero_contacto'];
+        }
         $observacion_gestion = $_POST['observacion_gestion'];
         $us_id = $_SESSION['id_user'];
         if ($respuesta == 'pago') {
@@ -286,6 +344,9 @@ switch ($action) {
             $monto_compromiso = $_POST['monto_compromiso'];
             $fecha_compromiso = $_POST['fecha_compromiso'];
             $estado = 'compromiso';
+        } else if($respuesta == 'notificacion'){
+            $estado = 'notificacion';
+            $email_contacto = $_POST['email_contacto'];
         }
         $id_pago = '';
         $id_com = '';
@@ -316,12 +377,16 @@ switch ($action) {
             $resCom = mysqli_query($mysqli, $queryCom) or die('error compromiso:' . mysqli_error($mysqli));
         }
 
+
         if ($estado == 'pendiente') {
             $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id)
             values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id')";
         } elseif ($estado == 'cobrada') {
             $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id,pag_id)
                         values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id','$id_pago')";
+        } else if($estado == 'notificacion'){
+            $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_email_contacto,ges_observacion,us_id,car_id)
+                        values('$tipo_gestion','$tipo_contacto','$respuesta','$email_contacto','$observacion_gestion','$us_id','$car_id')";
         } else {
             $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id,com_id)
                         values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id','$id_com')";

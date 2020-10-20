@@ -32,5 +32,14 @@ else {
 	elseif ($_GET['module'] == 'nueva_gestion') {
 		include "pages/gestiones/form.php";
 	}
+
+	elseif ($_GET['module'] == 'reportes') {
+		include "pages/reportes/view.php";
+	}
+
+	elseif ($_GET['module'] == 'excel') {
+		include "pages/reportes/excel.php";
+	}
+	
 }
 ?>

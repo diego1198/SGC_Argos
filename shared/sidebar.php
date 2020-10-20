@@ -53,16 +53,16 @@ switch ($permisos) {
                                                 } ?>">
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-to-do"></i><span>Reportes</span></a>
                             <ul class="collapse nav-sub">
-                                <li><a><span>Ventas por locales</span></a></li>
-                                <li><a><span>Reporte Cobranzas Anteriores</span></a></li>
-                                <li><a><span>Total Cobranza</span></a></li>
-                                <li><a><span>Detalle Cobranza</span></li>
-                                <li><a><span>Dinero por edades de cartera</span></a></li>
-                                <li><a><span>Cartera recuperada</span></a></li>
-                                <li><a><span>Cliente + Consumos</span></a></li>
-                                <li><a><span>Cliente - Consumos</span></a></li>
-                                <li><a><span>Detalle de cobranza por gestores</span></a></li>
-                                <li><a><span>Consumos del mes</span></a></li>
+                                <li><a href="?module=reportes&tipo=ventas por locales"><span>Ventas por locales</span></a></li>
+                                <li><a href="?module=reportes&tipo=cobranzas anteriores"><span>Reporte Cobranzas Anteriores</span></a></li>
+                                <li><a href="?module=reportes&tipo=total cobranza"><span>Total Cobranza</span></a></li>
+                                <li><a href="?module=reportes&tipo=detalle cobranza"><span>Detalle Cobranza</span></li>
+                                <li><a href="?module=reportes&tipo=dinero por edades de cartera"><span>Dinero por edades de cartera</span></a></li>
+                                <li><a href="?module=reportes&tipo=cartera recuperada"><span>Cartera recuperada</span></a></li>
+                                <li><a href="?module=reportes&tipo=cliente + consumos"><span>Cliente + Consumos</span></a></li>
+                                <li><a href="?module=reportes&tipo=cliente - consumos"><span>Cliente - Consumos</span></a></li>
+                                <li><a href="?module=reportes&tipo=cobranza por gestor"><span>Detalle de cobranza por gestores</span></a></li>
+                                <li><a href="?module=reportes&tipo=consumos del mes"><span>Consumos del mes</span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-header"><span>ADMINISTRACIÓN</span></li>
@@ -132,16 +132,16 @@ switch ($permisos) {
                                                 } ?>">
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-to-do"></i><span>Reportes</span></a>
                             <ul class="collapse nav-sub">
-                                <li><a><span>Ventas por locales</span></a></li>
-                                <li><a><span>Reporte Cobranzas Anteriores</span></a></li>
-                                <li><a><span>Total Cobranza</span></a></li>
-                                <li><a><span>Detalle Cobranza</span></li>
-                                <li><a><span>Dinero por edades de cartera</span></a></li>
-                                <li><a><span>Cartera recuperada</span></a></li>
-                                <li><a><span>Cliente + Consumos</span></a></li>
-                                <li><a><span>Cliente - Consumos</span></a></li>
-                                <li><a><span>Detalle de cobranza por gestores</span></a></li>
-                                <li><a><span>Consumos del mes</span></a></li>
+                                <li><a href="?module=reportes&tipo=ventas por locales"><span>Ventas por locales</span></a></li>
+                                <li><a href="?module=reportes&tipo=cobranzas anteriores"><span>Reporte Cobranzas Anteriores</span></a></li>
+                                <li><a href="?module=reportes&tipo=total cobranza"><span>Total Cobranza</span></a></li>
+                                <li><a href="?module=reportes&tipo=detalle cobranza"><span>Detalle Cobranza</span></li>
+                                <li><a href="?module=reportes&tipo=dinero por edades de cartera"><span>Dinero por edades de cartera</span></a></li>
+                                <li><a href="?module=reportes&tipo=cartera recuperada"><span>Cartera recuperada</span></a></li>
+                                <li><a href="?module=reportes&tipo=cliente + consumos"><span>Cliente + Consumos</span></a></li>
+                                <li><a href="?module=reportes&tipo=cliente - consumos"><span>Cliente - Consumos</span></a></li>
+                                <li><a href="?module=reportes&tipo=cobranza por gestor"><span>Detalle de cobranza por gestores</span></a></li>
+                                <li><a href="?module=reportes&tipo=consumos del mes"><span>Consumos del mes</span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-header"><span>ADMINISTRACIÓN</span></li>
@@ -206,16 +206,16 @@ switch ($permisos) {
                                                 } ?>">
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-to-do"></i><span>Reportes</span></a>
                             <ul class="collapse nav-sub">
-                                <li><a><span>Ventas por locales</span></a></li>
-                                <li><a><span>Reporte Cobranzas Anteriores</span></a></li>
-                                <li><a><span>Total Cobranza</span></a></li>
-                                <li><a><span>Detalle Cobranza</span></li>
-                                <li><a><span>Dinero por edades de cartera</span></a></li>
-                                <li><a><span>Cartera recuperada</span></a></li>
-                                <li><a><span>Cliente + Consumos</span></a></li>
-                                <li><a><span>Cliente - Consumos</span></a></li>
-                                <li><a><span>Detalle de cobranza por gestores</span></a></li>
-                                <li><a><span>Consumos del mes</span></a></li>
+                                <li><a href="?module=reportes&tipo=ventas por locales"><span>Ventas por locales</span></a></li>
+                                <li><a href="?module=reportes&tipo=cobranzas anteriores"><span>Reporte Cobranzas Anteriores</span></a></li>
+                                <li><a href="?module=reportes&tipo=total cobranza"><span>Total Cobranza</span></a></li>
+                                <li><a href="?module=reportes&tipo=detalle cobranza"><span>Detalle Cobranza</span></li>
+                                <li><a href="?module=reportes&tipo=dinero por edades de cartera"><span>Dinero por edades de cartera</span></a></li>
+                                <li><a href="?module=reportes&tipo=cartera recuperada"><span>Cartera recuperada</span></a></li>
+                                <li><a href="?module=reportes&tipo=cliente + consumos"><span>Cliente + Consumos</span></a></li>
+                                <li><a href="?module=reportes&tipo=cliente - consumos"><span>Cliente - Consumos</span></a></li>
+                                <li><a href="?module=reportes&tipo=cobranza por gestor"><span>Detalle de cobranza por gestores</span></a></li>
+                                <li><a href="?module=reportes&tipo=consumos del mes"><span>Consumos del mes</span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-header"><span>ADMINISTRACIÓN</span></li>
