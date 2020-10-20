@@ -394,17 +394,19 @@ switch ($action) {
 
         if ($estado == 'pendiente') {
             $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id)
-            values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id')";
+                        values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id')";
         } elseif ($estado == 'cobrada') {
             $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id,pag_id)
                         values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id','$id_pago')";
-        } else if($estado == 'notificacion'){
-            $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_email_contacto,ges_observacion,us_id,car_id)
-                        values('$tipo_gestion','$tipo_contacto','$respuesta','$email_contacto','$observacion_gestion','$us_id','$car_id')";
         } else {
             $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id,com_id)
                         values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id','$id_com')";
         }
+        
+        if($tipo_gestion == 'email'){
+            $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_email_contacto,ges_observacion,us_id,car_id)
+                        values('$tipo_gestion','$tipo_contacto','$respuesta','$email_contacto','$observacion_gestion','$us_id','$car_id')";
+        } 
 
 
         $res = mysqli_query($mysqli, $queryGestion) or die('error gestion:' . mysqli_error($mysqli));
@@ -530,6 +532,7 @@ switch ($action) {
                     <th>Contacto</th>
                     <th>Respuesta</th>
                     <th>Num. Contacto</th>
+                    <th>Email Contacto</th>
                     <th>Gestor</th>
                     <th>Acciones</th>
                 </tr>
@@ -543,6 +546,7 @@ switch ($action) {
                         <td><?php echo $row['ges_tipo_contacto']; ?></td>
                         <td><?php echo $row['ges_respuesta']; ?></td>
                         <td><?php echo $row['ges_contacto']; ?></td>
+                        <td><?php echo $row['ges_email_contacto']; ?></td>
                         <td><?php echo $row['name_user']; ?></td>
                         <td>
                             <a data-toggle='tooltip' data-placement='top' title='Ver Observación' class='btn btn-success btn-md' onclick="ver_observacion(<?php echo $row['ges_id'] ?>)">

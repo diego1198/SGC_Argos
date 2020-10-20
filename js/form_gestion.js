@@ -141,10 +141,10 @@ $('#form_gestion').submit(function (e) {
     if ($('#tipo_gestion').val() != 0) {
         if ($('#tipo_contacto').val() != 0) {
             if ($('#respuesta').val() != 0) {
-                if ($('#tipo_contacto').val() == 'email' && $('#email_contacto').val() == '') {
+                if ($('#tipo_gestion').val() == 'email' && $('#email_contacto').val() == '') {
                     alert('El email de contacto es requerido')
                 } else {
-                    if ($('#tipo_contacto').val() == 'telefonica' && $('#numero_contacto').val() == '') {
+                    if ($('#tipo_gestion').val() == 'telefonica' && $('#numero_contacto').val() == '') {
                         alert('El numero de contacto es requerido')
                     } else {
                         if (parseFloat($('#monto').val()) > parseFloat($('#total_deuda').val())) {
