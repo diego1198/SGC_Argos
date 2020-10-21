@@ -401,6 +401,9 @@ switch ($action) {
         } elseif ($estado == 'compromiso') {
             $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id,com_id)
                         values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id','$id_com')";
+        }else{
+            $queryGestion = "INSERT INTO gestion(ges_tipo_gestion,ges_tipo_contacto,ges_respuesta,ges_contacto,ges_observacion,us_id,car_id)
+                        values('$tipo_gestion','$tipo_contacto','$respuesta','$numero_contacto','$observacion_gestion','$us_id','$car_id')";
         }
         
         if($tipo_gestion == 'email'){
@@ -408,6 +411,7 @@ switch ($action) {
                         values('$tipo_gestion','$tipo_contacto','$respuesta','$email_contacto','$observacion_gestion','$us_id','$car_id')";
         } 
 
+        echo $queryGestion;
 
         $res = mysqli_query($mysqli, $queryGestion) or die('error gestion:' . mysqli_error($mysqli));
 
