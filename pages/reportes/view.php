@@ -29,12 +29,12 @@ $tipo = $_GET['tipo'];
                         <?php
                         switch ($tipo) {
                             case 'ventas por locales':
-                            ?>
+                        ?>
                                 <div class="row">
                                     <div class="col-sm-8 offset-sm-2">
                                         <form action="./pages/reportes/excel.php">
                                             <div class="row">
-                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo;?>">
+                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
                                                 <div class="col-sm-4">
                                                     <label for="">Fecha Inicio</label>
                                                     <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control">
@@ -65,17 +65,83 @@ $tipo = $_GET['tipo'];
                                 break;
                             case 'cobranzas anteriores':
                             ?>
-
+                                <div class="row">
+                                    <div class="col-sm-8 offset-sm-3">
+                                        <form action="./pages/reportes/excel.php">
+                                            <div class="row">
+                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Inicio</label>
+                                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Fin</label>
+                                                    <input type="date" name="fecha_fin" id="fecha_fin" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <br>
+                                                    <button type="submit" class="btn btn-info"><i class="icon dripicons-cloud-download" style="color:white"></i>Descargar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             <?php
                                 break;
                             case 'total cobranza':
                             ?>
-
+                                <div class="row">
+                                    <div class="col-sm-8 offset-sm-3">
+                                        <form action="./pages/reportes/excel.php">
+                                            <div class="row">
+                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Inicio</label>
+                                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Fin</label>
+                                                    <input type="date" name="fecha_fin" id="fecha_fin" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <br>
+                                                    <button type="submit" class="btn btn-info"><i class="icon dripicons-cloud-download" style="color:white"></i>Descargar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             <?php
                                 break;
                             case 'detalle cobranza':
                             ?>
-
+                                <div class="row">
+                                    <div class="col-sm-8 offset-sm-3">
+                                        <form action="./pages/reportes/excel.php">
+                                            <div class="row">
+                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Inicio</label>
+                                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Fin</label>
+                                                    <input type="date" name="fecha_fin" id="fecha_fin" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <br>
+                                                    <button type="submit" class="btn btn-info"><i class="icon dripicons-cloud-download" style="color:white"></i>Descargar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             <?php
                                 break;
                             case 'dinero por edades de cartera':
@@ -85,27 +151,128 @@ $tipo = $_GET['tipo'];
                                 break;
                             case 'cartera recuperada':
                             ?>
-
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <form action="./pages/reportes/excel.php">
+                                            <div class="row">
+                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <button type="submit" class="btn btn-info"><i class="icon dripicons-cloud-download" style="color:white"></i>Descargar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             <?php
                                 break;
-                            case 'cliente + consumos':
+                            case 'cliente consumos':
                             ?>
-
+                                <div class="row">
+                                    <div class="col-sm-8 offset-sm-3">
+                                        <form action="./pages/reportes/excel.php">
+                                            <div class="row">
+                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Inicio</label>
+                                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Fin</label>
+                                                    <input type="date" name="fecha_fin" id="fecha_fin" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <br>
+                                                    <button type="submit" class="btn btn-info"><i class="icon dripicons-cloud-download" style="color:white"></i>Descargar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             <?php
                                 break;
                             case 'cliente - consumos':
                             ?>
-
+                                <div class="row">
+                                    <div class="col-sm-8 offset-sm-3">
+                                        <form action="./pages/reportes/excel.php">
+                                            <div class="row">
+                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Inicio</label>
+                                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Fin</label>
+                                                    <input type="date" name="fecha_fin" id="fecha_fin" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <br>
+                                                    <button type="submit" class="btn btn-info"><i class="icon dripicons-cloud-download" style="color:white"></i>Descargar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             <?php
                                 break;
                             case 'cobranza por gestor':
                             ?>
-
+                                <div class="row">
+                                    <div class="col-sm-8 offset-sm-3">
+                                        <form action="./pages/reportes/excel.php">
+                                            <div class="row">
+                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Inicio</label>
+                                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="">Fecha Fin</label>
+                                                    <input type="date" name="fecha_fin" id="fecha_fin" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <br>
+                                                    <button type="submit" class="btn btn-info"><i class="icon dripicons-cloud-download" style="color:white"></i>Descargar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             <?php
                                 break;
                             case 'consumos del mes':
                             ?>
-
+                                <div class="row">
+                                    <div class="col-sm-8 offset-sm-2">
+                                        <form action="./pages/reportes/excel.php">
+                                            <div class="row">
+                                                <input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
+                                                <div class="col-sm-4">
+                                                    <label for="">Marca</label>
+                                                    <select name="marca" id="marca" class="form-control">
+                                                        <option value="0">Seleccione una marca</option>
+                                                        <option value="PIZZA HUT">PIZZA HUT</option>
+                                                        <option value="FRIDAYS">FRIDAYS</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <br>
+                                                    <button type="submit" class="btn btn-info"><i class="icon dripicons-cloud-download" style="color:white"></i>Descargar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                         <?php
                                 break;
                             default:
