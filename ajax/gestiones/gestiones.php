@@ -411,8 +411,6 @@ switch ($action) {
                         values('$tipo_gestion','$tipo_contacto','$respuesta','$email_contacto','$observacion_gestion','$us_id','$car_id')";
         } 
 
-        echo $queryGestion;
-
         $res = mysqli_query($mysqli, $queryGestion) or die('error gestion:' . mysqli_error($mysqli));
 
         if ($res) {
