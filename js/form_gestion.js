@@ -29,7 +29,7 @@ function load_datos(id) {
                 type: "GET",
                 url: "ajax/gestiones/gestiones.php?action=total&id=" + id_cliente + "&fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin + "&id_cartera=" + id,
                 success: function (response) {
-                    $('#total_deuda').val(response)
+                    $('#total_deuda').val(parseFloat(response).toFixed(2))
                 }
             });
 
@@ -104,7 +104,9 @@ $('#tipo_contacto').change(function (e) {
     e.preventDefault();
     if ($('#tipo_contacto').val() == 'no_contactado') {
         $("#respuesta option[value=no_contactado]").attr("selected", true);
-
+        $('#respuesta').attr("disabled",true)
+    }else{
+        $('#respuesta').attr("disabled",false)
     }
 });
 

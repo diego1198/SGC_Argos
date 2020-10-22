@@ -37,13 +37,21 @@
                                             <input type="text" name="contacto" id="contacto" readonly class="form-control" placeholder="Contacto">
                                         </div>
 
-                                        <div class="col-sm-8">
+                                        <div class="col-sm-6">
                                             <label for="">Email</label>
                                             <input type="text" name="email" id="email" readonly class="form-control" placeholder="Email">
                                         </div>
-                                        <div class="col-sm-8">
+                                        <div class="col-sm-6">
+                                            <label for="">Email 2</label>
+                                            <input type="text" name="email2" id="email2" readonly class="form-control" placeholder="Email 2">
+                                        </div>
+                                        <div class="col-sm-6">
                                             <label for="">Teléfono</label>
                                             <input type="text" name="telefono" id="telefono" readonly class="form-control" placeholder="Teléfono">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="">Teléfono 2</label>
+                                            <input type="text" name="telefono2" id="telefono2" readonly class="form-control" placeholder="Teléfono 2">
                                         </div>
                                     </div>
                                 </div>

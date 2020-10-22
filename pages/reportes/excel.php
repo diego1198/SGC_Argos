@@ -29,9 +29,17 @@ switch ($tipo) {
 
             $iva = 0.00;
 
-            $query = "SELECT loc_direccion, con_valor_total,con_iva,mar_descripcion from consumo c,local l,marca m 
-                    where c.loc_id = l.loc_id and c.con_fecha >= '$fechaini' and c.con_fecha<='$fechafin'
-                    and l.mar_id = m.mar_id and m.mar_descripcion = '$marca' group by l.loc_id";
+            if($marca == 'TODOS'){
+                $query = "SELECT loc_direccion, con_valor_total,con_iva,mar_descripcion from consumo c,local l,marca m 
+                where c.loc_id = l.loc_id and c.con_fecha >= '$fechaini' and c.con_fecha<='$fechafin'
+                and l.mar_id = m.mar_id group by l.loc_id";
+            }else{
+                $query = "SELECT loc_direccion, con_valor_total,con_iva,mar_descripcion from consumo c,local l,marca m 
+                where c.loc_id = l.loc_id and c.con_fecha >= '$fechaini' and c.con_fecha<='$fechafin'
+                and l.mar_id = m.mar_id and m.mar_descripcion = '$marca' group by l.loc_id";
+            }
+
+            
 
             $result = mysqli_query($mysqli, $query);
 
@@ -55,28 +63,12 @@ switch ($tipo) {
 
             <tr>
                 <td colspan=2>TOTAL</td>
-                <td><?php echo $total ?></td>
-            </tr>
-            <tr>
-                <td colspan=2>TOTAL PROPINA</td>
-                <td><?php echo 0 ?></td>
-            </tr>
-            <tr>
-                <td colspan=2>TOTAL SIN PROPINA</td>
-                <td><?php echo $total ?></td>
+                <td><?php echo $total - $iva; ?></td>
             </tr>
             <tr></tr>
             <tr>
-                <td colspan=2>DESGLOSE IVA</td>
-                <td><?php echo 0 ?></td>
-            </tr>
-            <tr>
                 <td colspan=2>IVA</td>
                 <td><?php echo $iva; ?></td>
-            </tr>
-            <tr>
-                <td colspan=2>COMISION</td>
-                <td><?php echo 0 ?></td>
             </tr>
             <tr>
                 <td colspan=2>VALOR A PAGAR</td>
@@ -422,10 +414,20 @@ switch ($tipo) {
             </tr>
             <?php
 
-            $query = "SELECT cli.cli_descripcion, p.per_nombre, c.con_fecha,c.con_hora, c.con_valor_total from consumo c,local l,marca m,personal p,cliente cli
-                        where c.loc_id = l.loc_id and l.mar_id = m.mar_id and c.per_id = p.per_id and p.cli_id = cli.cli_id
-                        and m.mar_descripcion = '$marca' and extract(month from c.con_fecha) = extract(month from (select now())) 
-                        and extract(year from c.con_fecha) = extract(year from (select now())) order by con_fecha,cli_descripcion desc";
+            if($marca == 'TODOS'){
+                $query = "SELECT cli.cli_descripcion, p.per_nombre, c.con_fecha,c.con_hora, c.con_valor_total from consumo c,local l,marca m,personal p,cliente cli
+                where c.loc_id = l.loc_id and l.mar_id = m.mar_id and c.per_id = p.per_id and p.cli_id = cli.cli_id
+                and extract(month from c.con_fecha) = extract(month from (select now())) 
+                and extract(year from c.con_fecha) = extract(year from (select now())) 
+                order by con_fecha,cli_descripcion desc";
+            }else{
+                $query = "SELECT cli.cli_descripcion, p.per_nombre, c.con_fecha,c.con_hora, c.con_valor_total from consumo c,local l,marca m,personal p,cliente cli
+                where c.loc_id = l.loc_id and l.mar_id = m.mar_id and c.per_id = p.per_id and p.cli_id = cli.cli_id
+                and m.mar_descripcion = '$marca' and extract(month from c.con_fecha) = extract(month from (select now())) 
+                and extract(year from c.con_fecha) = extract(year from (select now())) order by con_fecha,cli_descripcion desc";
+            }
+
+            
 
             $result = mysqli_query($mysqli, $query);
 

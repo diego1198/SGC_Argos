@@ -49,6 +49,8 @@ $tipo = $_GET['tipo'];
                                                         <option value="0">Seleccione una marca</option>
                                                         <option value="PIZZA HUT">PIZZA HUT</option>
                                                         <option value="FRIDAYS">FRIDAYS</option>
+                                                        <option value="OTROS">OTROS</option>
+                                                        <option value="TODOS">TODOS</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -261,6 +263,8 @@ $tipo = $_GET['tipo'];
                                                         <option value="0">Seleccione una marca</option>
                                                         <option value="PIZZA HUT">PIZZA HUT</option>
                                                         <option value="FRIDAYS">FRIDAYS</option>
+                                                        <option value="OTROS">OTROS</option>
+                                                        <option value="TODOS">TODOS</option>
                                                     </select>
                                                 </div>
                                             </div>

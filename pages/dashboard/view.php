@@ -173,7 +173,7 @@
                                                         </div>
                                                         <h5 class="card-title m-b-5 prepend-currency" data-count="" id="valor_cartera_30"></h5>
                                                         <h6 class="text-muted m-t-10">
-                                                            Cartera 30 días
+                                                            Consumos Cartera 30 días
                                                         </h6>
                                                         <div class="progress progress-cartera-30 mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-success" role="progressbar" style="" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -190,7 +190,7 @@
                                                         </div>
                                                         <h5 class="card-title m-b-5 prepend-currency" data-count="" id="valor_cartera_60"></h5>
                                                         <h6 class="text-muted m-t-10">
-                                                            Cartera 60 días
+                                                            Consumos Cartera 60 días
                                                         </h6>
                                                         <div class="progress progress-cartera-60 mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-info" role="progressbar" style="" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
@@ -207,7 +207,7 @@
                                                         </div>
                                                         <h5 class="card-title m-b-5 prepend-currency" data-count="" id="valor_cartera_90"></h5>
                                                         <h6 class="text-muted m-t-10">
-                                                            Cartera 90 días
+                                                            Consumos Cartera 90 días
                                                         </h6>
                                                         <div class="progress progress-cartera-90 mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-danger" role="progressbar" style="" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
@@ -224,7 +224,7 @@
                                                         </div>
                                                         <h5 class="card-title m-b-5 prepend-currency" data-count="" id="valor_cartera_91"></h5>
                                                         <h6 class="text-muted m-t-10">
-                                                            Cartera +90 días
+                                                            Consumos Cartera +90 días
                                                         </h6>
                                                         <div class="progress progress-cartera-91 mt-4" style="height:7px;">
                                                             <div class="progress-bar bg-primary" role="progressbar" style="" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>

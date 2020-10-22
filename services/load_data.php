@@ -9,7 +9,7 @@ $action = $_GET['action'];
 switch ($action) {
     case 'carga_data':
         $estado = 'adeuda';
-        $fechainicio = '2020-09-01';
+        $fechainicio = date('Y-m-01');
         $fechafin = date('Y-m-d');
 
         //url del webservice
